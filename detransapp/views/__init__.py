@@ -32,7 +32,7 @@ from detransapp.views.tipo_cancelamento import CadastroCancelamentoView, Consult
 from detransapp.views.download_detrans import DownloadDetransView, DownloadDetransApkView
 from detransapp.views.config_sinc import GetConfigSincRestView
 from detransapp.views.detrans_arquivo_sqlite import CriaSqliteView, StatusView
-from detransapp.views.DET import CadastroDETView, ConsultaDETView
+# from detransapp.views.DET import *
 import detransapp.views.cadastraInf
 from detransapp.models import *
 

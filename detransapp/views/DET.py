@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
 
-from detransapp.forms.DET import FormDET
+from detransapp.forms.DET import FormDet
 from detransapp.models import Configuracao_DET
 
 
@@ -13,9 +13,9 @@ class CadastroDETView(View):
 
         if det_id:
             det = Configuracao_DET.objects.get(pk=det_id)
-            form = FormDET(instance=det)
+            form = FormDet(instance=det)
         else:
-            form = FormDET()
+            form = FormDet()
 
         return render(request, self.template, {'form': form})
 
@@ -23,10 +23,10 @@ class CadastroDETView(View):
 
         if det_id:
             cor = Configuracao_DET.objects.get(pk=det_id)
-            form = FormDET(instance=cor, data=request.POST)
+            form = FormDet(instance=cor, data=request.POST)
         else:
 
-            form = FormDET(request.POST)
+            form = FormDet(request.POST)
 
         if form.is_valid():
             form.save(request)
