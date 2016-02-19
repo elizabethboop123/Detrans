@@ -12,6 +12,7 @@ class Agente(User):
     regioes = models.ManyToManyField(Regiao)
     data = models.DateTimeField(auto_now_add=True)
     data_alterado = models.DateTimeField(auto_now=True)
+    cpf = models.CharField(max_length=11)
 
     objects = AgenteManager()
 

@@ -55,7 +55,7 @@ i.inverted.circular.icon.verde{
     color: #fff !important;
 
 }
-.verde{
+.verde, .ui.verde.label:before {
     background-color: #799632 !important;
     color:#fff !important;
 }

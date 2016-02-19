@@ -121,8 +121,8 @@ urlpatterns = patterns('',
 
                        url(r'^cria-sqlite/$', CriaSqliteView.as_view(), name='cria-sqlite'),
                        url(r'^status-sqlite/$', StatusView.as_view(), name='status-sqlite'),
-                       # url(r'^config/get/det$', CadastroDETView.as_view(), name='cadastra-det'),
-                       # url(r'^config/set/det$', ConsultaDETView.as_view(), name='consulta-det'),
-
-
+                       url(r'^config/set/det$', CadastroDETView.as_view(), name='cadastra-det'),
+                       url(r'^config/get/det$', ConsultaDETView.as_view(), name='consulta-det'),
+                       url(r'^config/geradet$', GeraDet.as_view(), name='gera-det'),
+                       url(r'^config/det$', TemplateDET.as_view(), name='template-det'),
                        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
