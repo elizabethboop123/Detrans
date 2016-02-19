@@ -22,10 +22,10 @@ class FormBloco(forms.ModelForm):
     # class Meta:
     #     model = Bloco
     #     fields = ('inicio_intervalo','fim_intervalo','ativo',)
-    inicio_intervalo = forms.IntegerField(help_text='Inicio Intervalo')
-    fim_intervalo = forms.IntegerField(help_text='Fim Intervalo')
-    ativo = forms.BooleanField(help_text='Status')
-    contador = forms.IntegerField(help_text='Inicio Contador')
+    # inicio_intervalo = forms.IntegerField(help_text='Inicio Intervalo')
+    # fim_intervalo = forms.IntegerField(help_text='Fim Intervalo')
+    # ativo = forms.BooleanField(help_text='Status')
+    # contador = forms.IntegerField(help_text='Inicio Contador')
 
     class Meta:
         model = Bloco

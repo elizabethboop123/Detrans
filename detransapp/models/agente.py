@@ -15,5 +15,8 @@ class Agente(User):
 
     objects = AgenteManager()
 
+    def __unicode__(self):
+        return self.identificacao
+
     class Meta:
         app_label = "detransapp"

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from agente import Agente
 
 from detransapp.manager import BlocoManager
 
@@ -10,7 +11,9 @@ class Bloco(models.Model):
     data = models.DateTimeField(auto_now_add=True)
     data_alterado = models.DateTimeField(auto_now=True)
     usuario = models.ForeignKey(User)
-    ativo = models.BooleanField()
+    #agente = models.ForeignKey(Agente, null=True)
+    ativo = models.BooleanField(default=True)
     contador = models.IntegerField(default=0)
+    
 
     objects = BlocoManager()
