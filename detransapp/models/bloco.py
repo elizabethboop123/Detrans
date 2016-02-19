@@ -10,7 +10,7 @@ class Bloco(models.Model):
     data = models.DateTimeField(auto_now_add=True)
     data_alterado = models.DateTimeField(auto_now=True)
     usuario = models.ForeignKey(User)
-    ativo = models.BooleanField(default=True)
+    ativo = models.BooleanField()
     contador = models.IntegerField(default=0)
 
     objects = BlocoManager()

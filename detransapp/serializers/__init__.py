@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from agente import AgenteSerializer
+from bloco import BlocoSerializer
 from cidade import CidadeSerializer
 from especie import EspecieSerializer
 from modelo import ModeloSerializer

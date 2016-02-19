@@ -24,7 +24,7 @@ from detransapp.views.uf import GetUFsRestView
 from detransapp.views.cidade import GetCidadesRestView, ImportaCidade
 from detransapp.views.sincronismo import SincronismoRestView
 from detransapp.views.leis import CadastroLeisView, ConsultaLeisView
-from detransapp.views.bloco import CadastroBlocoView, ConsultaBlocoView
+from detransapp.views.bloco import CadastroBlocoView, ConsultaBlocoView, GetBlocoRestView
 from detransapp.views.cor import CadastroCorView, ConsultaCorView, ImportaCor, GetCoresRestView
 from detransapp.views.categoria import CadastroCategoriaView, ConsultaCategoriaView, ImportaCategoria, \
     GetCategoriasRestView
