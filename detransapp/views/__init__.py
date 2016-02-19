@@ -6,6 +6,7 @@ from django.template import RequestContext
 from django.utils import timezone
 from django.db.models import Count
 
+<<<<<<< HEAD
 from detransapp.views.modelo import CadastroModeloView, ConsultaModeloView, GetModelosRestView, ImportaModelo
 from detransapp.views.tipo_veiculo import CadastroTipoView, ConsultaTipoView, GetTiposVeiculoRestView, \
     ImportaTipoVeiculo
@@ -33,6 +34,32 @@ from detransapp.views.download_detrans import DownloadDetransView, DownloadDetra
 from detransapp.views.config_sinc import GetConfigSincRestView
 from detransapp.views.detrans_arquivo_sqlite import CriaSqliteView, StatusView
 # from detransapp.views.DET import *
+=======
+from detransapp.views.modelo import *
+from detransapp.views.tipo_veiculo import *
+from detransapp.views.tipo_infracao import *
+from detransapp.views.especie import *
+from detransapp.views.agente import *
+from detransapp.views.veiculo import *
+from detransapp.views.condutor import *
+from detransapp.views.proprietario import *
+from detransapp.views.dispositivo import *
+from detransapp.views.infracao import *
+from detransapp.views.modelo import *
+from detransapp.views.regiao import *
+from detransapp.views.uf import *
+from detransapp.views.cidade import *
+from detransapp.views.sincronismo import *
+from detransapp.views.leis import *
+from detransapp.views.bloco import *
+from detransapp.views.cor import *
+from detransapp.views.categoria import *
+from detransapp.views.tipo_cancelamento import *
+from detransapp.views.download_detrans import *
+from detransapp.views.config_sinc import *
+from detransapp.views.detrans_arquivo_sqlite import *
+from detransapp.views.DET import *
+>>>>>>> dfdb968f06b5026b411806f90f097437fb30d917
 import detransapp.views.cadastraInf
 from detransapp.models import *
 

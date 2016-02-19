@@ -73,6 +73,7 @@
     })
 
 
+
     $('.fazul').click(function(){
 
         id = $(this).attr('id')
@@ -80,6 +81,17 @@
     })
 
 
+	$('input').focus(function(){
+		id = $(this).attr('id');
+		$('.'+id).removeClass('hidden');
+		console.log('aparece');
+	})
+
+	$('input').focusout(function(){
+		id = $(this).attr('id');
+		$('.'+id).addClass('hidden');
+		console.log('some');
+	})
 
 
   })
