@@ -72,6 +72,17 @@
 
                         </div>
                     </div>
+                    <div class="field">
+                            <label>CPF</label>
+
+                            {{ form.cpf}}
+                            {% if form.cpf.errors %}
+                            <div class="ui red pointing label">
+                                {{ form.cpf.errors }}
+                            </div>
+                            {% endif %}
+
+                        </div>
                     <div class="field hidden">
                         <label>Ativo</label>
 
@@ -83,7 +94,7 @@
                         {% endif %}
 
                     </div>
-                    <a href='/cadastros'>
+                    <a href='/relatorios'>
                         <button type="button" class="ui cancel red button">Cancelar</button>
                     </a>
                     <button type="submit" class="ui verde button">Salvar</button>

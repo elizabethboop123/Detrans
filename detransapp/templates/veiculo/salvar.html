@@ -132,6 +132,33 @@
                             </div>
                         </div>
                     </div>
+                     <div class='two fields'>
+                        <div class='field'>
+                            <label>Número motor</label>
+
+                            <div>
+                                {{ form.nr_motor }}
+                                {% if form.nr_motor.errors %}
+                                <div class="ui red pointing label">
+                                    {{ form.nr_motor.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class='field'>
+                            <label>Número Chassi</label>
+
+                            <div>
+                                {{ form.chassi }}
+
+                                {% if form.chassi.errors%}
+                                <div class="ui red pointing label">
+                                    {{ form.chassi.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
                     <div class='two fields'>
                         <div class='field'>
                             <label>Ano Fabricacao</label>
@@ -186,7 +213,7 @@
                         </div>
 
                     </div>
-                    <a href='/cadastros'>
+                    <a href='/relatorios'>
                         <button type="button" class="ui cancel red button">Cancelar</button>
                     </a>
                     <button type="submit" class="ui verde button">Salvar</button>

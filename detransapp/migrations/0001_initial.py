@@ -20,6 +20,7 @@ class Migration(migrations.Migration):
                 ('identificacao', models.CharField(max_length=6)),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
+                ('cpf', models.CharField(max_length=11)),
             ],
             bases=('auth.user',),
         ),
@@ -66,6 +67,19 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
+            name='Configuracao_DET',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('tipo_registro', models.CharField(max_length=1)),
+                ('formato', models.CharField(max_length=6)),
+                ('cod_entidade', models.CharField(max_length=3)),
+                ('entidade', models.CharField(max_length=40)),
+                ('autuador', models.CharField(max_length=6)),
+                ('tipo_arquivo', models.CharField(max_length=1)),
+                ('filler', models.IntegerField()),
+            ],
+        ),
+        migrations.CreateModel(
             name='Cor',
             fields=[
                 ('codigo', models.IntegerField(serialize=False, primary_key=True)),
@@ -95,11 +109,11 @@ class Migration(migrations.Migration):
             name='Infracao',
             fields=[
                 ('id', models.IntegerField(serialize=False, primary_key=True)),
-                ('obs', models.TextField()),
+                ('obs', models.TextField(null=True, blank=True)),
                 ('is_estrangeiro', models.BooleanField()),
                 ('is_veiculo_editado', models.BooleanField()),
                 ('is_condutor_identi', models.BooleanField()),
-                ('justificativa', models.TextField(null=True)),
+                ('justificativa', models.TextField(null=True, blank=True)),
                 ('local', models.CharField(max_length=255)),
                 ('local_numero', models.CharField(max_length=100)),
                 ('data_infracao', models.DateTimeField()),
@@ -320,7 +334,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='infracao',
             name='tipo_cancelamento',
-            field=models.ForeignKey(to='detransapp.TipoCancelamento', null=True),
+            field=models.ForeignKey(blank=True, to='detransapp.TipoCancelamento', null=True),
         ),
         migrations.AddField(
             model_name='infracao',

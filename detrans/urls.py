@@ -21,7 +21,7 @@ urlpatterns = patterns('',
                        url(r'^sobre/', views.about, name='sobre'),
 
                        url(r'^legislacao/$', CadastroLeisView.as_view(), name='cad-legislacao'),
-                       url(r'^legislacao/(?P<marca_id>\d+)/$', CadastroLeisView.as_view(), name='cad-legislacao'),
+                       url(r'^legislacao/(?P<lei_id>\d+)/$', CadastroLeisView.as_view(), name='cad-legislacao'),
                        url(r'^legislacao/consulta/$', ConsultaLeisView.as_view(), name='leis-consulta'),
 
                        url(r'^modelo/$', CadastroModeloView.as_view(), name='cad-modelo'),
@@ -55,11 +55,11 @@ urlpatterns = patterns('',
                        url(r'^agente/consulta/$', ConsultaAgenteView.as_view(), name='agente-consulta'),
 
                        url(r'^cor/$', CadastroCorView.as_view(), name='cad-cor'),
-                       url(r'^cor/(?P<agente_id>\d+)/$', CadastroCorView.as_view(), name='cad-cor'),
+                       url(r'^cor/(?P<cor_id>\d+)/$', CadastroCorView.as_view(), name='cad-cor'),
                        url(r'^cor/consulta/$', ConsultaCorView.as_view(), name='cor-consulta'),
 
                        url(r'^categoria/$', CadastroCategoriaView.as_view(), name='cad-categoria'),
-                       url(r'^categoria/(?P<agente_id>\d+)/$', CadastroCategoriaView.as_view(), name='cad-categoria'),
+                       url(r'^categoria/(?P<categoria_id>\d+)/$', CadastroCategoriaView.as_view(), name='cad-categoria'),
                        url(r'^categoria/consulta/$', ConsultaCategoriaView.as_view(), name='categoria-consulta'),
 
                        url(r'^dispositivo/$', CadastroDispositivoView.as_view(), name='cad-dispositivo'),
