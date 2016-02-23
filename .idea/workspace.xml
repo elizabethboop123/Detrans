@@ -4,35 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/detransapp/views/DET.py" line="153" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3dfadd7-7d1c-4301-a2c2-5575344b4358" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/detransapp/migrations/0002_auto_20160204_0915.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/detransapp/migrations/0003_auto_20160204_0916.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/detransapp/migrations/0004_configuracao_det.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/detrans.sqlite" afterPath="$PROJECT_DIR$/detranstrue.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/detransapp/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/especie/consulta.html" afterPath="$PROJECT_DIR$/detransapp/templates/especie/consulta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/manager/infracao.py" afterPath="$PROJECT_DIR$/detransapp/manager/infracao.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/views/leis.py" afterPath="$PROJECT_DIR$/detransapp/views/leis.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/relatorios.html" afterPath="$PROJECT_DIR$/detransapp/templates/relatorios.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/agente/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/agente/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/bloco/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/bloco/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/categoria/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/categoria/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/condutor/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/condutor/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/cor/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/cor/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/det/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/det/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/dispositivo/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/dispositivo/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/especie/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/especie/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/leis/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/leis/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/marca/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/marca/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/modelo/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/modelo/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/proprietario/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/proprietario/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/tipo_cancelamento/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/tipo_cancelamento/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/tipo_infracao/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/tipo_infracao/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/tipo_veiculo/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/tipo_veiculo/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/veiculo/salvar.html" afterPath="$PROJECT_DIR$/detransapp/templates/veiculo/salvar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detrans/urls.py" afterPath="$PROJECT_DIR$/detrans/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detrans/settings/vanessa.py" afterPath="$PROJECT_DIR$/detrans/settings/vanessa.py" />
-    </list>
+    <list default="true" id="e3dfadd7-7d1c-4301-a2c2-5575344b4358" name="Default" comment="" />
     <ignored path="detrans1.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,10 +24,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/detrans/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8055553">
+            <state vertical-scroll-proportion="0.46938777">
               <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
@@ -84,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infracao.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="infracao.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detransapp/manager/infracao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41420117">
+            <state vertical-scroll-proportion="0.0">
               <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
               <folding />
             </state>
@@ -260,51 +232,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="detransapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detransapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detransapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="veiculo" />
+              <option name="myItemId" value="detrans_sqlite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -319,24 +247,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="detrans" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="settings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -496,16 +406,23 @@
       <option name="project" value="LOCAL" />
       <updated>1455883674759</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="correção de bugs levantados pela eliza:&#10;&#10;Relatórios de Agentes:&#10;Ao tentar cadastrar agente, se clicar em cancelar ele não volta para a página de busca, vai para a url inicial.&#10;Quando faz a busca e aparece o pesquisa, se clicar em cancelar ele não volta para a página de busca, vai para a url inicial.&#10;&#10;Bloco&#10;Não abre.&#10;&#10;Categoria:&#10;Em relatórios de categoria, a página de editar não abre.&#10;Importação de categoria, não importa os arquivos.&#10;&#10;Cadastro de cor&#10;Relatório de cor não abre o editar.&#10;Importação de cor, não importa os arquivos.&#10;&#10;Relatórios de dispositivos:&#10;Quando clica em editar e vai para o cadastro de dispositivo, se clicar em cancelar volta para a url inicial.&#10;&#10;Importação de espécie:&#10;Na página de relatório de Espécie, aparece cadastro de espécie.&#10;Não importa.&#10;&#10;Relatórios de Infração:&#10;Da erro ao tentar consultar&#10;&#10;Relatórios de Legislação:&#10;Da erro ao tentar editar a lei.&#10;&#10;Cadastro de modelo:&#10;Aparece erro ao tentar cadastrar modelo, mas aparece cadastrado depois.&#10;Não importa os arquivos..&#10;&#10;Cadastro de veículo:&#10;Select UF sem opções.&#10;Select Cidade sem opções.&#10;Da erro ao cadastrar.&#10;Da erro ao tentar importar veículo.&#10;">
+      <created>1456244701976</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1456244701976</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1665" y="24" width="1535" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32958803" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25016287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -517,7 +434,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -537,7 +453,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="logica det007, pagina de download e urls" />
-    <option name="LAST_COMMIT_MESSAGE" value="logica det007, pagina de download e urls" />
+    <MESSAGE value="correção de bugs levantados pela eliza:&#10;&#10;Relatórios de Agentes:&#10;Ao tentar cadastrar agente, se clicar em cancelar ele não volta para a página de busca, vai para a url inicial.&#10;Quando faz a busca e aparece o pesquisa, se clicar em cancelar ele não volta para a página de busca, vai para a url inicial.&#10;&#10;Bloco&#10;Não abre.&#10;&#10;Categoria:&#10;Em relatórios de categoria, a página de editar não abre.&#10;Importação de categoria, não importa os arquivos.&#10;&#10;Cadastro de cor&#10;Relatório de cor não abre o editar.&#10;Importação de cor, não importa os arquivos.&#10;&#10;Relatórios de dispositivos:&#10;Quando clica em editar e vai para o cadastro de dispositivo, se clicar em cancelar volta para a url inicial.&#10;&#10;Importação de espécie:&#10;Na página de relatório de Espécie, aparece cadastro de espécie.&#10;Não importa.&#10;&#10;Relatórios de Infração:&#10;Da erro ao tentar consultar&#10;&#10;Relatórios de Legislação:&#10;Da erro ao tentar editar a lei.&#10;&#10;Cadastro de modelo:&#10;Aparece erro ao tentar cadastrar modelo, mas aparece cadastrado depois.&#10;Não importa os arquivos..&#10;&#10;Cadastro de veículo:&#10;Select UF sem opções.&#10;Select Cidade sem opções.&#10;Da erro ao cadastrar.&#10;Da erro ao tentar importar veículo.&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="correção de bugs levantados pela eliza:&#10;&#10;Relatórios de Agentes:&#10;Ao tentar cadastrar agente, se clicar em cancelar ele não volta para a página de busca, vai para a url inicial.&#10;Quando faz a busca e aparece o pesquisa, se clicar em cancelar ele não volta para a página de busca, vai para a url inicial.&#10;&#10;Bloco&#10;Não abre.&#10;&#10;Categoria:&#10;Em relatórios de categoria, a página de editar não abre.&#10;Importação de categoria, não importa os arquivos.&#10;&#10;Cadastro de cor&#10;Relatório de cor não abre o editar.&#10;Importação de cor, não importa os arquivos.&#10;&#10;Relatórios de dispositivos:&#10;Quando clica em editar e vai para o cadastro de dispositivo, se clicar em cancelar volta para a url inicial.&#10;&#10;Importação de espécie:&#10;Na página de relatório de Espécie, aparece cadastro de espécie.&#10;Não importa.&#10;&#10;Relatórios de Infração:&#10;Da erro ao tentar consultar&#10;&#10;Relatórios de Legislação:&#10;Da erro ao tentar editar a lei.&#10;&#10;Cadastro de modelo:&#10;Aparece erro ao tentar cadastrar modelo, mas aparece cadastrado depois.&#10;Não importa os arquivos..&#10;&#10;Cadastro de veículo:&#10;Select UF sem opções.&#10;Select Cidade sem opções.&#10;Da erro ao cadastrar.&#10;Da erro ao tentar importar veículo.&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -892,16 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/detrans/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8055553">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/detransapp/templates/veiculo/salvar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.625">
@@ -920,9 +827,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/detransapp/manager/infracao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41420117">
+        <state vertical-scroll-proportion="0.0">
           <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detrans/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46938777">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
