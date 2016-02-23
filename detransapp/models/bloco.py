@@ -11,7 +11,7 @@ class Bloco(models.Model):
     data = models.DateTimeField(auto_now_add=True)
     data_alterado = models.DateTimeField(auto_now=True)
     usuario = models.ForeignKey(User)
-    #agente = models.ForeignKey(Agente, null=True)
+    agente_campo = models.ForeignKey(Agente, null=True, blank=True, related_name='+')
     ativo = models.BooleanField(default=True)
     contador = models.IntegerField(default=0)
     

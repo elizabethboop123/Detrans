@@ -6,35 +6,6 @@ from django.template import RequestContext
 from django.utils import timezone
 from django.db.models import Count
 
-<<<<<<< HEAD
-from detransapp.views.modelo import CadastroModeloView, ConsultaModeloView, GetModelosRestView, ImportaModelo
-from detransapp.views.tipo_veiculo import CadastroTipoView, ConsultaTipoView, GetTiposVeiculoRestView, \
-    ImportaTipoVeiculo
-from detransapp.views.tipo_infracao import CadastroTipoInfracaoView, ConsultaTipoInfracaoView, GetTiposInfracaoRestView, \
-    CarregaTiposInfracao
-from detransapp.views.especie import CadastroEspecieView, ConsultaEspecieView, GetEspeciesRestView, ImportaEspecie
-from detransapp.views.agente import CadastroAgenteView, ConsultaAgenteView, GetAgentesRestView
-from detransapp.views.veiculo import CadastroVeiculoView, ConsultaVeiculoView, GetVeiculosRestView, ImportaVeiculo
-from detransapp.views.condutor import CadastroCondutorView, ConsultaCondutorView
-from detransapp.views.proprietario import CadastroProprietarioView, ConsultaProprietarioView
-from detransapp.views.dispositivo import CadastroDispositivoView, ConsultaDispositivoView
-from detransapp.views.infracao import RelatorioInfracaoView, RecebeInfracoesRestView
-from detransapp.views.modelo import GetModelosRestView
-from detransapp.views.regiao import GetRegioesRestView
-from detransapp.views.uf import GetUFsRestView
-from detransapp.views.cidade import GetCidadesRestView, ImportaCidade
-from detransapp.views.sincronismo import SincronismoRestView
-from detransapp.views.leis import CadastroLeisView, ConsultaLeisView
-from detransapp.views.bloco import CadastroBlocoView, ConsultaBlocoView, GetBlocoRestView
-from detransapp.views.cor import CadastroCorView, ConsultaCorView, ImportaCor, GetCoresRestView
-from detransapp.views.categoria import CadastroCategoriaView, ConsultaCategoriaView, ImportaCategoria, \
-    GetCategoriasRestView
-from detransapp.views.tipo_cancelamento import CadastroCancelamentoView, ConsultaCancelamentoView
-from detransapp.views.download_detrans import DownloadDetransView, DownloadDetransApkView
-from detransapp.views.config_sinc import GetConfigSincRestView
-from detransapp.views.detrans_arquivo_sqlite import CriaSqliteView, StatusView
-# from detransapp.views.DET import *
-=======
 from detransapp.views.modelo import *
 from detransapp.views.tipo_veiculo import *
 from detransapp.views.tipo_infracao import *
@@ -59,7 +30,6 @@ from detransapp.views.download_detrans import *
 from detransapp.views.config_sinc import *
 from detransapp.views.detrans_arquivo_sqlite import *
 from detransapp.views.DET import *
->>>>>>> dfdb968f06b5026b411806f90f097437fb30d917
 import detransapp.views.cadastraInf
 from detransapp.models import *
 
@@ -95,30 +65,30 @@ def graficoInfracoes():
     # print d
     # #Step 1: Create a DataPool with the data we want to retrieve.
     # dados = DataPool(series=
-    #		 [{'options': {
-    #			'source': d},
-    #		   'terms': [
-    #			 'data',
-    #			 'data_infracao__count']}
-    #		 ])
+    #        [{'options': {
+    #           'source': d},
+    #          'terms': [
+    #            'data',
+    #            'data_infracao__count']}
+    #        ])
 
     # #Step 2: Create the Chart object
     # cht = Chart(
-    #		 datasource = dados,
-    #		 series_options =
-    #		   [{'options':{
-    #			   'type': 'line',
-    #			   'stacking': False},
-    #			 'terms':{
-    #			   'data': [
-    #				 'data_infracao__count']
-    #			   }}],
-    #		 chart_options =
-    #		   {'title': {
-    #				'text': 'Weather Data of Boston and Houston'},
-    #			'xAxis': {
-    #				 'title': {
-    #					'text': 'Month number'}}})
+    #        datasource = dados,
+    #        series_options =
+    #          [{'options':{
+    #              'type': 'line',
+    #              'stacking': False},
+    #            'terms':{
+    #              'data': [
+    #                'data_infracao__count']
+    #              }}],
+    #        chart_options =
+    #          {'title': {
+    #               'text': 'Weather Data of Boston and Houston'},
+    #           'xAxis': {
+    #                'title': {
+    #                   'text': 'Month number'}}})
 
     # #Step 3: Send the chart object to the template.
     return d

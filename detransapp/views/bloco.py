@@ -35,14 +35,15 @@ class CadastroBlocoView(View):
         if form.is_valid():
             
             post = form.save(commit=False)
-            # post.inicio_intervalo = request.POST['inicio_intervalo']
-            # post.fim_intervalo = request.POST['fim_intervalo']
             post.usuario = request.user
-            # post.ativo = request.POST['ativo']
-            # post.contador = 0
             
-
-            form.save()
+            # Controle de bloco campo 'ativo'
+            bloco = Bloco.objects.filter(ativo='TRUE')
+            if len(bloco) >= 2:
+                post.ativo=False         
+                form.save()
+            else:
+                form.save()
 
             return redirect('/')
                
@@ -103,23 +104,3 @@ class GetBlocoRestView(generics.ListCreateAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-# class SnippetList(generics.ListCreateAPIView):
-#     queryset = Snippet.objects.all()
-#     serializer_class = SnippetSerializer
-#     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-
-#     def perform_create(self, serializer):
-#         serializer.save(owner=self.request.user)
-
-# def post(self, request):
-#         if 'data' in request.POST:
-#             agentes = Agente.objects.get_agentes_sicronismo(request.POST['data'])
-#         else:
-#             agentes = Agente.objects.get_agentes_sicronismo()
-#         agentes_js = []
-#         for agente in agentes:
-#             serializer = AgenteSerializer(agente)
-#             agentes_js.append(serializer.data)
-#         return JSONResponse(agentes_js)
