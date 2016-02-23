@@ -92,6 +92,9 @@ urlpatterns = patterns('',
                        url(r'^download-apk/$', DownloadDetransApkView.as_view(), name='download_apk'),
 
                        # REST
+                       # <BLOCO>
+                       url(r'^rest/bloco/$', GetBlocoRestView.as_view(), name='rest-bloco'),
+                       # </BLOCO>
                        url(r'^rest/agente/$', GetAgentesRestView.as_view(), name='rest-agente'),
                        url(r'^rest/veiculo/$', GetVeiculosRestView.as_view(), name='rest-veiculo'),
                        url(r'^rest/tipo-infracao/$', GetTiposInfracaoRestView.as_view(), name='rest-tipo-infracao'),

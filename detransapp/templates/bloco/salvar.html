@@ -64,7 +64,25 @@
                             {% endif %}
                         </div>
                     </div>
+<<<<<<< HEAD
                     <a href='/relatorios'>
+=======
+                    <div class =' field'>
+                        <label>Contador</label>
+                        <div>
+                            {{ form.contador }}
+                            {% if form.contador.errors %}
+                            <div class="ui red pointing label">
+                                {{ form.contador.errors }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+
+
+                    <a href='/cadastros'>
+>>>>>>> 32e5ed579321b08ea2a7e4b3536f8543df685c2c
                         <button type="button" class="ui cancel red button">Cancelar</button>
                     </a>
                     <button type="submit" class="ui verde button">Salvar</button>

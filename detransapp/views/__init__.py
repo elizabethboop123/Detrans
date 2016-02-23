@@ -65,30 +65,30 @@ def graficoInfracoes():
     # print d
     # #Step 1: Create a DataPool with the data we want to retrieve.
     # dados = DataPool(series=
-    #		 [{'options': {
-    #			'source': d},
-    #		   'terms': [
-    #			 'data',
-    #			 'data_infracao__count']}
-    #		 ])
+    #        [{'options': {
+    #           'source': d},
+    #          'terms': [
+    #            'data',
+    #            'data_infracao__count']}
+    #        ])
 
     # #Step 2: Create the Chart object
     # cht = Chart(
-    #		 datasource = dados,
-    #		 series_options =
-    #		   [{'options':{
-    #			   'type': 'line',
-    #			   'stacking': False},
-    #			 'terms':{
-    #			   'data': [
-    #				 'data_infracao__count']
-    #			   }}],
-    #		 chart_options =
-    #		   {'title': {
-    #				'text': 'Weather Data of Boston and Houston'},
-    #			'xAxis': {
-    #				 'title': {
-    #					'text': 'Month number'}}})
+    #        datasource = dados,
+    #        series_options =
+    #          [{'options':{
+    #              'type': 'line',
+    #              'stacking': False},
+    #            'terms':{
+    #              'data': [
+    #                'data_infracao__count']
+    #              }}],
+    #        chart_options =
+    #          {'title': {
+    #               'text': 'Weather Data of Boston and Houston'},
+    #           'xAxis': {
+    #                'title': {
+    #                   'text': 'Month number'}}})
 
     # #Step 3: Send the chart object to the template.
     return d
