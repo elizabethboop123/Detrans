@@ -9,10 +9,10 @@ from detransapp.models.lei import Lei
 class CadastroLeisView(View):
     template = 'leis/salvar.html'
 
-    def get(self, request, condutor_id=None):
+    def get(self, request, lei_id=None):
 
-        if condutor_id:
-            leis = Lei.objects.get(pk=condutor_id)
+        if lei_id:
+            leis = Lei.objects.get(pk=lei_id)
             form = FormLei(instance=leis)
         else:
             form = FormLei()
