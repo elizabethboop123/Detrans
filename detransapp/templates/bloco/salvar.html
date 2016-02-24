@@ -21,16 +21,13 @@
                     {% csrf_token %}
                     <h2 class='ui header'>
                         <i class="icon edit"></i>
-
                         <div class="content">
                             Cadastro de Bloco
                             <div class='sub header'>Prencha os campos abaixo.</div>
                         </div>
-
                     </h2>
                     <div class='field'>
                         <label>In&iacute;cio Bloco</label>
-
                         <div>
                             {{ form.inicio_intervalo }}
                             {% if form.inicio_intervalo.errors %}
@@ -64,11 +61,9 @@
                             {% endif %}
                         </div>
                     </div>
-<<<<<<< HEAD
                     <a href='/relatorios'>
-=======
-                    <div class =' field'>
-                        <label>Contador</label>
+                        <div class =' field'>
+                            <label>Contador</label>
                         <div>
                             {{ form.contador }}
                             {% if form.contador.errors %}
@@ -78,11 +73,7 @@
                             {% endif %}
                         </div>
                     </div>
-                    
-
-
                     <a href='/cadastros'>
->>>>>>> 32e5ed579321b08ea2a7e4b3536f8543df685c2c
                         <button type="button" class="ui cancel red button">Cancelar</button>
                     </a>
                     <button type="submit" class="ui verde button">Salvar</button>
