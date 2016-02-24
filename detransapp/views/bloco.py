@@ -38,7 +38,7 @@ class CadastroBlocoView(View):
             post.usuario = request.user
             
             # Controle de bloco campo 'ativo'
-            bloco = Bloco.objects.filter(ativo='TRUE')
+            bloco = Bloco.objects.filter(ativo='TRUE', usuario=request.user)
             if len(bloco) >= 2:
                 post.ativo=False         
                 form.save()
