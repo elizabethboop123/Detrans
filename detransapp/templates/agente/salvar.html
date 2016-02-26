@@ -22,77 +22,79 @@
                     <h2 class='ui header'>
                         <i class="fa fa-user-secret icone"></i>Cadastro de Agente
                         <div class='sub header'>Prencha os campos abaixo.</div>
-
                     </h2>
-
                     <div class="two fields">
                         <div class="field">
                             <label>Nome</label>
-
                             {{ form.first_name}}
+                            <div class="ui verde pointing label large hidden id_first_name">
+                               Até 40 caracteres.
+                            </div>
                             {% if form.first_name.errors %}
                             <div class="ui red pointing label">
                                 {{ form.first_name.errors }}
                             </div>
                             {% endif %}
-
                         </div>
                         <div class='field'>
                             <label>Identificação</label>
                             {{ form.identificacao }}
+                            <div class="ui verde pointing label hidden id_identificacao">
+                               6 Números. Valor padrão 008088.
+                            </div>
                             {% if form.identificacao.errors %}
                             <div class="ui red pointing label">
                                 {{ form.identificacao.errors }}
                             </div>
                             {% endif %}
-
-                        </div>
-                    </div>
-                    <div class='two fields'>
-                        <div class="field">
-                            <label>Usu&aacute;rio</label>
-
-                            {{ form.username}}
-                            {% if form.username.errors %}
-                            <div class="ui red pointing label">
-                                {{ form.username.errors }}
-                            </div>
-                            {% endif %}
-
-                        </div>
-                        <div class="field">
-                            <label>Senha</label>
-
-                            {{ form.password}}
-                            {% if form.password.errors %}
-                            <div class="ui red pointing label">
-                                {{ form.password.errors }}
-                            </div>
-                            {% endif %}
-
                         </div>
                     </div>
                     <div class="field">
                             <label>CPF</label>
-
                             {{ form.cpf}}
+                            <div class="ui verde pointing label hidden id_cpf">
+                               11 Números. 
+                            </div>
                             {% if form.cpf.errors %}
                             <div class="ui red pointing label">
                                 {{ form.cpf.errors }}
                             </div>
                             {% endif %}
-
                         </div>
                     <div class="field hidden">
                         <label>Ativo</label>
-
                         {{ form.is_active }}
                         {% if form.is_active.errors %}
                         <div class="ui red pointing label">
                             {{ form.is_active.errors }}
                         </div>
                         {% endif %}
-
+                    </div>
+                    <div class='two fields'>
+                        <div class="field">
+                            <label>Usu&aacute;rio</label>
+                            {{ form.username}}
+                            <div class="ui verde pointing label large hidden id_username">
+                               Até 10 caracteres sem espaços.
+                            </div>
+                            {% if form.username.errors %}
+                            <div class="ui red pointing label">
+                                {{ form.username.errors }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="field">
+                            <label>Senha</label>
+                            {{ form.password}}
+                            <div class="ui verde pointing label large hidden id_password">
+                               Até 40 caracteres.
+                            </div>
+                            {% if form.password.errors %}
+                            <div class="ui red pointing label">
+                                {{ form.password.errors }}
+                            </div>
+                            {% endif %}
+                        </div>
                     </div>
                     <a href='/relatorios'>
                         <button type="button" class="ui cancel red button">Cancelar</button>

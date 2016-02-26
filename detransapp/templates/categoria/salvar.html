@@ -21,19 +21,19 @@
                     {% csrf_token %}
                     <h2 class='ui header'>
                         <i class="book icon"></i>
-
                         <div class="content">
                             Cadastro de Categoria
                             <div class='sub header'>Prencha os campos abaixo.</div>
                         </div>
-
                     </h2>
                     <div class='ui two fields'>
                         <div class='field'>
                             <label>C&oacute;digo</label>
-
                             <div>
                                 {{ form.codigo }}
+                                <div class="ui verde pointing label large hidden id_codigo">
+                               Números. Até 40 caracteres. Valor padrão Detrans.
+                            </div>
                                 {% if form.codigo.errors %}
                                 <div class="ui red pointing label">
                                     {{ form.codigo.errors }}
@@ -43,9 +43,11 @@
                         </div>
                         <div class='field'>
                             <label>Descricao</label>
-
                             <div>
                                 {{ form.descricao }}
+                                <div class="ui verde pointing label large hidden id_descricao">
+                               Letras e números. Até 40 caracteres. Valor padrão Detrans.
+                            </div>
                                 {% if form.descricao.errors %}
                                 <div class="ui red pointing label">
                                     {{ form.descricao.errors }}

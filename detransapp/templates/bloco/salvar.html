@@ -30,6 +30,9 @@
                         <label>In&iacute;cio Bloco</label>
                         <div>
                             {{ form.inicio_intervalo }}
+                            <div class="ui verde pointing label large hidden id_inicio_intervalo">
+                               Números. Até 40 caracteres. Valor padrão Detrans.
+                            </div>
                             {% if form.inicio_intervalo.errors %}
                             <div class="ui red pointing label">
                                 {{ form.inicio_intervalo.errors }}
@@ -39,9 +42,11 @@
                     </div>
                     <div class='field'>
                         <label>Fim Bloco</label>
-
                         <div>
                             {{ form.fim_intervalo }}
+                             <div class="ui verde pointing label large hidden id_fim_intervalo">
+                               Números. Até 40 caracteres. Valor padrão Detrans.
+                            </div>
                             {% if form.fim_intervalo.errors %}
                             <div class="ui red pointing label">
                                 {{ form.fim_intervalo.errors }}
@@ -51,7 +56,6 @@
                     </div>
                     <div class=' field'>
                         <label>Ativo?</label>
-
                         <div>
                             {{ form.ativo }}
                             {% if form.ativo.errors %}
@@ -62,10 +66,13 @@
                         </div>
                     </div>
                     <a href='/relatorios'>
-                        <div class =' field'>
-                            <label>Contador</label>
+                    <div class =' field'>
+                        <label>Contador</label>
                         <div>
                             {{ form.contador }}
+                             <div class="ui verde pointing label large hidden id_contador">
+                                Números. Até 40 caracteres. Valor padrão Detrans.
+                            </div>
                             {% if form.contador.errors %}
                             <div class="ui red pointing label">
                                 {{ form.contador.errors }}

@@ -20,17 +20,17 @@
                     {% endif %}
                     {% csrf_token %}
                     <h2 class='ui header'>
-
                         <i class="fa fa-car icone"></i> Cadastro de Ve&iacute;culo
                         <div class='sub header'>Prencha os campos abaixo.</div>
-
                     </h2>
                     <div class='two fields'>
                         <div class='field'>
                             <label>Placa</label>
-
                             <div>
                                 {{ form.placa }}
+                                <div class="ui verde pointing label large hidden id_placa">
+                               Letras e números. Até 7 caracteres.
+                            </div>
                                 {% if form.placa.errors %}
                                 <div class="ui red pointing label">
                                     {{ form.placa.errors }}
@@ -40,9 +40,11 @@
                         </div>
                         <div class='field'>
                             <label>Modelo</label>
-
                             <div>
                                 {{ form.modelo }}
+                                 <div class="ui verde pointing label large hidden id_entidade">
+                               Letras e números. Até 40 caracteres. Valor padrão Detrans.
+                            </div>
                                 {% if form.modelo.errors%}
                                 <div class="ui red pointing label">
                                     {{ form.modelo.errors }}
@@ -54,7 +56,6 @@
                     <div class='two fields'>
                         <div class='field'>
                             <label>Tipo</label>
-
                             <div>
                                 {{ form.tipo_veiculo }}
                                 {% if form.tipo_veiculo.errors %}
@@ -66,7 +67,6 @@
                         </div>
                         <div class='field'>
                             <label>Especie</label>
-
                             <div>
                                 {{ form.especie }}
 
@@ -81,7 +81,6 @@
                     <div class='two fields'>
                         <div class='field'>
                             <label>Cor</label>
-
                             <div>
                                 {{ form.cor}}
                                 {% if form.cor.errors %}
@@ -93,10 +92,8 @@
                         </div>
                         <div class='field'>
                             <label>Categoria</label>
-
                             <div>
                                 {{ form.categoria }}
-
                                 {% if form.categoria.errors%}
                                 <div class="ui red pointing label">
                                     {{ form.categoria.errors }}
@@ -108,9 +105,11 @@
                     <div class='two fields'>
                         <div class='field'>
                             <label>Renavam</label>
-
                             <div>
                                 {{ form.renavam }}
+                                 <div class="ui verde pointing label large hidden id_renavam">
+                               Números. Até 10 caracteres.
+                            </div>
                                 {% if form.renavam.errors %}
                                 <div class="ui red pointing label">
                                     {{ form.renavam.errors }}
@@ -120,10 +119,11 @@
                         </div>
                         <div class='field'>
                             <label>Numero de passageiro</label>
-
                             <div>
                                 {{ form.num_passageiro }}
-
+                                 <div class="ui verde pointing label large hidden id_num_passageiro">
+                               Números. Até 3 caracteres.
+                            </div>
                                 {% if form.num_passageiro.errors%}
                                 <div class="ui red pointing label">
                                     {{ form.num_passageiro.errors }}
@@ -135,9 +135,11 @@
                      <div class='two fields'>
                         <div class='field'>
                             <label>Número motor</label>
-
                             <div>
                                 {{ form.nr_motor }}
+                                 <div class="ui verde pointing label large hidden id_nr_motor">
+                               Números. Até 21 caracteres.
+                            </div>
                                 {% if form.nr_motor.errors %}
                                 <div class="ui red pointing label">
                                     {{ form.nr_motor.errors }}
@@ -147,10 +149,11 @@
                         </div>
                         <div class='field'>
                             <label>Número Chassi</label>
-
                             <div>
                                 {{ form.chassi }}
-
+                                 <div class="ui verde pointing label large hidden id_chassi">
+                               Números. Até 21 caracteres.
+                            </div>
                                 {% if form.chassi.errors%}
                                 <div class="ui red pointing label">
                                     {{ form.chassi.errors }}
@@ -162,9 +165,11 @@
                     <div class='two fields'>
                         <div class='field'>
                             <label>Ano Fabricacao</label>
-
                             <div>
                                 {{ form.ano_fabricacao }}
+                                 <div class="ui verde pointing label large hidden id_ano_fabricacao">
+                               Números. Até 4 caracteres.
+                            </div>
                                 {% if form.ano_fabricacao.errors %}
                                 <div class="ui red pointing label">
                                     {{ form.ano_fabricacao.errors }}
@@ -174,10 +179,11 @@
                         </div>
                         <div class='field'>
                             <label>Ano Modelo</label>
-
                             <div>
                                 {{ form.ano_modelo }}
-
+                                <div class="ui verde pointing label large hidden id_ano_modelo">
+                               Números. Até 4 caracteres.
+                            </div>
                                 {% if form.ano_modelo.errors%}
                                 <div class="ui red pointing label">
                                     {{ form.ano_modelo.errors }}
@@ -189,7 +195,6 @@
                     <div class='fields'>
                         <div class='four wide field'>
                             <label>UF</label>
-
                             <div>
                                 {{ form.uf }}
                                 {% if form.uf.errors %}
@@ -201,7 +206,6 @@
                         </div>
                         <div class='twelve wide field'>
                             <label>Cidade</label>
-
                             <div>
                                 {{ form.cidade }}
                                 {% if form.cidade.errors %}
@@ -211,7 +215,6 @@
                                 {% endif %}
                             </div>
                         </div>
-
                     </div>
                     <a href='/relatorios'>
                         <button type="button" class="ui cancel red button">Cancelar</button>
