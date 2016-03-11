@@ -5,12 +5,18 @@ from datetime import datetime
 from detransapp.forms.bloco import FormBloco
 from detransapp.models import Bloco
 # Daqui para baixo -> Lucas
+import json
+from detransapp.rest import JSONResponse
+from detransapp.models.bloco_padrao import BlocoPadrao
 from detransapp.serializers import BlocoSerializer
-from rest_framework import generics, status
+from rest_framework import generics, status, viewsets
+from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.utils.decorators import method_decorator
 from detransapp.decorators import validar_imei
 from rest_framework.response import Response
+from rest_framework import permissions
+from detransapp.permissions import IsOwnerOrReadOnly
 # Fim do Lucas
 
 class CadastroBlocoView(View):
@@ -85,22 +91,35 @@ class ConsultaBlocoView(View):
 
 # View que mandará as informações para o client
 
-class GetBlocoRestView(generics.ListCreateAPIView):
+class GetBlocoRestView(APIView):
+
     permission_classes = (IsAuthenticated, AllowAny)
-    queryset = Bloco.objects.all()
-    serializer_class = BlocoSerializer
+    # queryset =  Bloco.objects.all()
+    # serializer_class = BlocoSerializer
 
-
-    # @method_decorator(validar_imei())
+    @method_decorator(validar_imei())
     def post(self, request):
         
-        serializer = BlocoSerializer(data=request.data)
+        bloco = AddBloco(request)
+        bloco.save()
+        bp = BlocoPadrao.objects.get(ativo=True)
+        bp.contador += bp.numero_paginas
+        bp.save()    
+        serializer = BlocoSerializer(bloco) 
+        return Response(serializer.data)
+        
+        # serializer = BlocoSerializer(data=request.data)
+        # if serializer.is_valid():
+        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        if serializer.is_valid():
+def AddBloco(request):
+    bp = BlocoPadrao.objects.get(ativo=True)
+    bloco = Bloco()
+    bloco.inicio_intervalo = bp.contador
+    bloco.fim_intervalo = bp.contador + bp.numero_paginas
+    bloco.usuario = request.user 
+    bloco.ativo = True
 
-            serializer.save(usuario=self.request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    return bloco
 

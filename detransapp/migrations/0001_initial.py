@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, migrations
+from django.db import migrations, models
 from django.conf import settings
 
 
@@ -33,7 +33,6 @@ class Migration(migrations.Migration):
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
                 ('ativo', models.BooleanField(default=True)),
-                ('contador', models.IntegerField(default=0)),
                 ('agente_campo', models.ForeignKey(related_name='+', blank=True, to='detransapp.Agente', null=True)),
                 ('usuario', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
