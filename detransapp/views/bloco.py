@@ -93,25 +93,27 @@ class ConsultaBlocoView(View):
 
 class GetBlocoRestView(APIView):
 
-    permission_classes = (IsAuthenticated, AllowAny)
-    # queryset =  Bloco.objects.all()
-    # serializer_class = BlocoSerializer
+    permission_classes = (AllowAny, AllowAny)
+
 
     @method_decorator(validar_imei())
     def post(self, request):
         
+        # if Bloco.objects.filter(usuario=request.user) == N
+
         bloco = AddBloco(request)
+        # bloco.agente_campo = request.user
         bloco.save()
+
         bp = BlocoPadrao.objects.get(ativo=True)
         bp.contador += bp.numero_paginas
         bp.save()    
-        serializer = BlocoSerializer(bloco) 
+        serializer = BlocoSerializer(bloco)
+
+
         return Response(serializer.data)
         
-        # serializer = BlocoSerializer(data=request.data)
-        # if serializer.is_valid():
-        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
-        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+  
 
 def AddBloco(request):
     bp = BlocoPadrao.objects.get(ativo=True)
