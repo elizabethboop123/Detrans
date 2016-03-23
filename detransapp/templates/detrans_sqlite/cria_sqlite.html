@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %} Download SQLite {% endblock %}
+
+{% block home %}item {% endblock %}
+{% block cadastros %}item active{% endblock %}
+{% block relatorios %}item {% endblock %}
+{% block sobre %}item {% endblock %}
+{% block op1 %} item {% endblock %}
+{% block op2 %} item {% endblock %}
+
+{% block result %}
+<div class='ui grid'>
+    <div class='row'>
+        <div class='three wide column'></div>
+        <div class='ten wide column'>
+
+            <form method="POST" action="{% url 'cria-sqlite'%}" class='ui form'>
+                {% csrf_token %}
+                <h3 class="ui header">
+                    Clique para iniciar a criação e download do banco de dados para dispositivo móvel.
+                    <p class="sub header">
+                        Esse processo deve demorar alguns minutos.
+                    </p>
+                </h3>
+                <button type="submit" class="ui verde button">Iniciar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+#criaContainer li{
+display:list;
+width:97%;
+float:left;
+}
+.criaBusca{
+    float:left
+    }
+    
+.comandos,.coluna,.retira{
+    float:right;
+    cursor:pointer;
+}
+.escondida{
+    display:none;
+}
+#busca-1{
+    display:block;
+    }
+    
+#criaContainer ul{
+    list-style:none;
+    }

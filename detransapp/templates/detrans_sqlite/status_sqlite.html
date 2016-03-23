@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} Status {% endblock %}
+
+{% block home %}item {% endblock %}
+{% block cadastros %}item active{% endblock %}
+{% block relatorios %}item {% endblock %}
+{% block sobre %}item {% endblock %}
+{% block op1 %} item {% endblock %}
+{% block op2 %} item {% endblock %}
+
+{% block result %}
+
+Status : {{ status }}<br>
+Erro : {{ erro }}
+<div class="ui grid">
+    <div class="centered row">
+        <div class="four wide column">
+            {% if erro and status != 'Concluído' %}
+            <div class="ui red inverted compact segment">
+                Ocorreu um erro, tente novamente
+            </div>
+            {% else %}
+            <div class="ui loading center aligned segment">
+                <h1 class="ui header">Processando...</h1><br/>
+
+                <p></p>
+
+                <p></p>
+
+                <p></p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class='ui grid'>
+    <div class='row'>
+        <div class='three wide column'></div>
+        <div class='ten wide column'>
+
+            <form method="POST" action="{% url 'status-sqlite'%}" class='ui form'>
+                {% csrf_token %}
+                <button type="submit" class="ui red button">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

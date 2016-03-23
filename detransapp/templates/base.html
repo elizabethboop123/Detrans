@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title> {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/semantic.css"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/relatorios.css"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome-4.3.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/sticky.css"/>
+    <script src="{{ STATIC_URL }}js/jquery.js"></script>
+    <script src="{{ STATIC_URL }}js/sticky.js"></script>
+    <script src="{{ STATIC_URL }}js/highcharts.js"></script>
+    <script src="{{ STATIC_URL }}css/components/transition.js"></script>
+    <script src="{{ STATIC_URL }}js/detrans.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.png"/>
+    {% load sistema %}
+</head>
+<body>
+<header>
+    <div class='row'>
+        <div class='fourteen wide column'>
+            <div id='topo'>
+                <a href='/'>
+                    <h2 class='ui header linklogo'>
+                        <img src="{{ MEDIA_URL }}{% logo %}" alt='{% sigla %}' width='100px'/>
+
+                        <div class="content">
+                            {% sigla %}
+                            <div class="sub header">{% nome_completo%}</div>
+                        </div>
+                    </h2>
+                </a>
+            </div>
+        </div>
+        <div class='two wide column login'>
+            {% if user.is_authenticated %}
+            <a href='/logout/'>Sair</a>
+            {% else %}
+            <a href='/login/'>Entrar</a>
+            {% endif %}
+        </div>
+    </div>
+    <nav class='ui menu azul inverted large'>
+        <a class='{% block home %}{% endblock %}' href='/'> Home </a>
+        <a class='{% block cadastros %}{% endblock %}' href='/relatorios'> Cadastros e Relat&oacute;rios</a>
+
+        <div class="right menu">
+            <a class="{% block sobre %}{% endblock %}" href="/sobre">
+                Sobre
+            </a>
+        </div>
+    </nav>
+</header>
+<article class="content">
+    {% block result %}
+    {% endblock %}
+</article>
+<footer id="footer" class='ui stackable grid '>
+    <div class="middle aligned row ">
+        <div class='three wide column'>
+            <figure class="banner">
+                <img src="{{ STATIC_URL }}/img/prefj.png" alt='Fàbrica de Software' width='75px'>
+            </figure>
+        </div>
+        <div class='ten wide column'>
+            <h4 class='ui header foot'> Prefeitura de Joinville
+                <p class='sub header foot' id="span">
+                    Av. Herman August Lepper, 10 | Centro
+                </p>
+
+                <p class="sub header foot" id="span">
+                    Joinville | SC | 89221-901
+                </p>
+
+                <p class="sub header foot" id="span">
+                    47 3431.3233
+                </p>
+            </h4>
+        </div>
+        <div class='three wide only computer column'>
+            <h5 class='ui header foot'>
+                Desenvolvido por:
+                <p>
+                    <a href='http://fabricadesoftware.araquari.ifc.edu.br' class='sub header foot'>
+                        Fábrica de Software
+                    </a>
+                </p>
+
+            </h5>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
