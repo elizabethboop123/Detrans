@@ -6,6 +6,7 @@ from detransapp.forms.bloco import FormBloco
 from detransapp.models import Bloco
 # Daqui para baixo -> Lucas
 from django.utils import timezone
+from django.contrib.auth.models import User
 from detransapp.rest import JSONResponse
 from detransapp.models.bloco_padrao import BlocoPadrao
 from detransapp.models.infracao import Infracao 
@@ -104,17 +105,20 @@ class GetBlocoRestView(APIView):
         # (primeiro acesso) mande um bloco para ele!
         if not Bloco.objects.filter(usuario=request.user):
             
+            print "caiu no primeiro if"
             bloco = AddBloco(request)
             # bloco.agente_campo = request.user
             bloco.save()
 
             bp = BlocoPadrao.objects.get(ativo=True)
             bp.contador += bp.numero_paginas
+
             bp.save()    
+
             serializer = BlocoSerializer(bloco)
+            print serializer.data
 
-
-            return Response(serializer.data)
+            return JSONResponse(serializer.data)
 
         # Se houver registros do usuário na tabela bloco:
         else:
@@ -130,15 +134,18 @@ class GetBlocoRestView(APIView):
                   >>> Bloco.objects.filter(usuario=request.user).order_by('-data')
             """
             bloco = Bloco.objects.filter(usuario=request.user).order_by('-data')[0]
-            inf = Infraco.objects.filter(id__range=[bloco.inicio_intervalo, bloco.fim_intervalo])
+            inf = Infracao.objects.filter(id__range=[bloco.inicio_intervalo, bloco.fim_intervalo])
             
             usr = User.objects.get(id=request.user.id)
             #user.last_login
+            bloco_valor_max = 1
+            
 
             ''' Se o bloco excedeu de fato seu limite, mande outro '''
             if len(inf) >= bloco_valor_max:
                 bloco = AddBloco(request)
                 # bloco.agente_campo = request.user
+                bloco.ativo = False
                 bloco.save()
 
                 bp = BlocoPadrao.objects.get(ativo=True)
@@ -146,7 +153,7 @@ class GetBlocoRestView(APIView):
                 bp.save()    
                 serializer = BlocoSerializer(bloco)
 
-                return Response(serializer.data)
+                return JSONResponse(serializer.data)
             """ Se não excedeu e mesmo assim houve a requisição, verificar se ele logou a poucos
                 minutos
             """
@@ -155,17 +162,16 @@ class GetBlocoRestView(APIView):
 
             """ Se o usuário acabou de se logar então mande seu bloco"""
             
-            if (timezone.now() - user.last_login).total_seconds()/60 < 60:
+            if (timezone.now() - usr.last_login).total_seconds()/60 < 60:
                 bloco = Bloco.objects.filter(usuario=request.user).order_by('-data')[0]
                 # mudar a data modificado pra de agora
                 bloco.data_alterado = timezone.now()
-                bloco.inicio_intervalo = fim_intervalo - len(inf) 
+                bloco.inicio_intervalo += len(inf) 
                 bloco.save()
                 serializer = BlocoSerializer(bloco)
-                return Response(serializer.data)
+                return JSONResponse(serializer.data)
 
-  
-
+            
 def AddBloco(request):
     bp = BlocoPadrao.objects.get(ativo=True)
     bloco = Bloco()

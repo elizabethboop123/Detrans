@@ -5,7 +5,12 @@ from detransapp.models import Bloco
 
 class BlocoSerializer(serializers.Serializer):
     # usuario = serializers.ReadOnlyField(source='usuario.username')
+    
+    inicio_intervalo = serializers.IntegerField()
+    fim_intervalo = serializers.IntegerField()
+    ativo = serializers.BooleanField(default=True)
+    
 
     class Meta:
         model = Bloco
-        fields = ('inicio_intervalo', 'fim_intervalo', 'data', 'data_alterado', 'ativo', 'usuario',)
+        fields = ('inicio_intervalo', 'fim_intervalo', 'data', 'data_alterado', 'ativo', 'usuario', 'agente_campo',)
