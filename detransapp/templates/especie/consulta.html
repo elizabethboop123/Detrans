@@ -18,7 +18,6 @@
             <h2 class='ui header'>
                 <i class="fa fa-truck icone"></i>Relatório de Esp&eacute;cie
                 <div class='sub header'>Prencha os campos abaixo.</div>
-
             </h2>
             <div class="ui fluid form">
                 <form method="POST" action="{% url 'especie-consulta' %}">
@@ -27,7 +26,6 @@
                         <label>Busca</label>
                         <input type="text" name="procurar"/>
                     </div>
-
                     <button type="submit" class="ui verde button">Consultar</button>
                 </form>
                 {{ especies }}
@@ -39,8 +37,6 @@
                     </tr>
                     </thead>
                     <tbody>
-
-
                     </tbody>
                 </table>
                 {% include "partials/paginacao.html" with lista=especies procurar=procurar %}

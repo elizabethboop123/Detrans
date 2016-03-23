@@ -81,6 +81,13 @@
     })
 
 
+    $('.cazul').click(function(){
+
+        id = $(this).attr('id')
+        $('.'+id).transition('fade down')
+    })
+
+
 	$('input').focus(function(){
 		id = $(this).attr('id');
 		$('.'+id).removeClass('hidden');
