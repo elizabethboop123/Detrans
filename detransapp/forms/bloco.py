@@ -9,4 +9,4 @@ class FormBloco(forms.ModelForm):
 
     class Meta:
         model = Bloco
-        fields = ('inicio_intervalo', 'fim_intervalo', 'ativo', 'contador', )
+        fields = ('inicio_intervalo', 'fim_intervalo', 'ativo', )

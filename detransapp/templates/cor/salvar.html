@@ -22,15 +22,14 @@
                     <h2 class='ui header'>
                         <i class="icon paint brush"></i>Cadastro de Cor
                         <div class='sub header'>Prencha os campos abaixo.</div>
+
                     </h2>
                     <div class='ui two fields'>
                         <div class='field'>
                             <label>C&oacute;digo</label>
+
                             <div>
                                 {{ form.codigo }}
-                                <div class="ui verde pointing label large hidden id_codigo">
-                               Números. Até 40 caracteres. Valor padrão Detrans.
-                            </div>
                                 {% if form.codigo.errors %}
                                 <div class="ui red pointing label">
                                     {{ form.codigo.errors }}
@@ -40,11 +39,9 @@
                         </div>
                         <div class='field'>
                             <label>Descrição</label>
+
                             <div>
                                 {{ form.descricao }}
-                                <div class="ui verde pointing label large hidden id_descricao">
-                               Letras e números. Até 40 caracteres. Valor padrão Detrans.
-                            </div>
                                 {% if form.descricao.errors %}
                                 <div class="ui red pointing label">
                                     {{ form.descricao.errors }}
@@ -53,7 +50,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href='/relatorios'>
+                    <a href='/cadastros'>
                         <button type="button" class="ui cancel red button">Cancelar</button>
                     </a>
                     <button type="submit" class="ui verde button">Salvar</button>

@@ -5,6 +5,7 @@ from agente import Agente
 from detransapp.manager import BlocoManager
 
 
+
 class Bloco(models.Model):
     inicio_intervalo = models.IntegerField()
     fim_intervalo = models.IntegerField()
@@ -13,7 +14,7 @@ class Bloco(models.Model):
     usuario = models.ForeignKey(User)
     agente_campo = models.ForeignKey(Agente, null=True, blank=True, related_name='+')
     ativo = models.BooleanField(default=True)
-    contador = models.IntegerField(default=0)
+    
     
 
     objects = BlocoManager()
