@@ -17,15 +17,22 @@
         <div class='ten wide column'>
             <h2 class='ui header'>
                 <i class="fa fa-truck icone"></i>Importaç&atilde;o de veículo
+<<<<<<< HEAD
 
             </h2>
 
+=======
+            </h2>
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
             {% if not envio %}
             <form method="POST" enctype="multipart/form-data" class='ui form'>
                 {% csrf_token %}
                 <div class='field'>
                     <label>Arquivo</label>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
                     <div>
                         {{ form.arquivo }}
                         {% if form.arquivo.errors %}

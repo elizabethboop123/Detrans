@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+<<<<<<< HEAD
 from django.db import models, migrations
+=======
+from django.db import migrations, models
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
 from django.conf import settings
 
 
@@ -20,6 +24,10 @@ class Migration(migrations.Migration):
                 ('identificacao', models.CharField(max_length=6)),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
+<<<<<<< HEAD
+=======
+                ('cpf', models.CharField(default=b'12345678901', max_length=11)),
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
             ],
             bases=('auth.user',),
         ),
@@ -32,7 +40,11 @@ class Migration(migrations.Migration):
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
                 ('ativo', models.BooleanField(default=True)),
+<<<<<<< HEAD
                 ('contador', models.IntegerField(default=0)),
+=======
+                ('agente_campo', models.ForeignKey(related_name='+', blank=True, to='detransapp.Agente', null=True)),
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
                 ('usuario', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
@@ -66,6 +78,22 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
+<<<<<<< HEAD
+=======
+            name='Configuracao_DET',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('tipo_registro', models.CharField(max_length=1)),
+                ('formato', models.CharField(max_length=6)),
+                ('cod_entidade', models.CharField(max_length=3)),
+                ('entidade', models.CharField(max_length=40)),
+                ('autuador', models.CharField(max_length=6)),
+                ('tipo_arquivo', models.CharField(max_length=1)),
+                ('filler', models.IntegerField()),
+            ],
+        ),
+        migrations.CreateModel(
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
             name='Cor',
             fields=[
                 ('codigo', models.IntegerField(serialize=False, primary_key=True)),
@@ -95,11 +123,19 @@ class Migration(migrations.Migration):
             name='Infracao',
             fields=[
                 ('id', models.IntegerField(serialize=False, primary_key=True)),
+<<<<<<< HEAD
                 ('obs', models.TextField()),
                 ('is_estrangeiro', models.BooleanField()),
                 ('is_veiculo_editado', models.BooleanField()),
                 ('is_condutor_identi', models.BooleanField()),
                 ('justificativa', models.TextField(null=True)),
+=======
+                ('obs', models.TextField(null=True, blank=True)),
+                ('is_estrangeiro', models.BooleanField()),
+                ('is_veiculo_editado', models.BooleanField()),
+                ('is_condutor_identi', models.BooleanField()),
+                ('justificativa', models.TextField(null=True, blank=True)),
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
                 ('local', models.CharField(max_length=255)),
                 ('local_numero', models.CharField(max_length=100)),
                 ('data_infracao', models.DateTimeField()),
@@ -320,7 +356,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='infracao',
             name='tipo_cancelamento',
+<<<<<<< HEAD
             field=models.ForeignKey(to='detransapp.TipoCancelamento', null=True),
+=======
+            field=models.ForeignKey(blank=True, to='detransapp.TipoCancelamento', null=True),
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
         ),
         migrations.AddField(
             model_name='infracao',

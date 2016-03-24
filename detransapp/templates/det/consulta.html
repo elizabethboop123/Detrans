@@ -19,7 +19,10 @@
             <h2 class='ui header'>
                 <i class="fa fa-user-secret icone"></i>Relat&oacute;rio de Agentes
                 <div class='sub header'>Prencha o campo abaixo para refinar a busca.</div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
             </h2>
             <div class="ui fluid form ">
                 <form method="POST" action="{% url 'agente-consulta' %}" class='ui fluid form'>
@@ -28,10 +31,15 @@
                         <label>Busca</label>
                         <input type="text" name="procurar"/>
                     </div>
+<<<<<<< HEAD
 
                     <button type="submit" class="ui verde button">Consultar</button>
                 </form>
 
+=======
+                    <button type="submit" class="ui verde button">Consultar</button>
+                </form>
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
                 <table class="ui table">
                     <thead>
                     <tr>
@@ -43,14 +51,20 @@
                     <tbody>
                     {% for agente in agentes %}
                     <tr>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
                         <!-- <input type='text' id='1' {{ busca }}> -->
                         <td>{{ agente.identificacao }}</td>
                         <td>{{ agente.first_name }}</td>
                         <td><a href="{% url 'cad-agente' agente.id %}"><i class='icon configure'></i>Editar</a></td>
                     </tr>
                     {% endfor %}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
                     </tbody>
                 </table>
                 {% include "partials/paginacao.html" with lista=agentes procurar=procurar %}

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*
+=======
+99/*
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
     @author: vanessa rolim;
     css desenvolvido em cima do framework semantic ui
 
@@ -6,6 +10,34 @@
 
 
 /*=============ALTURAS DE POSICIONAMENTO DE RODAPE==============*/
+<<<<<<< HEAD
+=======
+.direita{
+    float: right;
+}
+.usuario{
+    position:absolute !important;
+    margin-top: 0% !important;
+    z-index:99 !important;
+
+}
+
+.ui.header.cazul{
+    cursor:pointer;
+
+}
+a.branco, .branco {
+    color:#fff;
+    font-size: 18px;
+}
+
+a.branco:hover{
+    color:#fff;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
 
 header{
     min-height:20%;
@@ -55,7 +87,11 @@ i.inverted.circular.icon.verde{
     color: #fff !important;
 
 }
+<<<<<<< HEAD
 .verde{
+=======
+.verde, .ui.verde.label:before {
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
     background-color: #799632 !important;
     color:#fff !important;
 }
@@ -64,7 +100,15 @@ i.inverted.circular.icon.verde{
     background-color: #005e83 !important;
 }
 
+<<<<<<< HEAD
 
+=======
+ .ui.blue.inverted.segment.cazul{
+
+ background-color: #005e83 !important;
+}
+ }
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
 .fazul{
     color: #003A51 !important;
     cursor:pointer;
@@ -107,6 +151,53 @@ h2.ui.header.fazul .content,h2.ui.header.vermelho .content,h2.ui.header.fverde .
   font-size: 1.3rem !important;
  }
 
+<<<<<<< HEAD
+=======
+ .row-menu{
+    margin: 50px !important;
+    padding: 0 !important;
+}
+
+.item{
+    color:#ffff !important;
+    cursor: pointer;
+
+}
+
+.ui.large.menu .item {
+  font-size: 1.3rem !important;
+}
+
+.item .submenu{
+    display:none !important;
+}
+
+.item:hover > .submenu{
+    display: inline-block !important;
+}
+
+.submenu{
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 999;
+    background-color: #005e83;
+}
+
+.layout.block{ margin-right: -6px !important;}
+.submenu i, .submenu a {
+    display: inline-flex !important;
+}
+
+i.icon{
+    margin-right:11px !important;
+}
+
+i.icon.newspaper{
+    margin: 0em 0.25em 0em 0em !important;
+}
+
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
 
 /*===========================HOME==============================*/
 i.inverted.verde.icon{
@@ -291,3 +382,9 @@ figure.fabrica{
     color:#fff !important;
 }
 
+<<<<<<< HEAD
+=======
+.fazul i, .fazul .content{
+    cursor: pointer;
+}
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8

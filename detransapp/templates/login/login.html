@@ -17,7 +17,10 @@
             {% endif %}
             <form class='ui segment form' method="POST" action="{% url 'django.contrib.auth.views.login' %}">
                 {% csrf_token %}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
                 <div class="field">
                     <label>Usu&aacute;rio</label>
                     {{form.username}}
@@ -26,9 +29,13 @@
                     <label>Senha</label>
                     {{form.password}}
                 </div>
+<<<<<<< HEAD
 
                 <input type="hidden" name="next" value="/"/>
 
+=======
+                <input type="hidden" name="next" value="/"/>
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
                 <input type='submit' class="ui submit button verde" value='Enviar'>
             </form>
         </div>

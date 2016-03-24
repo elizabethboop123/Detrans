@@ -1,9 +1,21 @@
 # coding: utf-8
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
 
 from detransapp.forms.DET import FormDet
 from detransapp.models import Configuracao_DET
+=======
+from datetime import datetime
+import random
+
+from django.shortcuts import render, redirect, HttpResponse
+from django.views.generic.base import View
+
+from detransapp.forms.DET import FormDet
+from detransapp.models import Configuracao_DET, Infracao
+import os
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
 
 
 class CadastroDETView(View):
@@ -66,3 +78,109 @@ class ConsultaDETView(View):
 
     def post(self, request):
         return self.__page(request)
+<<<<<<< HEAD
+=======
+
+
+class TemplateDET(View):
+    template_name = 'det/template.html'
+
+    def get(self, request):
+        return render(request, self.template_name, )
+
+
+class GeraDet(View):
+    template_name = 'det/gera.html'
+
+    def get(self, request):
+
+        sequencial_arquivo = random.randrange(0, 999999)
+
+        nome_arq = 'DET007.016.008088.' + str(sequencial_arquivo) + '.DET'
+        arq = open(nome_arq, 'w')
+
+        # topo
+        config = Configuracao_DET.objects.get(id=1)
+
+        hoje = datetime.now()
+
+        filler_entidade = len(config.entidade)
+        entidade = config.entidade
+        if filler_entidade < 40:
+            qtd = 40 - filler_entidade
+            entidade = config.entidade + ' ' * qtd
+
+        data = hoje.strftime('%d%m%Y')
+
+        hora = hoje.strftime('%H%M')
+
+        filler = config.filler * ' '
+
+        sequencial_registro = 123456
+
+        topo = config.tipo_registro + config.formato + config.cod_entidade + entidade + data + hora + str(
+            sequencial_arquivo) + config.autuador + config.tipo_arquivo + filler + str(sequencial_registro)
+        arq.write(topo + '\n')
+
+        # infracoes
+        infracoes = Infracao.objects.all()
+        seq = 0
+
+        for i in infracoes:
+            seq += 1
+            strseq = ('0' * (6 - len(str(seq)))) + str(seq)
+            tipo_registro = '1'
+            n_auto = str(i.id)
+            if len(n_auto) < 10:
+                n_auto = ('0' * (10 - len(n_auto))) + n_auto
+            local = i.local
+            if len(local) < 80:
+                local = ' ' * (80 - len(local)) + local
+
+            cod_municipio = '9999'
+
+            cod_tipo_inf = str(i.tipo_infracao.codigo)
+
+            if len(cod_tipo_inf) < 4:
+                cod_tipo_inf = ('0' * (4 - len(cod_tipo_inf))) + cod_tipo_inf
+            print(cod_tipo_inf)
+
+            desmembramento = '1'
+
+            condutor = '0'
+
+            cnh = ' ' * 11
+
+            complemento = 'c' * 80
+
+            if i.is_condutor_identi:
+                condutor = 1
+                cnh = i.infrator.cnh
+                if len(cnh) < 11:
+                    cnh = cnh + ' ' * (11 - len(cnh))
+
+            filler = ' ' * 31
+
+            infracao = tipo_registro + n_auto + i.veiculo.placa + i.veiculo.cidade.uf.sigla + i.data_infracao.strftime(
+                '%d%m%Y') + i.data_infracao.strftime(
+                '%H%M%S') + local + cod_municipio + cod_tipo_inf + desmembramento + condutor + cnh + i.agente.cpf + complemento + filler + str(
+                strseq)
+            print(len(infracao))
+            arq.write(infracao + '\n')
+
+        # trailer
+        qtd = len(infracoes)
+
+        if len(str(qtd)) < 6:
+            qtd = ('0' * (6 - qtd)) + str(qtd)
+        trailer = '9' + str(qtd) + ' ' * 250 + str(sequencial_registro)
+        arq.write(trailer + '\n')
+        print(arq)
+
+        arq.close()
+        down = open(nome_arq, 'r')
+        response = HttpResponse(down, content_type='application/force-download')
+        response['Content-Disposition'] = 'attachment; filename=%s' % nome_arq
+        os.remove(nome_arq)
+        return response
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8

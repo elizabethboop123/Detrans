@@ -1,6 +1,10 @@
 from rest_framework import serializers
 
 from agente import AgenteSerializer
+<<<<<<< HEAD
+=======
+from bloco import BlocoSerializer
+>>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
 from cidade import CidadeSerializer
 from especie import EspecieSerializer
 from modelo import ModeloSerializer
