@@ -73,10 +73,6 @@
     })
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
     $('.fazul').click(function(){
 
         id = $(this).attr('id')
@@ -84,27 +80,6 @@
     })
 
 
-<<<<<<< HEAD
-=======
-    $('.cazul').click(function(){
-
-        id = $(this).attr('id')
-        $('.'+id).transition('fade down')
-    })
-
-
-	$('input').focus(function(){
-		id = $(this).attr('id');
-		$('.'+id).removeClass('hidden');
-		console.log('aparece');
-	})
-
-	$('input').focusout(function(){
-		id = $(this).attr('id');
-		$('.'+id).addClass('hidden');
-		console.log('some');
-	})
->>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
 
 
   })

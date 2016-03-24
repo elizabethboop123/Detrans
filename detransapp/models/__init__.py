@@ -1,10 +1,6 @@
 from detransapp.models.pessoa import Pessoa
 from detransapp.models.agente import Agente
 from detransapp.models.bloco import Bloco
-<<<<<<< HEAD
-=======
-from detransapp.models.bloco_padrao import BlocoPadrao
->>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
 from detransapp.models.categoria import Categoria
 from detransapp.models.uf import UF
 from detransapp.models.cidade import Cidade

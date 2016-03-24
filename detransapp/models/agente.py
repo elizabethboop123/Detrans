@@ -12,20 +12,8 @@ class Agente(User):
     regioes = models.ManyToManyField(Regiao)
     data = models.DateTimeField(auto_now_add=True)
     data_alterado = models.DateTimeField(auto_now=True)
-<<<<<<< HEAD
 
     objects = AgenteManager()
 
     class Meta:
         app_label = "detransapp"
-=======
-    cpf = models.CharField(max_length=11, default='12345678901')
-
-    objects = AgenteManager()
-
-    def __unicode__(self):
-        return self.identificacao
-
-    class Meta:
-        app_label = "detransapp"
->>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8

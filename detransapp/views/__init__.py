@@ -6,7 +6,6 @@ from django.template import RequestContext
 from django.utils import timezone
 from django.db.models import Count
 
-<<<<<<< HEAD
 from detransapp.views.modelo import CadastroModeloView, ConsultaModeloView, GetModelosRestView, ImportaModelo
 from detransapp.views.tipo_veiculo import CadastroTipoView, ConsultaTipoView, GetTiposVeiculoRestView, \
     ImportaTipoVeiculo
@@ -34,32 +33,6 @@ from detransapp.views.download_detrans import DownloadDetransView, DownloadDetra
 from detransapp.views.config_sinc import GetConfigSincRestView
 from detransapp.views.detrans_arquivo_sqlite import CriaSqliteView, StatusView
 # from detransapp.views.DET import *
-=======
-from detransapp.views.modelo import *
-from detransapp.views.tipo_veiculo import *
-from detransapp.views.tipo_infracao import *
-from detransapp.views.especie import *
-from detransapp.views.agente import *
-from detransapp.views.veiculo import *
-from detransapp.views.condutor import *
-from detransapp.views.proprietario import *
-from detransapp.views.dispositivo import *
-from detransapp.views.infracao import *
-from detransapp.views.modelo import *
-from detransapp.views.regiao import *
-from detransapp.views.uf import *
-from detransapp.views.cidade import *
-from detransapp.views.sincronismo import *
-from detransapp.views.leis import *
-from detransapp.views.bloco import *
-from detransapp.views.cor import *
-from detransapp.views.categoria import *
-from detransapp.views.tipo_cancelamento import *
-from detransapp.views.download_detrans import *
-from detransapp.views.config_sinc import *
-from detransapp.views.detrans_arquivo_sqlite import *
-from detransapp.views.DET import *
->>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
 import detransapp.views.cadastraInf
 from detransapp.models import *
 
@@ -95,7 +68,6 @@ def graficoInfracoes():
     # print d
     # #Step 1: Create a DataPool with the data we want to retrieve.
     # dados = DataPool(series=
-<<<<<<< HEAD
     #		 [{'options': {
     #			'source': d},
     #		   'terms': [
@@ -120,32 +92,6 @@ def graficoInfracoes():
     #			'xAxis': {
     #				 'title': {
     #					'text': 'Month number'}}})
-=======
-    #        [{'options': {
-    #           'source': d},
-    #          'terms': [
-    #            'data',
-    #            'data_infracao__count']}
-    #        ])
-
-    # #Step 2: Create the Chart object
-    # cht = Chart(
-    #        datasource = dados,
-    #        series_options =
-    #          [{'options':{
-    #              'type': 'line',
-    #              'stacking': False},
-    #            'terms':{
-    #              'data': [
-    #                'data_infracao__count']
-    #              }}],
-    #        chart_options =
-    #          {'title': {
-    #               'text': 'Weather Data of Boston and Houston'},
-    #           'xAxis': {
-    #                'title': {
-    #                   'text': 'Month number'}}})
->>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
 
     # #Step 3: Send the chart object to the template.
     return d
@@ -189,8 +135,4 @@ def relatorios(request):
 
 
 def about(request):
-<<<<<<< HEAD
     return render_to_response("sobre.html", RequestContext(request))
-=======
-    return render_to_response("sobre.html", RequestContext(request))
->>>>>>> 42530833b14b0f1113b8362e49e66e19662d0de8
