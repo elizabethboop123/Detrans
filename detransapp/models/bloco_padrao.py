@@ -11,5 +11,6 @@ class BlocoPadrao(models.Model):
 	contador = models.IntegerField(default=0)
 	ativo = models.BooleanField(default=True)
 	numero_paginas = models.IntegerField(default=1000)
+	minimo_pag_restantes = models.IntegerField(null=True)
 
 	objects = BlocoManager()

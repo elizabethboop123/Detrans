@@ -5,7 +5,8 @@ def criar(conn, cursor):
                     + "horas_discarte integer, "
                     + "tempo_captura_mov integer,"
                     + "distancia_captura_mov decimal,"
-                    + "data_sinc datetime)")
+                    + "data_sinc datetime, "
+                    + "quantidade_fotos integer)")
 
     cursor.execute("create table if not exists categoria ("
                     + "codigo integer primary key, "

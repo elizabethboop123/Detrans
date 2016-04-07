@@ -187,15 +187,16 @@ class RecebeInfracoesRestView(APIView):
                 infracoes_sinc.append({'id': infracao.id, 'status': True})
                 transaction.savepoint_commit(sid)
 
-            # except NameError:
-            #     exc_type, exc_value, exc_traceback = sys.exc_info()
-            #     lines = traceback.format_exception(exc_type, exc_value, exc_traceback)
-            #     print ''.join('!! ' + line for line in lines)
-
-            except:
+            except NameError:
                 print "caiu no except"
-                infracoes_sinc.append({'id': int(inf_json['infracao_id']), 'status': False})
-                transaction.savepoint_rollback(sid)
+                exc_type, exc_value, exc_traceback = sys.exc_info()
+                lines = traceback.format_exception(exc_type, exc_value, exc_traceback)
+                print ''.join('!! ' + line for line in lines)
+
+            # except:
+            #     print "caiu no except"
+            #     infracoes_sinc.append({'id': int(inf_json['infracao_id']), 'status': False})
+            #     transaction.savepoint_rollback(sid)
         
         print infracoes_sinc
         json = dumps(infracoes_sinc, ensure_ascii=False)

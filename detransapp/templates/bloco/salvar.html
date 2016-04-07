@@ -23,7 +23,7 @@
                         <i class="icon edit"></i>
 
                         <div class="content">
-                            Cadastro de Bloco
+                            Cadastro de Bloco Mestre
                             <div class='sub header'>Prencha os campos abaixo.</div>
                         </div>
 
@@ -64,8 +64,33 @@
                             {% endif %}
                         </div>
                     </div>
-                    
-                    
+
+                    <div class='field'>
+                        <label> Número de Páginas por Bloco</label> 
+
+                        <div>
+                            {{ form.numero_paginas }}
+                            {% if form.numero_paginas.errors %}
+                            <div class="ui red pointing label">
+                                {{ form.numero_paginas.errors }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                     <div class='field'>
+                        <label> Número de Páginas Limite para reposição</label> 
+
+                        <div>
+                            {{ form.minimo_pag_restantes }}
+                            {% if form.minimo_pag_restantes.errors %}
+                            <div class="ui red pointing label">
+                                {{ form.minimo_pag_restantes.errors }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                                        
 
 
                     <a href='/cadastros'>
