@@ -20,12 +20,15 @@
                     {% endif %}
                     {% csrf_token %}
                     <h2 class='ui header'>
+
                         <i class="fa fa-motorcycle icone"></i> Cadastro de Tipo
                         <div class='sub header'>Prencha os campos abaixo.</div>
+
                     </h2>
                     <div class='two fields'>
                         <div class='field'>
                             <label>C&oacute;digo</label>
+
                             <div>
                                 {{ form.codigo }}
                                 {% if form.codigo.errors %}
@@ -37,6 +40,7 @@
                         </div>
                         <div class='field'>
                             <label>Descri&ccedil;&atilde;o</label>
+
                             <div>
                                 {{ form.descricao }}
                                 {% if form.descricao.errors %}

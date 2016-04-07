@@ -29,6 +29,7 @@
 
                     <button type="submit" class="ui verde button">Consultar</button>
                 </form>
+
                 <table class="ui table">
                     <thead>
                     <tr>
@@ -50,6 +51,7 @@
                         </td>
                     </tr>
                     {% endfor %}
+
                     </tbody>
                 </table>
                 {% include "partials/paginacao.html" with lista=veiculos procurar=procurar %}

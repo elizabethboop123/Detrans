@@ -474,13 +474,10 @@ def exporta_veiculos_csv():
                 nr_motor_veiculo = linha[143:164].strip()
                 cpf_proprietario = linha[45:59].strip()
 
-                writer.writerow({'chassi': chassi_veiculo, 'renavam': renavam_veiculo, 'placa': placa_veiculo,
-                                 'modelo': modelo_veiculo, 'cor': cor_veiculo, 'tipo_veiculo': tipo_veiculo,
-                                 'especie': especie_veiculo, 'categoria': categoria_veiculo,
-                                 'municipio': municipio_veiculo,
-                                 'ano_fabricacao': ano_fabricacao_veiculo, 'ano_modelo': ano_modelo_veiculo,
-                                 'nr_passageiros': num_passageiros_veiculo, 'nr_motor': nr_motor_veiculo,
-                                 'proprietario': cpf_proprietario})
+                writer.writerow({'chassi': chassi_veiculo,
+                                 'modelo': modelo_veiculo, 'cor': cor_veiculo,
+                                 'especie': especie_veiculo,
+                                 'ano_fabricacao': ano_fabricacao_veiculo)
 
             except Exception as e:
                 linhas_problematicas.append({'erro': 'unicode', 'ex': '%s ; %s' % (type(e), e), 'linha': linha})

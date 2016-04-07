@@ -22,8 +22,11 @@ Erro : {{ erro }}
             {% else %}
             <div class="ui loading center aligned segment">
                 <h1 class="ui header">Processando...</h1><br/>
+
                 <p></p>
+
                 <p></p>
+
                 <p></p>
             </div>
             {% endif %}
@@ -34,6 +37,7 @@ Erro : {{ erro }}
     <div class='row'>
         <div class='three wide column'></div>
         <div class='ten wide column'>
+
             <form method="POST" action="{% url 'status-sqlite'%}" class='ui form'>
                 {% csrf_token %}
                 <button type="submit" class="ui red button">Cancelar</button>

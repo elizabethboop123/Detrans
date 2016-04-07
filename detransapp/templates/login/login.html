@@ -17,6 +17,7 @@
             {% endif %}
             <form class='ui segment form' method="POST" action="{% url 'django.contrib.auth.views.login' %}">
                 {% csrf_token %}
+
                 <div class="field">
                     <label>Usu&aacute;rio</label>
                     {{form.username}}
@@ -25,7 +26,9 @@
                     <label>Senha</label>
                     {{form.password}}
                 </div>
+
                 <input type="hidden" name="next" value="/"/>
+
                 <input type='submit' class="ui submit button verde" value='Enviar'>
             </form>
         </div>

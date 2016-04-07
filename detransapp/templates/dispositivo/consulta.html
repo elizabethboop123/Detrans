@@ -18,10 +18,12 @@
         <div class='ten wide column'>
             <h2 class='ui header'>
                 <i class="icon massive tablet"></i>
+
                 <div class="content">
                     Relat&oacute;rio de dispositivo
                     <div class='sub header'>Prencha o campo abaixo para refinar a busca.</div>
                 </div>
+
             </h2>
             <div class="ui fluid form ">
                 <form method="POST" action="{% url 'dispositivo-consulta' %}" class='ui fluid form'>
@@ -30,8 +32,10 @@
                         <label>Busca</label>
                         <input type="text" name="procurar"/>
                     </div>
+
                     <button type="submit" class="ui verde button">Consultar</button>
                 </form>
+
                 <table class="ui table">
                     <thead>
                     <tr>
@@ -43,6 +47,7 @@
                     <tbody>
                     {% for dispositivo in dispositivos %}
                     <tr>
+
                         <!-- <input type='text' id='1' {{ busca }}> -->
                         <td>{{ dispositivo.imei }}</td>
                         <td>{{ dispositivo.ativo }}</td>
@@ -50,6 +55,7 @@
                                 class='icon configure'></i>Editar</a></td>
                     </tr>
                     {% endfor %}
+
                     </tbody>
                 </table>
                 {% include "partials/paginacao.html" with lista=agentes procurar=procurar %}

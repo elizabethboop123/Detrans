@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} Cadastro para o DET007 {% endblock %}
+{% block title %} Cadastro de agente {% endblock %}
 
 {% block home %}item {% endblock %}
 {% block cadastros %}item active{% endblock %}
@@ -14,107 +14,41 @@
         <div class='three wide column'></div>
         <div class='ten wide column'>
             {% if form.instance.id %}
-            <form method="POST" action="{% url 'cadastra-det' form.instance.id %}" class='ui form'>
+            <form method="POST" action="{% url 'cad-agente' form.instance.id %}" class='ui form'>
                 {% else %}
-                <form method="POST" action="{% url 'cadastra-det' %}" class='ui form'>
+                <form method="POST" action="{% url 'cad-agente' %}" class='ui form'>
                     {% endif %}
                     {% csrf_token %}
                     <h2 class='ui header'>
-                        <i class="fa fa-user-secret icone"></i>Cadastro de Informações para o DET007
+                        <i class="fa fa-user-secret icone"></i>Cadastro de Agente
                         <div class='sub header'>Prencha os campos abaixo.</div>
-                    </h2>
-                    <!--{{form}}-->
-                    <div class="two fields">
-                        <div class="field">
-                            <label>Tipo de Registro </label>
-                            {{ form.tipo_registro }}
-                            <div class="ui verde pointing label hidden id_tipo_registro">
-                               Números. Valor padrão 0.
-                            </div>
-                            {% if form.tipo_registro.errors %}
-                            <div class="ui red pointing label">
-                                {{ form.tipo_registro.errors }}
-                            </div>
-                            {% endif %}
-                        </div>
-                        <div class="field">
-                            <label>Formato</label>
-                            {{ form.formato }}
-                             <div class="ui verde pointing label large hidden id_formato">
-                               Letras e números. Até 6 caracteres. Valor padrão DET007.
-                            </div>
-                            {% if form.formato.errors %}
-                            <div class="ui red pointing label">
-                                {{ form.formato.errors }}
 
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
+                    </h2>
+                    {{form}}
                     <div class="two fields">
-                        <div class="three wide field">
-                            <label>Código da Entidade </label>
-                                {{ form.cod_entidade }}
-                            <div class="ui verde pointing label hidden id_cod_entidade">
-                               3 Números. Valor padrão 789.
-                            </div>
-                            {% if form.cod_entidade.errors %}
+                        <div class="field">
+                            <label>Nome</label>
+
+                            {{ form.first_name}}
+                            {% if form.first_name.errors %}
                             <div class="ui red pointing label">
-                                {{ form.cod_entidade.errors }}
+                                {{ form.first_name.errors }}
                             </div>
                             {% endif %}
+
                         </div>
-                        <div class="thirteen wide field">
-                            <label>Entidade</label>
-                                {{ form.entidade }}
-                            <div class="ui verde pointing label large hidden id_entidade">
-                               Letras e números. Até 40 caracteres. Valor padrão Detrans.
-                            </div>
-                            {% if form.entidade.errors %}
+                        <div class='field'>
+                            <label>Identificação</label>
+                            {{ form.identificacao }}
+                            {% if form.identificacao.errors %}
                             <div class="ui red pointing label">
-                                {{ form.entidade.errors }}
+                                {{ form.identificacao.errors }}
                             </div>
                             {% endif %}
+
                         </div>
                     </div>
-                    <div class="three fields">
-                        <div class="field">
-                            <label>Código do órgão autuador </label>
-                            {{ form.autuador }}
-                            <div class="ui verde pointing label hidden id_autuador">
-                               6 Números. Valor padrão 008088.
-                            </div>
-                            {% if form.autuador.errors %}
-                            <div class="ui red pointing label">
-                                {{ form.autuador.errors }}
-                            </div>
-                            {% endif %}
-                        </div>
-                        <div class="field">
-                            <label>Tipo de Arquivo</label>
-                                {{ form.tipo_arquivo }}
-                            <div class="ui verde pointing label large hidden id_tipo_arquivo">
-                               1 Letra. Valor padrão P.
-                            </div>
-                            {% if form.tipo_arquivo.errors %}
-                            <div class="ui red pointing label">
-                                {{ form.tipo_arquivo.errors }}
-                            </div>
-                            {% endif %}
-                        </div>
-                        <div class="field">
-                            <label>Filler</label>
-                            {{ form.filler }}
-                            <div class="ui verde pointing label large hidden id_filler">
-                               Espaço em branco no fim do arquivo. Números. Valor padrão 182.
-                            </div>
-                            {% if form.filler.errors %}
-                            <div class="ui red pointing label">
-                                {{ form.filler.errors }}
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
+
                     <a href='/cadastros'>
                         <button type="button" class="ui cancel red button">Cancelar</button>
                     </a>

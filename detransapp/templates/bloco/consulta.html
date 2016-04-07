@@ -17,6 +17,7 @@
         <div class='ten wide column'>
             <h2 class='ui header'>
                 <i class="icon edit"></i>
+
                 <div class="content">
                     Relat&oacute;rio de Blocos
                 </div>
@@ -28,8 +29,10 @@
                         <label>Busca</label>
                         <input type="text" name="procurar"/>
                     </div>
+
                     <button type="submit" class="ui verde button">Consultar</button>
                 </form>
+
                 <table class="ui table">
                     <thead>
                     <tr>
@@ -46,6 +49,7 @@
                         <td> {{ bloco.inicio_intervalo }}</td>
                         <td> {{ bloco.fim_intervalo }}</td>
                         <td> {{ bloco.author }}</td>
+
                         {% if bloco.ativo %}
                         <td>
                             <div class="ui green empty circular label"></div>

@@ -21,10 +21,12 @@
                     {% csrf_token %}
                     <h2 class='ui header'>
                         <i class="user icon"></i>
+
                         <div class='content'>
                             Cadastro de Condutor
                             <div class='sub header'>Prencha os campos abaixo.</div>
                         </div>
+
                     </h2>
                     <div class='two fields'>
                         <div class="field">
@@ -38,6 +40,7 @@
                         </div>
                         <div class="field">
                             <label>CNH</label>
+
                             <div>
                                 {{ form.cnh }}
                                 {% if form.cnh.errors %}
@@ -51,6 +54,7 @@
                     <div class='two fields'>
                         <div class="field">
                             <label>RG</label>
+
                             <div>
                                 {{ form.rg }}
                                 {% if form.rg.errors %}
@@ -62,6 +66,7 @@
                         </div>
                         <div class="field">
                             <label>CPF</label>
+
                             <div>
                                 {{ form.cpf }}
                                 {% if form.cpf.errors %}

@@ -18,6 +18,7 @@
         <div class='ten wide column'>
             <h2 class='ui header'>
                 <i class="browser icon"></i>
+
                 <div class="content">
                     Relat&oacute;rio de Infra&ccedil;&atilde;o
                     <div class='sub header'>Prencha os campos abaixo para refinar a busca.</div>
@@ -30,8 +31,10 @@
                         <label>Busca</label>
                         <input type="text" name="procurar"/>
                     </div>
+
                     <button type="submit" class="ui verde button">Consultar</button>
                 </form>
+
                 <table class="ui table">
                     <thead>
                     <tr>
@@ -54,6 +57,7 @@
                         <td>{{ infracao.obs }}</td>
                     </tr>
                     {% endfor %}
+
                     </tbody>
                 </table>
             </div>

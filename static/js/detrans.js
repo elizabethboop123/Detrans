@@ -73,7 +73,6 @@
     })
 
 
-
     $('.fazul').click(function(){
 
         id = $(this).attr('id')
@@ -81,24 +80,6 @@
     })
 
 
-    $('.cazul').click(function(){
-
-        id = $(this).attr('id')
-        $('.'+id).transition('fade down')
-    })
-
-
-	$('input').focus(function(){
-		id = $(this).attr('id');
-		$('.'+id).removeClass('hidden');
-		console.log('aparece');
-	})
-
-	$('input').focusout(function(){
-		id = $(this).attr('id');
-		$('.'+id).addClass('hidden');
-		console.log('some');
-	})
 
 
   })

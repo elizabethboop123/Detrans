@@ -21,6 +21,7 @@
                     {% csrf_token %}
                     <h2 class='ui header'>
                         <i class="asterisk icon"></i>
+
                         <div class="content">
                             Cadastro de Marca
                             <div class='sub header'>Prencha os campos abaixo.</div>
@@ -29,6 +30,7 @@
                     <div class="two fields">
                         <div class='field'>
                             <label>Sigla</label>
+
                             <div>
                                 {{ form.sigla }}
                                 {% if form.sigla.errors %}
@@ -38,8 +40,10 @@
                                 {% endif %}
                             </div>
                         </div>
+
                         <div class='field'>
                             <label>Nome</label>
+
                             <div>
                                 {{ form.nome }}
                                 {% if form.nome.errors %}
