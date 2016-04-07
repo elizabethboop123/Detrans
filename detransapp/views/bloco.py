@@ -1,9 +1,8 @@
 # coding: utf-8
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
-
+from datetime import datetime
 from detransapp.forms.bloco import FormBloco
-<<<<<<< HEAD
 from detransapp.models import Bloco, BlocoPadrao
 # Daqui para baixo -> Lucas
 from django.utils import timezone
@@ -21,10 +20,6 @@ from rest_framework.response import Response
 from rest_framework import permissions
 from detransapp.permissions import IsOwnerOrReadOnly
 # Fim do Lucas
-=======
-from detransapp.models import Bloco
-
->>>>>>> 1a7e28163ca8c15961f8c29385178cfd18e9c58f
 
 class CadastroBlocoView(View):
     template = 'bloco/salvar.html'
@@ -32,29 +27,20 @@ class CadastroBlocoView(View):
     def get(self, request, bloco_id=None):
 
         if bloco_id:
-<<<<<<< HEAD
             
             bloco = BlocoPadrao.objects.get(pk=bloco_id)
-=======
-            bloco = Bloco.objects.get(pk=bloco_id)
->>>>>>> 1a7e28163ca8c15961f8c29385178cfd18e9c58f
             form = FormBloco(instance=bloco)
         else:
+
             form = FormBloco()
 
         return render(request, self.template, {'form': form})
 
     def post(self, request, bloco_id=None):
-
-        if bloco_id:
-            bloco = Bloco.objects.get(pk=bloco_id)
-            form = FormBloco(instance=bloco, data=request.POST)
-        else:
-
-            form = FormBloco(request.POST)
-
+    
+        form = FormBloco(request.POST)
+        
         if form.is_valid():
-<<<<<<< HEAD
             
             post = form.save(commit=False)
             
@@ -65,14 +51,10 @@ class CadastroBlocoView(View):
                 form.save()
             else:
                 form.save()
-=======
-            form.save()
->>>>>>> 1a7e28163ca8c15961f8c29385178cfd18e9c58f
 
             return redirect('/')
-
+               
         return render(request, self.template, {'form': form})
-
 
 class ConsultaBlocoView(View):
     template_name = 'bloco/consulta.html'
@@ -106,7 +88,6 @@ class ConsultaBlocoView(View):
     def post(self, request):
 
         return self.__page(request)
-<<<<<<< HEAD
 
 
 # View que mandará as informações para o client
@@ -223,5 +204,3 @@ def AddBloco(request):
 
     return bloco
 
-=======
->>>>>>> 1a7e28163ca8c15961f8c29385178cfd18e9c58f

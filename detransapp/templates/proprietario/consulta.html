@@ -18,12 +18,10 @@
         <div class='ten wide column'>
             <h2 class='ui header'>
                 <i class="user icon"></i>
-
                 <div class='content'>
                     Relat&oacute;rio de Propriet&aacute;rio
                     <div class='sub header'>Prencha os campos abaixo para refinar a busca.</div>
                 </div>
-
             </h2>
             <div class="ui fluid form">
                 <form method="POST" action="{% url 'proprietario-consulta' %}">
@@ -32,10 +30,8 @@
                         <label>Busca</label>
                         <input type="text" name="procurar"/>
                     </div>
-
                     <button type="submit" class="ui verde button">Consultar</button>
                 </form>
-
                 <table class="table ui table">
                     <thead>
                     <tr>
@@ -57,7 +53,6 @@
                         </td>
                     </tr>
                     {% endfor %}
-
                     </tbody>
                 </table>
                 {% include "partials/paginacao.html" with lista=proprietarios procurar=procurar %}

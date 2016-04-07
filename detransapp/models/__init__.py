@@ -2,6 +2,7 @@ from detransapp.models.pessoa import Pessoa
 from detransapp.models.agente import Agente
 from detransapp.models.agente_login import Agente_login
 from detransapp.models.bloco import Bloco
+from detransapp.models.bloco_padrao import BlocoPadrao
 from detransapp.models.categoria import Categoria
 from detransapp.models.uf import UF
 from detransapp.models.cidade import Cidade
