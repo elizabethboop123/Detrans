@@ -9,6 +9,9 @@
 .direita{
     float: right;
 }
+.esquerda{
+    float:left!important;
+}
 .usuario{
     position:absolute !important;
     margin-top: 0% !important;

@@ -17,3 +17,4 @@ from detransapp.manager.tipo_cancelamento import TipoCancelamentoManager
 from detransapp.manager.dispositivo import DispositivoManager
 from detransapp.manager.log_sincronizacao import LogSincronizacaoManager
 from config_sinc import ConfigSincManager
+from det import DETManager

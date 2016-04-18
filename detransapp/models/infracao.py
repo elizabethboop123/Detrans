@@ -34,6 +34,8 @@ class Infracao(models.Model):
     data_infracao = models.DateTimeField()
     data_sincronizacao = models.DateTimeField(auto_now=True)
 
+    det = models.CharField(max_length=255, default='0')
+
     objects = InfracaoManager()
 
     class Meta:

@@ -18,6 +18,8 @@ urlpatterns = patterns('',
                        url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login/login.html'},
                            name='login'),
                        url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'logout/logout.html'}, name='logout'),
+                       url(r'^config/$', 'django.contrib.auth.views.login', {'template_name': 'config/configuracao.html'},
+                           name='config'),
                        
                        url(r'^relatorios/', views.relatorios, name='relatorios'),
                        url(r'^sobre/', views.about, name='sobre'),
@@ -129,7 +131,11 @@ urlpatterns = patterns('',
                        url(r'^config/set/det$', CadastroDETView.as_view(), name='cadastra-det'),
                        url(r'^config/get/det$', ConsultaDETView.as_view(), name='consulta-det'),
                        url(r'^config/geradet$', GeraDet.as_view(), name='gera-det'),
+                       url(r'^config/geradet/(?P<filtro>\d+)/$$', GeraDet.as_view(), name='gera-det'),
+                       url(r'^configuracoes/$', ConfigSincView.as_view(), name='config'),
                        url(r'^config/det$', TemplateDET.as_view(), name='template-det'),
+                       #url(r'^config/$', GetConfigSincRestView.as_view(), name='config'),
+
                        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns = format_suffix_patterns(urlpatterns)
