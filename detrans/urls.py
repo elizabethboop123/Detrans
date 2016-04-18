@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from detransapp import views
 from detransapp.views import *
 
+
 from rest_framework.urlpatterns import format_suffix_patterns
 
 admin.autodiscover()

@@ -3,9 +3,10 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from datetime import datetime
 from detransapp.forms.bloco import FormBloco
-from detransapp.models import Bloco
+from detransapp.models import Bloco, BlocoPadrao
 # Daqui para baixo -> Lucas
 from django.utils import timezone
+from django.contrib.auth.models import User
 from detransapp.rest import JSONResponse
 from detransapp.models.bloco_padrao import BlocoPadrao
 from detransapp.models.infracao import Infracao 
@@ -27,7 +28,7 @@ class CadastroBlocoView(View):
 
         if bloco_id:
             
-            bloco = Bloco.objects.get(pk=bloco_id)
+            bloco = BlocoPadrao.objects.get(pk=bloco_id)
             form = FormBloco(instance=bloco)
         else:
 
@@ -42,11 +43,10 @@ class CadastroBlocoView(View):
         if form.is_valid():
             
             post = form.save(commit=False)
-            post.usuario = request.user
             
             # Controle de bloco campo 'ativo'
-            bloco = Bloco.objects.filter(ativo='TRUE', usuario=request.user)
-            if len(bloco) >= 2:
+            bloco = BlocoPadrao.objects.filter(ativo='TRUE')
+            if len(bloco) >= 1:
                 post.ativo=False         
                 form.save()
             else:
@@ -104,17 +104,25 @@ class GetBlocoRestView(APIView):
         # (primeiro acesso) mande um bloco para ele!
         if not Bloco.objects.filter(usuario=request.user):
             
+            print "caiu no primeiro if"
             bloco = AddBloco(request)
             # bloco.agente_campo = request.user
             bloco.save()
 
             bp = BlocoPadrao.objects.get(ativo=True)
             bp.contador += bp.numero_paginas
+
             bp.save()    
+
             serializer = BlocoSerializer(bloco)
+            print serializer.data
+
+            js_core = []
+            js_core.append(serializer.data)
 
 
-            return Response(serializer.data)
+
+            return JSONResponse(js_core)
 
         # Se houver registros do usuário na tabela bloco:
         else:
@@ -129,24 +137,41 @@ class GetBlocoRestView(APIView):
                 obs: Ordenação por data em ordem Decrescente:
                   >>> Bloco.objects.filter(usuario=request.user).order_by('-data')
             """
+            
             bloco = Bloco.objects.filter(usuario=request.user).order_by('-data')[0]
-            inf = Infraco.objects.filter(id__range=[bloco.inicio_intervalo, bloco.fim_intervalo])
+            inf = Infracao.objects.filter(id__range=[bloco.inicio_intervalo, bloco.fim_intervalo])
             
             usr = User.objects.get(id=request.user.id)
-            #user.last_login
+            
+
+            # user.last_login
+            # número mínimo de páginas
+            bloco_valor_max = 50
+            
 
             ''' Se o bloco excedeu de fato seu limite, mande outro '''
-            if len(inf) >= bloco_valor_max:
+            if (bloco.fim_intervalo - len(inf)) <= bloco_valor_max:
+                bloco = Bloco.objects.filter(usuario=request.user).order_by('-data_alterado')[0]
+                # bloco.agente_campo = request.user
+                bloco.ativo = False
+                bloco.save()
+
                 bloco = AddBloco(request)
                 # bloco.agente_campo = request.user
                 bloco.save()
 
                 bp = BlocoPadrao.objects.get(ativo=True)
                 bp.contador += bp.numero_paginas
-                bp.save()    
-                serializer = BlocoSerializer(bloco)
+                bp.save()
 
-                return Response(serializer.data)
+                serializer = BlocoSerializer(bloco)
+                core_js = []
+                core_js.append(serializer.data)
+
+                print "caiu na condição de falta de numero_paginas"
+
+                return JSONResponse(core_js)
+
             """ Se não excedeu e mesmo assim houve a requisição, verificar se ele logou a poucos
                 minutos
             """
@@ -155,17 +180,19 @@ class GetBlocoRestView(APIView):
 
             """ Se o usuário acabou de se logar então mande seu bloco"""
             
-            if (timezone.now() - user.last_login).total_seconds()/60 < 60:
-                bloco = Bloco.objects.filter(usuario=request.user).order_by('-data')[0]
+            if (timezone.now() - usr.last_login).total_seconds()/60 < 20:
+                bloco = Bloco.objects.filter(usuario=request.user).order_by('-data_alterado')[0]
                 # mudar a data modificado pra de agora
                 bloco.data_alterado = timezone.now()
-                bloco.inicio_intervalo = fim_intervalo - len(inf) 
+                bloco.inicio_intervalo += len(inf) 
                 bloco.save()
                 serializer = BlocoSerializer(bloco)
-                return Response(serializer.data)
+                print "caiu na condição de login"
+                return JSONResponse(serializer.data)
 
-  
-
+            """ Condição para testes """
+            
+            
 def AddBloco(request):
     bp = BlocoPadrao.objects.get(ativo=True)
     bloco = Bloco()
@@ -173,6 +200,7 @@ def AddBloco(request):
     bloco.fim_intervalo = bp.contador + bp.numero_paginas
     bloco.usuario = request.user 
     bloco.ativo = True
+    bloco.minimo_pag_restantes = bp.minimo_pag_restantes
 
     return bloco
 

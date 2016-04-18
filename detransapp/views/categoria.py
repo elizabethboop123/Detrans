@@ -80,7 +80,7 @@ class ConsultaCategoriaView(View):
 class GetCategoriasRestView(APIView):
     permission_classes = (IsAuthenticated, AllowAny)
 
-    @method_decorator(validar_imei())
+    # @method_decorator(validar_imei())
     def post(self, request):
         if 'data' in request.POST:
             categorias = Categoria.objects.get_categorias_sicronismo(request.POST['data'])
@@ -91,6 +91,8 @@ class GetCategoriasRestView(APIView):
         for categoria in categorias:
             serializer = CategoriaSerializer(categoria)
             cores_js.append(serializer.data)
+            print serializer.data
+            
         return JSONResponse(cores_js)
 
 

@@ -14,6 +14,7 @@ class Bloco(models.Model):
     usuario = models.ForeignKey(User)
     agente_campo = models.ForeignKey(Agente, null=True, blank=True, related_name='+')
     ativo = models.BooleanField(default=True)
+    minimo_pag_restantes = models.IntegerField(null=True)
     
     
 
