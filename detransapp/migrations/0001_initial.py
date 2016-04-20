@@ -20,8 +20,19 @@ class Migration(migrations.Migration):
                 ('identificacao', models.CharField(max_length=6)),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
+                ('cpf', models.CharField(default=b'12345678901', max_length=11)),
             ],
             bases=('auth.user',),
+        ),
+        migrations.CreateModel(
+            name='Agente_login',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('status', models.BooleanField(default=False)),
+                ('data_login', models.DateTimeField(auto_now_add=True)),
+                ('data_logout', models.DateTimeField(null=True, blank=True)),
+                ('agente', models.ForeignKey(to='detransapp.Agente')),
+            ],
         ),
         migrations.CreateModel(
             name='Bloco',
@@ -32,8 +43,22 @@ class Migration(migrations.Migration):
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
                 ('ativo', models.BooleanField(default=True)),
-                ('contador', models.IntegerField(default=0)),
+                ('minimo_pag_restantes', models.IntegerField(null=True)),
+                ('agente_campo', models.ForeignKey(related_name='+', blank=True, to='detransapp.Agente', null=True)),
                 ('usuario', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='BlocoPadrao',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('inicio_intervalo', models.IntegerField()),
+                ('fim_intervalo', models.IntegerField()),
+                ('data', models.DateTimeField(auto_now_add=True)),
+                ('contador', models.IntegerField(default=0)),
+                ('ativo', models.BooleanField(default=True)),
+                ('numero_paginas', models.IntegerField(default=1000)),
+                ('minimo_pag_restantes', models.IntegerField(null=True)),
             ],
         ),
         migrations.CreateModel(
@@ -58,11 +83,24 @@ class Migration(migrations.Migration):
             name='ConfigSinc',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('horas_discarte', models.IntegerField()),
+                ('horas_descarte', models.IntegerField()),
                 ('tempo_captura_mov', models.IntegerField()),
                 ('distancia_captura_mov', models.DecimalField(max_digits=10, decimal_places=2)),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Configuracao_DET',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('tipo_registro', models.CharField(max_length=1)),
+                ('formato', models.CharField(max_length=6)),
+                ('cod_entidade', models.CharField(max_length=3)),
+                ('entidade', models.CharField(max_length=40)),
+                ('autuador', models.CharField(max_length=6)),
+                ('tipo_arquivo', models.CharField(max_length=1)),
+                ('filler', models.IntegerField()),
             ],
         ),
         migrations.CreateModel(
@@ -75,10 +113,17 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
+            name='DET',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('codigo', models.CharField(max_length=255)),
+            ],
+        ),
+        migrations.CreateModel(
             name='Dispositivo',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('imei', models.CharField(max_length=18)),
+                ('imei', models.CharField(unique=True, max_length=18)),
                 ('ativo', models.BooleanField(default=True)),
             ],
         ),
@@ -95,15 +140,16 @@ class Migration(migrations.Migration):
             name='Infracao',
             fields=[
                 ('id', models.IntegerField(serialize=False, primary_key=True)),
-                ('obs', models.TextField()),
+                ('obs', models.TextField(null=True, blank=True)),
                 ('is_estrangeiro', models.BooleanField()),
                 ('is_veiculo_editado', models.BooleanField()),
                 ('is_condutor_identi', models.BooleanField()),
-                ('justificativa', models.TextField(null=True)),
+                ('justificativa', models.TextField(null=True, blank=True)),
                 ('local', models.CharField(max_length=255)),
                 ('local_numero', models.CharField(max_length=100)),
                 ('data_infracao', models.DateTimeField()),
                 ('data_sincronizacao', models.DateTimeField(auto_now=True)),
+                ('det', models.CharField(default=b'0', max_length=255)),
                 ('agente', models.ForeignKey(to='detransapp.Agente')),
                 ('dispositivo', models.ForeignKey(to='detransapp.Dispositivo')),
             ],
@@ -320,7 +366,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='infracao',
             name='tipo_cancelamento',
-            field=models.ForeignKey(to='detransapp.TipoCancelamento', null=True),
+            field=models.ForeignKey(blank=True, to='detransapp.TipoCancelamento', null=True),
         ),
         migrations.AddField(
             model_name='infracao',
@@ -336,6 +382,11 @@ class Migration(migrations.Migration):
             model_name='cidade',
             name='uf',
             field=models.ForeignKey(to='detransapp.UF'),
+        ),
+        migrations.AddField(
+            model_name='agente_login',
+            name='device',
+            field=models.ForeignKey(to='detransapp.Dispositivo'),
         ),
         migrations.AddField(
             model_name='agente',

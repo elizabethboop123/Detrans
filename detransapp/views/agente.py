@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.utils.decorators import method_decorator
 
+from detransapp.models import Agente_login
 from detransapp.forms.agente import FormAgente
 from detransapp.models.agente import Agente
 from detransapp.serializers import AgenteSerializer
@@ -89,3 +90,19 @@ class GetAgentesRestView(APIView):
             serializer = AgenteSerializer(agente)
             agentes_js.append(serializer.data)
         return JSONResponse(agentes_js)
+
+
+class GetControlLoginRestView(APIView):
+    permission_classes = (IsAuthenticated, AllowAny)
+
+    @method_decorator(validar_imei())
+    def post(self, request):
+        pass 
+
+
+
+
+
+
+
+

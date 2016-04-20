@@ -17,15 +17,12 @@
         <div class='ten wide column'>
             <h2 class='ui header'>
                 <i class="ui asterisk icon"></i>Importaç&atilde;o de Modelo
-
             </h2>
-
             {% if not envio %}
             <form method="POST" enctype="multipart/form-data" class='ui form'>
                 {% csrf_token %}
                 <div class='field'>
                     <label>Arquivo</label>
-
                     <div>
                         {{ form.arquivo }}
                         {% if form.arquivo.errors %}
@@ -40,6 +37,7 @@
             {% else %}
             Foram importados {{qtd}} modelos.
             {% endif %}
+            <div class='sub header'><i class="info circle large icon icone"></i>Apenas arquivos do tipo texto.</div>
         </div>
     </div>
 </div>

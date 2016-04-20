@@ -3,6 +3,7 @@
 # from pandas.tseries.frequencies import infer_freq
 from json import loads, dumps
 from datetime import datetime
+# from django.utils import timezone
 
 from django.shortcuts import render
 from django.views.generic.base import View
@@ -15,6 +16,9 @@ from django.utils.decorators import method_decorator
 from detransapp.models import Infracao
 from detransapp.models import Infrator, Movimentacao, Dispositivo, VeiculoEditado, VeiculoEstrangeiro
 from detransapp.decorators import validar_imei
+
+import sys
+import traceback
 
 
 class RelatorioInfracaoView(View):
@@ -72,12 +76,16 @@ class RecebeInfracoesRestView(APIView):
         infracoes_sinc = []
         infracoes_json = loads(request.POST['infracoes'])
 
+
         for inf_json in infracoes_json:
             sid = transaction.savepoint()
+            print "Antes do try"
             try:
                 is_estrangeiro = True
                 if inf_json['is_estrangeiro'] == '0':
                     is_estrangeiro = False
+
+
 
                 is_editado = True
 
@@ -91,6 +99,7 @@ class RecebeInfracoesRestView(APIView):
 
                 infracao = Infracao()
                 infracao.agente_id = request.user.id
+                # infracao.agente_id = 3
                 # TODO REVISAR TABELA DISPOSITIVO CAMPO CHAVE IMEI
                 infracao.dispositivo_id = Dispositivo.objects.get(imei=request.POST['imei']).id
 
@@ -99,9 +108,12 @@ class RecebeInfracoesRestView(APIView):
                 infracao.local = inf_json['local']
                 infracao.local_numero = inf_json['local_numero']
 
+                
                 infracao.veiculo_id = inf_json['veiculo_id']
-                print 'inf_json[tipo_infracao_id] : ', inf_json['tipo_infracao_id']
+                # print 'inf_json[tipo_infracao_id] : ', inf_json['tipo_infracao_id']
                 infracao.tipo_infracao_id = inf_json['tipo_infracao_id']
+               
+               
 
                 movimentacao = Movimentacao()
                 movimentacao.tempo = datetime.strptime(inf_json['data'], "%d/%m/%Y %H:%M:%S")
@@ -169,11 +181,23 @@ class RecebeInfracoesRestView(APIView):
                     veiculo_estrangeiro.cor_id = inf_json['veiculo']['cor_id']
                     veiculo_estrangeiro.categoria_id = inf_json['veiculo']['categoria_id']
                     '''
+
+
+
                 infracoes_sinc.append({'id': infracao.id, 'status': True})
                 transaction.savepoint_commit(sid)
-            except:
-                infracoes_sinc.append({'id': int(inf_json['infracao_id']), 'status': False})
-                transaction.savepoint_rollback(sid)
+
+            except NameError:
+                print "caiu no except"
+                exc_type, exc_value, exc_traceback = sys.exc_info()
+                lines = traceback.format_exception(exc_type, exc_value, exc_traceback)
+                print ''.join('!! ' + line for line in lines)
+
+            # except:
+            #     print "caiu no except"
+            #     infracoes_sinc.append({'id': int(inf_json['infracao_id']), 'status': False})
+            #     transaction.savepoint_rollback(sid)
+        
         print infracoes_sinc
         json = dumps(infracoes_sinc, ensure_ascii=False)
         return HttpResponse(json)

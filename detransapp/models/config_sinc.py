@@ -15,7 +15,7 @@ class ConfigSinc(models.Model):
     hora_fim_sinc = models.TimeField()
 '''
 
-    horas_discarte = models.IntegerField()
+    horas_descarte = models.IntegerField()
     tempo_captura_mov = models.IntegerField()
     distancia_captura_mov = models.DecimalField(max_digits=10, decimal_places=2)
     data = models.DateTimeField(auto_now_add=True)

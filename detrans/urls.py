@@ -6,6 +6,9 @@ from django.conf.urls.static import static
 from detransapp import views
 from detransapp.views import *
 
+
+from rest_framework.urlpatterns import format_suffix_patterns
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -15,8 +18,10 @@ urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login/login.html'},
                            name='login'),
-                       url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'login/logout.html'},
-                           name='logout'),
+                       url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'logout/logout.html'}, name='logout'),
+                       url(r'^config/$', 'django.contrib.auth.views.login', {'template_name': 'config/configuracao.html'},
+                           name='config'),
+                       
                        url(r'^relatorios/', views.relatorios, name='relatorios'),
                        url(r'^sobre/', views.about, name='sobre'),
 
@@ -92,6 +97,9 @@ urlpatterns = patterns('',
                        url(r'^download-apk/$', DownloadDetransApkView.as_view(), name='download_apk'),
 
                        # REST
+                       # <BLOCO>
+                       url(r'^rest/bloco/$', GetBlocoRestView.as_view(), name='rest-bloco'),
+                  
                        url(r'^rest/agente/$', GetAgentesRestView.as_view(), name='rest-agente'),
                        url(r'^rest/veiculo/$', GetVeiculosRestView.as_view(), name='rest-veiculo'),
                        url(r'^rest/tipo-infracao/$', GetTiposInfracaoRestView.as_view(), name='rest-tipo-infracao'),
@@ -121,8 +129,18 @@ urlpatterns = patterns('',
 
                        url(r'^cria-sqlite/$', CriaSqliteView.as_view(), name='cria-sqlite'),
                        url(r'^status-sqlite/$', StatusView.as_view(), name='status-sqlite'),
-                       # url(r'^config/get/det$', CadastroDETView.as_view(), name='cadastra-det'),
-                       # url(r'^config/set/det$', ConsultaDETView.as_view(), name='consulta-det'),
-
+                       url(r'^config/set/det$', CadastroDETView.as_view(), name='cadastra-det'),
+                       url(r'^config/get/det$', ConsultaDETView.as_view(), name='consulta-det'),
+                       url(r'^config/geradet$', GeraDet.as_view(), name='gera-det'),
+                       url(r'^config/geradet/(?P<filtro>\d+)/$$', GeraDet.as_view(), name='gera-det'),
+                       url(r'^configuracoes/$', ConfigSincView.as_view(), name='config'),
+                       url(r'^config/det$', TemplateDET.as_view(), name='template-det'),
+                       #url(r'^config/$', GetConfigSincRestView.as_view(), name='config'),
 
                        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns = format_suffix_patterns(urlpatterns)
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls',
+                               namespace='rest_framework')),
+]

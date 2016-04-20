@@ -18,7 +18,6 @@
         <div class='ten wide column'>
             <h2 class='ui header'>
                 <i class="asterisk icon"></i>
-
                 <div class="content">
                     Relat&oacute;rio de Modelo
                     <div class='sub header'>Prencha os campos abaixo para refinar a busca.</div>
@@ -31,10 +30,8 @@
                         <label>Busca</label>
                         <input type="text" name="procurar"/>
                     </div>
-
                     <button type="submit" class="ui verde button">Consultar</button>
                 </form>
-
                 <table class="ui table">
                     <thead>
                     <tr>
@@ -51,7 +48,6 @@
                         <td><a href="{% url 'cad-modelo' modelo.codigo %}"><i class='icon configure'></i>Editar</a></td>
                     </tr>
                     {% endfor %}
-
                     </tbody>
                 </table>
                 {% include "partials/paginacao.html" with lista=modelos procurar=procurar %}

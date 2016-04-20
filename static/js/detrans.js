@@ -74,12 +74,15 @@
 
 
     $('.fazul').click(function(){
-
+        
         id = $(this).attr('id')
         $('.'+id).transition('browse')
     })
 
-
-
+    $('.cazul').click(function(){
+        
+        id = $(this).attr('id')
+        $('.'+id).transition('browse')
+    })
 
   })

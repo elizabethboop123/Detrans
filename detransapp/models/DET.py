@@ -1,5 +1,5 @@
 from django.db import models
-
+from detransapp.manager import DETManager
 
 class Configuracao_DET(models.Model):
     tipo_registro = models.CharField(max_length=1)
@@ -12,3 +12,12 @@ class Configuracao_DET(models.Model):
 
     class Meta:
         app_label = "detransapp"
+
+
+class DET(models.Model):
+	codigo = models.CharField(max_length=255)
+
+	objects = DETManager()
+
+	class Meta:
+		app_label = "detransapp"

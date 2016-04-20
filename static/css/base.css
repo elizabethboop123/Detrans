@@ -1,4 +1,4 @@
-/*
+/*/*/*/*
     @author: vanessa rolim;
     css desenvolvido em cima do framework semantic ui
 
@@ -19,6 +19,9 @@ footer{
 }
 
 /*===========================GERAL==============================*/
+.logout{
+    color:#005e83 !important;
+}
 .ui.grid{
 
     margin:0 !important;
@@ -97,6 +100,37 @@ h2.ui.header.fazul .content,h2.ui.header.vermelho .content,h2.ui.header.fverde .
 .fverde{color:#037C20 !important;}
 
 /*===========================MENU=============================*/
+.direita{
+    float: right;
+}
+.esquerda{
+    float:left!important;
+}
+.usuario{
+    position:absolute !important;
+    margin-top: 0% !important;
+    z-index:99 !important;
+
+}
+
+.ui.header.cazul{
+    cursor:pointer;
+
+}
+
+.ui.inverted.blue.segment.cazul{
+    background: #005e83 !important;
+}
+a.branco, .branco {
+    color:#fff;
+    font-size: 18px;
+}
+
+a.branco:hover{
+    color:#fff;
+    font-size: 18px;
+    text-decoration: underline;
+}
 
 .ui.inverted.verde.menu{
 
@@ -111,7 +145,7 @@ h2.ui.header.fazul .content,h2.ui.header.vermelho .content,h2.ui.header.fverde .
 /*===========================HOME==============================*/
 i.inverted.verde.icon{
 
-    background-color: #4EA741 !important;
+    background-color: #4EA741;
     color: #FFFFFF !important;
 }
 
@@ -291,3 +325,4 @@ figure.fabrica{
     color:#fff !important;
 }
 
+*/*/*/
