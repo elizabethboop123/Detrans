@@ -54,6 +54,7 @@
         </div>
     {% endif %}
     <nav class='ui menu azul inverted large'>
+       
         <a class='{% block home %}{% endblock %}' href='/'> Home </a>
         <a class='{% block cadastros %}{% endblock %}' href='/relatorios'> Cadastros e Relat&oacute;rios</a>
         <div class="right menu">
@@ -64,6 +65,8 @@
     </nav>
 </header>
 <article class="content">
+ {% block legal %}
+        {% endblock %}
     {% block result %}
     {% endblock %}
 </article>
