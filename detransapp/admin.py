@@ -15,3 +15,6 @@ admin.site.register(Lei)
 admin.site.register(Especie)
 admin.site.register(Categoria)
 admin.site.register(UF)
+admin.site.register(Cor)
+
+

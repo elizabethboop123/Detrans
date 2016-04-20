@@ -5,8 +5,8 @@ from detransapp.manager import BlocoManager
 
 
 class Bloco(models.Model):
-    inicio_intervalo = models.IntegerField()
-    fim_intervalo = models.IntegerField()
+    inicio_intervalo = models.PositiveIntegerField()
+    fim_intervalo = models.PositiveIntegerField()
     data = models.DateTimeField(auto_now_add=True)
     data_alterado = models.DateTimeField(auto_now=True)
     usuario = models.ForeignKey(User)

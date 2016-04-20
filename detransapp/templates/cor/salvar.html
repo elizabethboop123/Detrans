@@ -14,47 +14,47 @@
         <div class='three wide column'></div>
         <div class='ten wide column'>
             {% if form.instance.id %}
-            <form method="POST" action="{% url 'cad-cor' form.instance.id %}" class='ui form'>
-                {% else %}
+				<form method="POST" action="{% url 'cad-cor' form.instance.id %}" class='ui form'>
+            {% else %}
                 <form method="POST" action="{% url 'cad-cor' %}" class='ui form'>
-                    {% endif %}
-                    {% csrf_token %}
-                    <h2 class='ui header'>
-                        <i class="icon paint brush"></i>Cadastro de Cor
-                        <div class='sub header'>Prencha os campos abaixo.</div>
+            {% endif %}
+                {% csrf_token %}
+				<h2 class='ui header'>
+					<i class="icon paint brush"></i>Cadastro de Cor
+					<div class='sub header'>Prencha os campos abaixo.</div>
 
-                    </h2>
-                    <div class='ui two fields'>
-                        <div class='field'>
-                            <label>C&oacute;digo</label>
+				</h2>
+				<div class='ui two fields'>
+					<div class='field'>
+						<label>C&oacute;digo</label>
 
-                            <div>
-                                {{ form.codigo }}
-                                {% if form.codigo.errors %}
-                                <div class="ui red pointing label">
-                                    {{ form.codigo.errors }}
-                                </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class='field'>
-                            <label>Descrição</label>
+						<div>
+							{{ form.codigo }}
+							{% if form.codigo.errors %}
+							<div class="ui red pointing label">
+								{{ form.codigo.errors }}
+							</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class='field'>
+						<label>Descrição</label>
 
-                            <div>
-                                {{ form.descricao }}
-                                {% if form.descricao.errors %}
-                                <div class="ui red pointing label">
-                                    {{ form.descricao.errors }}
-                                </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    <a href='/cadastros'>
-                        <button type="button" class="ui cancel red button">Cancelar</button>
-                    </a>
-                    <button type="submit" class="ui verde button">Salvar</button>
-                </form>
+						<div>
+							{{ form.descricao }}
+							{% if form.descricao.errors %}
+							<div class="ui red pointing label">
+								{{ form.descricao.errors }}
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<a href='/cadastros'>
+					<button type="button" class="ui cancel red button">Cancelar</button>
+				</a>
+				<button type="submit" class="ui verde button">Salvar</button>
+            </form>
         </div>
     </div>
 </div>

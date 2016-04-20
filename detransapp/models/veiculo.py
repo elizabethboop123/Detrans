@@ -22,8 +22,8 @@ class Veiculo(models.Model):
     categoria = models.ForeignKey(Categoria)
     data = models.DateTimeField(auto_now_add=True)
     data_alterado = models.DateTimeField(auto_now=True)
-    ano_fabricacao = models.IntegerField()
-    ano_modelo = models.IntegerField()
+    ano_fabricacao = models.PositiveIntegerField()
+    ano_modelo = models.PositiveIntegerField()
     num_passageiro = models.CharField(max_length=3)
     # proprietario = models.ForeignKey(Proprietario)
 
