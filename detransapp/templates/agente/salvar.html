@@ -72,7 +72,19 @@
 
                         </div>
                     </div>
-                    <div class="field hidden">
+                    <div class="field">
+                        <label>CPF</label>
+
+                        {{ form.cpf }}
+                        {% if form.cpf.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.cpf.errors }}
+                        </div>
+                        {% endif %}
+
+                    </div>
+                    
+                    <div class="field">
                         <label>Ativo</label>
 
                         {{ form.is_active }}

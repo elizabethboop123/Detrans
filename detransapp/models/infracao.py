@@ -12,9 +12,9 @@ from detransapp.manager import InfracaoManager
 
 class Infracao(models.Model):
     id = models.IntegerField(primary_key=True)
-    tipo_infracao = models.ForeignKey(TipoInfracao)
+    tipo_infracao = models.ForeignKey(TipoInfracao, null=True)
     infrator = models.ForeignKey(Infrator, null=True)
-    agente = models.ForeignKey(Agente)
+    agente = models.ForeignKey(Agente, null=True)
     veiculo = models.ForeignKey(Veiculo, null=True)
     obs = models.TextField(null=True, blank=True)
     movimento = models.ForeignKey(Movimentacao, null=True)
@@ -26,10 +26,10 @@ class Infracao(models.Model):
 
     tipo_cancelamento = models.ForeignKey(TipoCancelamento, null=True, blank=True)
     justificativa = models.TextField(null=True, blank=True)
-    dispositivo = models.ForeignKey(Dispositivo)
+    dispositivo = models.ForeignKey(Dispositivo, null=True)
 
-    local = models.CharField(max_length=255)
-    local_numero = models.CharField(max_length=100)
+    local = models.CharField(max_length=255, null=True)
+    local_numero = models.CharField(max_length=100, null=True)
 
     data_infracao = models.DateTimeField()
     data_sincronizacao = models.DateTimeField(auto_now=True)

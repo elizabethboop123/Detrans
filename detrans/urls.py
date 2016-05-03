@@ -24,7 +24,7 @@ urlpatterns = patterns('',
                        url(r'^sobre/', views.about, name='sobre'),
 
                        url(r'^legislacao/$', CadastroLeisView.as_view(), name='cad-legislacao'),
-                       url(r'^legislacao/(?P<marca_id>\d+)/$', CadastroLeisView.as_view(), name='cad-legislacao'),
+                       url(r'^legislacao/(?P<condutor_id>\d+)/$', CadastroLeisView.as_view(), name='cad-legislacao'),
                        url(r'^legislacao/consulta/$', ConsultaLeisView.as_view(), name='leis-consulta'),
 
                        url(r'^modelo/$', CadastroModeloView.as_view(), name='cad-modelo'),
@@ -36,10 +36,9 @@ urlpatterns = patterns('',
                        url(r'^tipo-veiculo/consulta/$', ConsultaTipoView.as_view(), name='tipo-veiculo-consulta'),
 
                        url(r'^tipo-infracao/$', CadastroTipoInfracaoView.as_view(), name='cad-tipo-infracao'),
-                       url(r'^tipo-infracao/(?P<tipo_infracao_id>\d+)/$', CadastroTipoInfracaoView.as_view(),
+                       url(r'^tipo-infracao/(?P<tipo_infracao_id>[\w-]+)/$', CadastroTipoInfracaoView.as_view(),
                            name='cad-tipo-infracao'),
-                       url(r'^tipo-infracao/consulta/$', ConsultaTipoInfracaoView.as_view(),
-                           name='tipo-infracao-consulta'),
+                       url(r'^tipo_infracao/consulta/$', ConsultaTipoInfracaoView.as_view(), name='tipo-infracao-consulta'),
 
                        url(r'^tipo-cancelamento/$', CadastroCancelamentoView.as_view(), name='cad-tipo-cancelamento'),
                        url(r'^tipo-cancelamento/(?P<tipo_infracao_id>\d+)/$', CadastroCancelamentoView.as_view(),
@@ -58,11 +57,11 @@ urlpatterns = patterns('',
                        url(r'^agente/consulta/$', ConsultaAgenteView.as_view(), name='agente-consulta'),
 
                        url(r'^cor/$', CadastroCorView.as_view(), name='cad-cor'),
-                       url(r'^cor/(?P<agente_id>\d+)/$', CadastroCorView.as_view(), name='cad-cor'),
+                       url(r'^cor/(?P<cor_id>\d+)/$', CadastroCorView.as_view(), name='cad-cor'),
                        url(r'^cor/consulta/$', ConsultaCorView.as_view(), name='cor-consulta'),
 
                        url(r'^categoria/$', CadastroCategoriaView.as_view(), name='cad-categoria'),
-                       url(r'^categoria/(?P<agente_id>\d+)/$', CadastroCategoriaView.as_view(), name='cad-categoria'),
+                       url(r'^categoria/(?P<categoria_id>\d+)/$', CadastroCategoriaView.as_view(), name='cad-categoria'),
                        url(r'^categoria/consulta/$', ConsultaCategoriaView.as_view(), name='categoria-consulta'),
 
                        url(r'^dispositivo/$', CadastroDispositivoView.as_view(), name='cad-dispositivo'),
@@ -85,10 +84,11 @@ urlpatterns = patterns('',
                            name='proprietario-consulta'),
 
                        url(r'^bloco/$', CadastroBlocoView.as_view(), name='cad-bloco'),
-                       url(r'^bloco/(?P<proprietario_id>\d+)/$', CadastroBlocoView.as_view(), name='cad-bloco'),
+                       url(r'^bloco/(?P<bloco_id>\d+)/$', CadastroBlocoView.as_view(), name='cad-bloco'),
                        url(r'^bloco/consulta/$', ConsultaBlocoView.as_view(), name='bloco-consulta'),
 
                        url(r'^infracao/relatorio/$', RelatorioInfracaoView.as_view(), name='relatorio-infracao'),
+                       url(r'^infracao/relatorio/(?P<infracao_id>\d+)/$', RelatorioInfracaoDetalhesView.as_view(), name='detalhes-infracao'),
 
                        url(r'^get-cidades/$', 'detransapp.views.cidade.get_cidades', name='get-cidades'),
                        url(r'^downloadsqlite/$', DownloadDetransView.as_view(), name='download_sqlite'),
@@ -99,6 +99,7 @@ urlpatterns = patterns('',
                        url(r'^rest/bloco/$', GetBlocoRestView.as_view(), name='rest-bloco'),
                   
                        url(r'^rest/agente/$', GetAgentesRestView.as_view(), name='rest-agente'),
+                       url(r'^rest/agente_login/$', GetControlLoginRestView.as_view(), name='rest-agente-login'),
                        url(r'^rest/veiculo/$', GetVeiculosRestView.as_view(), name='rest-veiculo'),
                        url(r'^rest/tipo-infracao/$', GetTiposInfracaoRestView.as_view(), name='rest-tipo-infracao'),
                        url(r'^rest/tipo-veiculo/$', GetTiposVeiculoRestView.as_view(), name='rest-tipo-veiculo'),

@@ -15,5 +15,5 @@ class FormAgente(forms.ModelForm):
 
 	class Meta:
 		model = Agente
-		exclude = ('movimentos','regioes','email','date_joined','is_staff','user_permissions','groups','last_login')
+		exclude = ('movimentos','regioes','email','date_joined','is_staff','user_permissions','groups','last_login',)
 

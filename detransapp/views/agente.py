@@ -7,7 +7,9 @@ from django.utils.decorators import method_decorator
 
 from detransapp.models import Agente_login
 from detransapp.forms.agente import FormAgente
+from detransapp.models.dispositivo import Dispositivo
 from detransapp.models.agente import Agente
+from detransapp.models.agente_login import Agente_login
 from detransapp.serializers import AgenteSerializer
 from detransapp.rest import JSONResponse
 from detransapp.decorators import validar_imei
@@ -33,12 +35,17 @@ class CadastroAgenteView(View):
         else:
             form = FormAgente(request.POST)
 
+
         if form.is_valid():
+            form.is_active = True
             form.save()
 
             return redirect('/')
 
-        print(form)
+        else:
+            print "agente não válido"
+
+        
         return render(request, self.template, {'form': form})
 
 
@@ -97,12 +104,39 @@ class GetControlLoginRestView(APIView):
 
     @method_decorator(validar_imei())
     def post(self, request):
-        pass 
+        controle = loads(request.POST['controle_login'])
 
+        status = True
 
+        if controle['status'] == 0:
+            status = False
 
+        # Logar
+        if status == True:
+            agente_login = Agente_login.objects.filter(device=controle['device'], agente=int(controle['agente']), status=True)
+            if agente_login:
+                return False
+            else:
+                agente_login = Agente_login()
 
+                agente_login.agente = int(controle['agente'])
 
+                dispositivo = Dispositivo.objects.get(imei=controle['device'])
+                agente_login.device = dispositivo.id 
 
+                agente_login.save()
+                return True
+        # Deslogar
+        else:
 
+            # Talvez utilizar o filter
+            agente_login = Agente_login.objects.get(device=controle['device'], agente=int(controle['agente']), status=True)
 
+            if agente_login:
+
+                agente_login.status = False
+                agente_login.save()
+                return True
+
+            else:
+                return False

@@ -22,6 +22,7 @@ class CadastroDispositivoView(View):
     def post(self, request, dispositivo_id=None):
 
         if dispositivo_id:
+            
             dispositivo = Dispositivo.objects.get(pk=dispositivo_id)
             form = FormDispositivo(instance=dispositivo, data=request.POST)
         else:

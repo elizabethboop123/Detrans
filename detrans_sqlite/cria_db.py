@@ -99,4 +99,10 @@ def criar(conn, cursor):
                     + "foreign key(categoria_codigo) references categoria(codigo), "
                     + "foreign key(proprietario_id) references proprietario(id))")
 
+    cursor.execute("create table if not exists agente_login ("
+                    + "id integer primary key autoincrement, "
+                    + "agente integer, "
+                    + "status boolean, "
+                    + "foreign key (agente) references agente(id)")
+
     conn.commit()

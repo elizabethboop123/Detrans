@@ -20,6 +20,16 @@ from detransapp.decorators import validar_imei
 import sys
 import traceback
 
+class RelatorioInfracaoDetalhesView(View):
+
+    template = 'infracao/detalhes.html'
+
+    def get(self, request, infracao_id = None):
+
+        if infracao_id:
+            inf = Infracao.objects.get(pk=infracao_id)
+
+        return render(request, self.template, {'infracao': inf})
 
 class RelatorioInfracaoView(View):
     template = 'infracao/relatorio.html'
@@ -75,6 +85,7 @@ class RecebeInfracoesRestView(APIView):
         print request.POST['infracoes']
         infracoes_sinc = []
         infracoes_json = loads(request.POST['infracoes'])
+        print "\n ------------------- \n"
 
 
         for inf_json in infracoes_json:
@@ -108,11 +119,12 @@ class RecebeInfracoesRestView(APIView):
                 infracao.local = inf_json['local']
                 infracao.local_numero = inf_json['local_numero']
 
-                
-                infracao.veiculo_id = inf_json['veiculo_id']
-                # print 'inf_json[tipo_infracao_id] : ', inf_json['tipo_infracao_id']
-                infracao.tipo_infracao_id = inf_json['tipo_infracao_id']
-               
+                if inf_json['veiculo_id'] != "null":
+
+                    infracao.veiculo_id = inf_json['veiculo_id']
+                    # print 'inf_json[tipo_infracao_id] : ', inf_json['tipo_infracao_id']
+                    infracao.tipo_infracao_id = inf_json['tipo_infracao_id']
+                   
                
 
                 movimentacao = Movimentacao()

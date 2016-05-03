@@ -18,8 +18,10 @@ class CadastroModeloView(View):
     def get(self, request, modelo_id=None):
 
         if modelo_id:
+            
             modelo = Modelo.objects.get(pk=modelo_id)
             form = FormModelo(instance=modelo)
+
         else:
             form = FormModelo()
 
@@ -27,10 +29,13 @@ class CadastroModeloView(View):
 
     def post(self, request, modelo_id=None):
 
+        modelo_id=request.POST['codigo']
         if modelo_id:
+            
             modelo = Modelo.objects.get(pk=modelo_id)
             form = FormModelo(instance=modelo, data=request.POST)
         else:
+            
             form = FormModelo(request.POST)
 
         if form.is_valid():
@@ -117,7 +122,7 @@ class ImportaModelo(View):
                 linha = linha.encode('UTF-8')
                 cod = linha[0:6]
                 desc = linha[6:].strip()
-                novoModelo = Modelo(codigo=cod, descricao=desc)
+                novoModelo = Modelo(modelo_id=cod, descricao=desc)
                 novoModelo.save()
                 i += 1
 

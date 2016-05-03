@@ -30,6 +30,7 @@ class CadastroVeiculoView(View):
 
     def post(self, request, veiculo_id=None):
 
+        veiculo_id = request.POST['chassi']
         if veiculo_id:
             veiculo = Veiculo.objects.get(pk=veiculo_id)
             form = FormVeiculo(request.POST['uf'], request.POST, instance=veiculo)

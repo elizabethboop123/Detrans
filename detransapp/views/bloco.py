@@ -37,22 +37,41 @@ class CadastroBlocoView(View):
         return render(request, self.template, {'form': form})
 
     def post(self, request, bloco_id=None):
-    
-        form = FormBloco(request.POST)
         
+        bloco_id = bloco_id
+
+        form = FormBloco(request.POST)
+
+        is_input = True
+
+        if bloco_id:
+            bloco_padrao = BlocoPadrao.objects.get(pk=bloco_id)
+            form = FormBloco(instance=bloco_padrao, data=request.POST)
+            is_input = False
+
+        else:
+
+            form = FormBloco(request.POST)
+
         if form.is_valid():
             
-            post = form.save(commit=False)
-            
-            # Controle de bloco campo 'ativo'
-            bloco = BlocoPadrao.objects.filter(ativo='TRUE')
-            if len(bloco) >= 1:
-                post.ativo=False         
-                form.save()
-            else:
-                form.save()
+            if is_input == True:
+                post = form.save(commit=False)
 
-            return redirect('/')
+                # Controle de bloco campo 'ativo'
+
+                bloco = BlocoPadrao.objects.filter(ativo='TRUE')
+                if len(bloco) >= 1:
+                    post.ativo=False         
+                    form.save()
+                else:
+                    form.save()
+
+            else:
+                
+                form.save()  
+            
+            return redirect('/')   
                
         return render(request, self.template, {'form': form})
 
@@ -77,7 +96,7 @@ class ConsultaBlocoView(View):
         except Exception:
             page = 1
 
-        blocos_page = Bloco.objects.get_page(page, procurar)
+        blocos_page = BlocoPadrao.objects.get_page(page, procurar)
 
         return render(request, self.template_name, {'blocos': blocos_page, 'procurar': procurar})
 
@@ -94,7 +113,8 @@ class ConsultaBlocoView(View):
 
 class GetBlocoRestView(APIView):
 
-    permission_classes = (AllowAny, AllowAny)
+    
+    permission_classes = (IsAuthenticated, AllowAny)
 
 
     @method_decorator(validar_imei())
@@ -198,7 +218,7 @@ def AddBloco(request):
     bloco = Bloco()
     bloco.inicio_intervalo = bp.contador
     bloco.fim_intervalo = bp.contador + bp.numero_paginas
-    bloco.usuario = request.user 
+    bloco.usuario = request.user
     bloco.ativo = True
     bloco.minimo_pag_restantes = bp.minimo_pag_restantes
 

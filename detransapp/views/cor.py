@@ -28,6 +28,7 @@ class CadastroCorView(View):
 
     def post(self, request, cor_id=None):
 
+        cor_id = request.POST['codigo']
         if cor_id:
             cor = Cor.objects.get(pk=cor_id)
             form = FormCor(instance=cor, data=request.POST)

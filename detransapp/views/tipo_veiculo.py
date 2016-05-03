@@ -28,6 +28,8 @@ class CadastroTipoView(View):
 
     def post(self, request, tipo_id=None):
 
+        tipo_id = request.POST['codigo']
+
         if tipo_id:
             tipo = TipoVeiculo.objects.get(pk=tipo_id)
             form = FormTipoVeiculo(instance=tipo, data=request.POST)

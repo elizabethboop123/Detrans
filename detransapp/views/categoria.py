@@ -16,9 +16,12 @@ from detransapp.serializers import CategoriaSerializer
 class CadastroCategoriaView(View):
     template = 'categoria/salvar.html'
 
+   
     def get(self, request, categoria_id=None):
 
+        
         if categoria_id:
+            
             categoria = Categoria.objects.get(pk=categoria_id)
             form = FormCategoria(instance=categoria)
         else:
@@ -27,6 +30,8 @@ class CadastroCategoriaView(View):
         return render(request, self.template, {'form': form})
 
     def post(self, request, categoria_id=None):
+
+        categoria_id = request.POST['codigo']
 
         if categoria_id:
             categoria = Categoria.objects.get(pk=categoria_id)

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %} Relat&oacute;rio de Infraç&otilde;es {% endblock %}
+
+{% block home %}item {% endblock %}
+{% block cadastros %}item {% endblock %}
+{% block relatorios %}item active{% endblock %}
+{% block sobre %}item {% endblock %}
+{% block op1 %} item {% endblock %}
+{% block op2 %} item {% endblock %}
+
+
+{% block result %}
+<div class='ui grid relatorio'>
+    <div class='row'>
+        <div class='three wide column'>
+        </div>
+        <div class='ten wide column'>
+            <h2 class='ui header'>
+                <i class="browser icon"></i>
+                <div class="content">
+                    Detalhes Infração nº {{infracao.id}}
+                </div>
+                    <div>
+                    <br>
+                    <h2> Identificação do Veículo </h2> 
+                    <h3>
+                        Placa do Veículo: {{infracao.veiculo.placa}}<br>
+                        Município: {{infracao.veiculo.cidade.nome}} <br>
+                        UF: {{infracao.veiculo.cidade.uf.sigla}} <br>
+                        Marca/Modelo: {{infracao.veiculo.modelo.descricao}} <br>
+                        Espécie: {{infracao.veiculo.especie.descricao}} <br>
+                    </h3>
+
+                    <h2> Identificação da Infração </h2>
+                    <h3>
+                        Localidade: {{infracao.local}} {{infracao.local_numero}}<br>
+                        Código da Infração: {{infracao.id}} <br>
+                        Data/Hora: {{infracao.data_infracao}}<br>
+                        Código de Legislação: {{infracao.tipo_infracao_id}}<br>
+                        Descrição da Infração: {{infracao.tipo_infracao.descricao}} <br>
+                    </h3>
+
+                    <h2> Identificação do Condutor</h2>
+                    <h3> 
+                        Nome: {{infracao.infrator.nome}} <br>
+                        Nº CNH/Permissão p/Dirigir: {{infracao.infrator.cnh}} <br>
+                        Nº Documento: {{infracao.infrator.documento}} <br>
+                    </h3>
+
+                    <h2> Observação </h2>
+                    <h3> 
+                        Observação: {{infracao.obs}}<br>
+                    </h3>
+
+                    <h2> Identificação da Autoridade ou Agente Autuador</h2>
+                    <h3>
+                        Agente Nome: {{infracao.agente.first_name}} {{infracao.agente.last_name}} <br>
+                        Assinatura: <br>
+                    </h3>
+                </div>
+            </h2>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

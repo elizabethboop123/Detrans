@@ -7,7 +7,8 @@ from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
 from detransapp.forms.tipo_infracao import FormTipoInfracao
-from detransapp.models import TipoInfracao, Lei
+from detransapp.models import TipoInfracao, Bloco, BlocoPadrao
+from detransapp.models import Lei
 from detransapp.serializers import TipoInfracaoSerializer
 from detransapp.rest import JSONResponse
 
@@ -17,6 +18,7 @@ class CadastroTipoInfracaoView(View):
 
     def get(self, request, tipo_infracao_id=None):
 
+       
         if tipo_infracao_id:
             tipo_infracao = TipoInfracao.objects.get(pk=tipo_infracao_id)
 
@@ -30,6 +32,7 @@ class CadastroTipoInfracaoView(View):
 
     def post(self, request, tipo_infracao_id=None):
 
+        tipo_infracao_id = request.POST['codigo']
         if tipo_infracao_id:
             tipo_infracao = TipoInfracao.objects.get(pk=tipo_infracao_id)
             form = FormTipoInfracao(request.POST, instance=tipo_infracao)
@@ -47,9 +50,12 @@ class CadastroTipoInfracaoView(View):
 
 
 class ConsultaTipoInfracaoView(View):
+
     template_name = 'tipo_infracao/consulta.html'
 
+    print "Caiu na View"
     def __page(self, request):
+
         procurar = ''
 
         if request.method == 'POST':
@@ -72,11 +78,12 @@ class ConsultaTipoInfracaoView(View):
         return render(request, self.template_name, {'tipos': tipos_page, 'procurar': procurar})
 
     def get(self, request):
-
+        
         return self.__page(request)
+       
 
     def post(self, request):
-
+        
         return self.__page(request)
 
 
