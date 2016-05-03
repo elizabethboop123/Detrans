@@ -1,28 +1,16 @@
 from base import *
+
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-# DATABASES = {
-#  'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': 'detrans6',  # Or path to database file if using sqlite3.
-#        'USER': 'postgres',  # Not used with sqlite3.
-#        'PASSWORD': 'postgres',  # Not used with sqlite3.
-#        'HOST': 'localhost',  # Set to empty string for localhost. Not used with sqlite3.
-#        'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
-#    }
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(BASE_DIR, 'banco'),  # Or path to database file if using sqlite3.
-        'USER': '',  # Not used with sqlite3.
-        'PASSWORD': '',  # Not used with sqlite3.
-        'HOST': 'localhost',  # Set to empty string for localhost. Not used wit$
-        'PORT': '',  # Set to empty string for default. Not used with sqlit$
+        'NAME': 'detrans7',  # Or path to database file if using sqlite3.
+        'USER': 'postgres',  # Not used with sqlite3.
+        'PASSWORD': 'postgres',  # Not used with sqlite3.
+        'HOST': 'localhost',  # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
     }
 }
-

@@ -7,13 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('detransapp', '0004_configuracao_det'),
+        ('detransapp', '0010_auto_20160503_1513'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='categoria',
-            name='codigo',
-            field=models.PositiveIntegerField(serialize=False, primary_key=True),
+            model_name='veiculo',
+            name='ano_fabricacao',
+            field=models.PositiveIntegerField(default=0),
         ),
     ]
