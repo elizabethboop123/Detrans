@@ -16,8 +16,8 @@ class DispositivoManager(models.Manager):
         else:
             dispostivos = self.filter()
 
-        dispostivos = dispostivos.order_by('ativo')
-
+        #dispostivos = dispostivos.order_by('ativo')
+        return dispostivos 
         paginator = Paginator(dispostivos, settings.NR_REGISTROS_PAGINA)
         try:
             dispostivos_page = paginator.page(page)

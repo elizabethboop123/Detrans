@@ -20,13 +20,13 @@
                     {% endif %}
                     {% csrf_token %}
                     <h2 class='ui header'>
-                        <i class="fa fa-user-secret icone"></i>Cadastro de Informações para o DET007
+                        <i class="icon list layout icone"></i>Cadastro de Informações para o DET007
                         <div class='sub header'>Prencha os campos abaixo.</div>
                     </h2>
                     <!--{{form}}-->
                     <div class="two fields">
                         <div class="field">
-                            <label>Tipo de Registro </label>
+                            <label>Tipo de Registro</label>
                             {{ form.tipo_registro }}
                             <div class="ui verde pointing label hidden id_tipo_registro">
                                Números. Valor padrão 0.
@@ -79,7 +79,7 @@
                     </div>
                     <div class="three fields">
                         <div class="field">
-                            <label>Código do órgão autuador </label>
+                            <label>Código do Órgão Autuador  </label>
                             {{ form.autuador }}
                             <div class="ui verde pointing label hidden id_autuador">
                                6 Números. Valor padrão 008088.

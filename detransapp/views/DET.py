@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.views.generic.base import View
 
 from detransapp.forms.DET import FormDet
-from detransapp.models import Configuracao_DET, Infracao
+from detransapp.models import Configuracao_DET, Infracao, DET
 import os
 
 
@@ -61,9 +61,9 @@ class ConsultaDETView(View):
         except Exception:
             page = 1
 
-        cores_page = Configuracao_DET.objects.get_page(page, procurar)
+        det_page = DET.DET.objects.get_page(page, procurar)
 
-        return render(request, self.template_name, {'cores': cores_page, 'procurar': procurar})
+        return render(request, self.template_name, {'dets': det_page, 'procurar': procurar})
 
     def get(self, request):
         return self.__page(request)
@@ -82,12 +82,17 @@ class TemplateDET(View):
 class GeraDet(View):
     template_name = 'det/gera.html'
 
-    def get(self, request):
+    def get(self, request, filtro='0'):
+        det = datetime.now().strftime("%Y%m%d%H%M%S")
 
         sequencial_arquivo = random.randrange(0, 999999)
 
         nome_arq = 'DET007.016.008088.' + str(sequencial_arquivo) + '.DET'
         arq = open(nome_arq, 'w')
+
+        if filtro =='0':
+            det_novo = DET.DET(codigo=det)
+            det_novo.save()
 
         # topo
         config = Configuracao_DET.objects.get(id=1)
@@ -113,7 +118,7 @@ class GeraDet(View):
         arq.write(topo + '\n')
 
         # infracoes
-        infracoes = Infracao.objects.all()
+        infracoes = Infracao.objects.filter(det=filtro)
         seq = 0
 
         for i in infracoes:
@@ -157,6 +162,9 @@ class GeraDet(View):
                 strseq)
             print(len(infracao))
             arq.write(infracao + '\n')
+            if i.det =='0':
+                i.det = det
+                i.save()
 
         # trailer
         qtd = len(infracoes)

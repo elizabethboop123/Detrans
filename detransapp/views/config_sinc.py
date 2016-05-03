@@ -13,17 +13,16 @@ from detransapp.serializers import ConfigSincSerializer
 
 
 class ConfigSincView(View):
-    template = 'config_sinc/salvar.html'
+    template = 'config/configuracao.html'
 
     def get(self, request, config_sinc_id=None):
-
         if config_sinc_id:
             config_sinc = ConfigSinc.objects.get(pk=config_sinc_id)
             form = FormConfigSinc(instance=config_sinc)
         else:
             form = FormConfigSinc()
 
-        return render(request, self.template, {'form': form})
+        return render(request, self.template, {'form': form, 'nome': 'Fulano'})
 
     def post(self, request, config_sinc_id=None):
 

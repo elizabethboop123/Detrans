@@ -4,7 +4,7 @@ from detransapp.manager import EspecieManager
 
 
 class Especie(models.Model):
-    codigo = models.IntegerField(primary_key=True)
+    codigo = models.PositiveIntegerField(primary_key=True)
     descricao = models.CharField(max_length=40)
     data = models.DateTimeField(auto_now_add=True)
     data_alterado = models.DateTimeField(auto_now=True)

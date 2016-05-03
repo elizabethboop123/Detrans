@@ -21,12 +21,10 @@
                     {% csrf_token %}
                     <h2 class='ui header'>
                         <i class="icon edit"></i>
-
                         <div class="content">
                             Cadastro de Bloco Mestre
                             <div class='sub header'>Prencha os campos abaixo.</div>
                         </div>
-
                     </h2>
                     <div class='field'>
                         <label>In&iacute;cio Bloco</label>
@@ -42,7 +40,6 @@
                     </div>
                     <div class='field'>
                         <label>Fim Bloco</label>
-
                         <div>
                             {{ form.fim_intervalo }}
                             {% if form.fim_intervalo.errors %}
@@ -54,7 +51,6 @@
                     </div>
                     <div class=' field'>
                         <label>Ativo?</label>
-
                         <div>
                             {{ form.ativo }}
                             {% if form.ativo.errors %}
@@ -64,6 +60,8 @@
                             {% endif %}
                         </div>
                     </div>
+<<<<<<< HEAD
+=======
 
                     <div class='field'>
                         <label> Número de Páginas por Bloco</label> 
@@ -93,6 +91,7 @@
                                         
 
 
+>>>>>>> 7d7570bbe76c14b523acb340f251f9d837da5834
                     <a href='/cadastros'>
                         <button type="button" class="ui cancel red button">Cancelar</button>
                     </a>
