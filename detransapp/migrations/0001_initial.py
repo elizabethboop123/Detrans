@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import migrations, models
+from django.db import models, migrations
 from django.conf import settings
 
 
@@ -25,22 +25,46 @@ class Migration(migrations.Migration):
             bases=('auth.user',),
         ),
         migrations.CreateModel(
+            name='Agente_login',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('status', models.BooleanField(default=False)),
+                ('data_login', models.DateTimeField(auto_now_add=True)),
+                ('data_logout', models.DateTimeField(null=True, blank=True)),
+                ('agente', models.ForeignKey(to='detransapp.Agente')),
+            ],
+        ),
+        migrations.CreateModel(
             name='Bloco',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('inicio_intervalo', models.IntegerField()),
-                ('fim_intervalo', models.IntegerField()),
+                ('inicio_intervalo', models.PositiveIntegerField()),
+                ('fim_intervalo', models.PositiveIntegerField()),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
                 ('ativo', models.BooleanField(default=True)),
+                ('minimo_pag_restantes', models.IntegerField(null=True)),
                 ('agente_campo', models.ForeignKey(related_name='+', blank=True, to='detransapp.Agente', null=True)),
                 ('usuario', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
+            name='BlocoPadrao',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('inicio_intervalo', models.IntegerField()),
+                ('fim_intervalo', models.IntegerField()),
+                ('data', models.DateTimeField(auto_now_add=True)),
+                ('contador', models.IntegerField(default=0)),
+                ('ativo', models.BooleanField(default=True)),
+                ('numero_paginas', models.IntegerField(default=1000)),
+                ('minimo_pag_restantes', models.IntegerField(null=True)),
+            ],
+        ),
+        migrations.CreateModel(
             name='Categoria',
             fields=[
-                ('codigo', models.IntegerField(serialize=False, primary_key=True)),
+                ('codigo', models.PositiveIntegerField(serialize=False, primary_key=True)),
                 ('descricao', models.CharField(max_length=40)),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
@@ -59,7 +83,7 @@ class Migration(migrations.Migration):
             name='ConfigSinc',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('horas_discarte', models.IntegerField()),
+                ('horas_descarte', models.IntegerField()),
                 ('tempo_captura_mov', models.IntegerField()),
                 ('distancia_captura_mov', models.DecimalField(max_digits=10, decimal_places=2)),
                 ('data', models.DateTimeField(auto_now_add=True)),
@@ -82,24 +106,31 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Cor',
             fields=[
-                ('codigo', models.IntegerField(serialize=False, primary_key=True)),
+                ('codigo', models.PositiveIntegerField(serialize=False, primary_key=True)),
                 ('descricao', models.CharField(max_length=40)),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
             ],
         ),
         migrations.CreateModel(
+            name='DET',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('codigo', models.CharField(max_length=255)),
+            ],
+        ),
+        migrations.CreateModel(
             name='Dispositivo',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('imei', models.CharField(max_length=18)),
+                ('imei', models.CharField(unique=True, max_length=18)),
                 ('ativo', models.BooleanField(default=True)),
             ],
         ),
         migrations.CreateModel(
             name='Especie',
             fields=[
-                ('codigo', models.IntegerField(serialize=False, primary_key=True)),
+                ('codigo', models.PositiveIntegerField(serialize=False, primary_key=True)),
                 ('descricao', models.CharField(max_length=40)),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
@@ -114,12 +145,13 @@ class Migration(migrations.Migration):
                 ('is_veiculo_editado', models.BooleanField()),
                 ('is_condutor_identi', models.BooleanField()),
                 ('justificativa', models.TextField(null=True, blank=True)),
-                ('local', models.CharField(max_length=255)),
-                ('local_numero', models.CharField(max_length=100)),
+                ('local', models.CharField(max_length=255, null=True)),
+                ('local_numero', models.CharField(max_length=100, null=True)),
                 ('data_infracao', models.DateTimeField()),
                 ('data_sincronizacao', models.DateTimeField(auto_now=True)),
-                ('agente', models.ForeignKey(to='detransapp.Agente')),
-                ('dispositivo', models.ForeignKey(to='detransapp.Dispositivo')),
+                ('det', models.CharField(default=b'0', max_length=255)),
+                ('agente', models.ForeignKey(to='detransapp.Agente', null=True)),
+                ('dispositivo', models.ForeignKey(to='detransapp.Dispositivo', null=True)),
             ],
         ),
         migrations.CreateModel(
@@ -172,7 +204,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Modelo',
             fields=[
-                ('codigo', models.IntegerField(serialize=False, primary_key=True)),
+                ('codigo', models.PositiveIntegerField(serialize=False, primary_key=True)),
                 ('descricao', models.CharField(max_length=40)),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
@@ -236,7 +268,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='TipoVeiculo',
             fields=[
-                ('codigo', models.IntegerField(serialize=False, primary_key=True)),
+                ('codigo', models.PositiveIntegerField(serialize=False, primary_key=True)),
                 ('descricao', models.CharField(max_length=40)),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
@@ -261,8 +293,8 @@ class Migration(migrations.Migration):
                 ('placa', models.CharField(max_length=7)),
                 ('data', models.DateTimeField(auto_now_add=True)),
                 ('data_alterado', models.DateTimeField(auto_now=True)),
-                ('ano_fabricacao', models.IntegerField()),
-                ('ano_modelo', models.IntegerField()),
+                ('ano_fabricacao', models.PositiveIntegerField(default=0)),
+                ('ano_modelo', models.PositiveIntegerField()),
                 ('num_passageiro', models.CharField(max_length=3)),
                 ('categoria', models.ForeignKey(to='detransapp.Categoria')),
                 ('cidade', models.ForeignKey(to='detransapp.Cidade')),
@@ -339,7 +371,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='infracao',
             name='tipo_infracao',
-            field=models.ForeignKey(to='detransapp.TipoInfracao'),
+            field=models.ForeignKey(to='detransapp.TipoInfracao', null=True),
         ),
         migrations.AddField(
             model_name='infracao',
@@ -350,6 +382,11 @@ class Migration(migrations.Migration):
             model_name='cidade',
             name='uf',
             field=models.ForeignKey(to='detransapp.UF'),
+        ),
+        migrations.AddField(
+            model_name='agente_login',
+            name='device',
+            field=models.ForeignKey(to='detransapp.Dispositivo'),
         ),
         migrations.AddField(
             model_name='agente',
