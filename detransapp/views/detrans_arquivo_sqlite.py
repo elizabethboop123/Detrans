@@ -23,6 +23,7 @@ class ThreadDetransSqlite(threading.Thread):
         self.is_finalisado = False
         self.is_cancelado = False
         self.is_erro_processo = False
+        self.progress = 0
         self.detrans_sqlite_nome = settings.MEDIA_ROOT + '/detrans.sqlite'
 
     def run(self):
@@ -46,17 +47,29 @@ class ThreadDetransSqlite(threading.Thread):
                 raise ValueError('Geração detrans.sqlite cancelada, parada ao criar banco sqlite')
 
             categoria.importa(conn, cursor, self.stopthread)
+            self.progress = 8
             cor.importa(conn, cursor, self.stopthread)
+            self.progress = 16
             especie.importa(conn, cursor, self.stopthread)
+            self.progress = 24
             lei.importa(conn, cursor, self.stopthread)
+            self.progress = 32
             tipo_infracao.importa(conn, cursor, self.stopthread)
+            self.progress = 40
             tipo_veiculo.importa(conn, cursor, self.stopthread)
+            self.progress = 48
             uf_cidade.importa(conn, cursor, self.stopthread)
+            self.progress = 56
             modelo.importa(conn, cursor, self.stopthread)
+            self.progress = 64
             veiculo.importa(conn, cursor, self.stopthread)
+            self.progress = 72
             agente.importa(conn, cursor, self.stopthread)
+            self.progress = 80
             config_sinc.importa(conn, cursor, data_versao_bd, self.stopthread)
+            self.progress = 90
             comprimir.comprimir_detrans_sqlite(self.detrans_sqlite_nome)
+            self.progress = 100
 
             self.is_finalisado = True
             self.is_erro_processo = False
@@ -83,6 +96,9 @@ class ThreadDetransSqlite(threading.Thread):
             return 'Concluído'
 
         return 'Processando'
+
+    def get_status_mensagem_str(self):
+        return self.progress
 
 
 myProcess = None
@@ -111,8 +127,9 @@ class StatusView(View):
 
         status = myProcess.get_status_str()
         erro = myProcess.is_erro_processo
+        status_mensagem = myProcess.get_status_mensagem_str()
 
-        return render(request, self.template, {'status': status, 'erro': erro})
+        return render(request, self.template, {'status': status, 'erro': erro, 'status_mensagem': status_mensagem})
 
     def post(self, request):
         global myProcess

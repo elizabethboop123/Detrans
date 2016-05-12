@@ -1,4 +1,4 @@
-/*/*/*/*
+/*
     @author: vanessa rolim;
     css desenvolvido em cima do framework semantic ui
 
@@ -144,6 +144,10 @@ a.branco:hover{
   font-size: 1.3rem !important;
  }
 
+/*compatibilidade da largura do menu com a versão 2.1 do semantic-ui*/
+.ui.large.menu{
+    width: 100%;
+}
 
 /*===========================HOME==============================*/
 i.inverted.verde.icon{
@@ -328,4 +332,13 @@ figure.fabrica{
     color:#fff !important;
 }
 
-*/*/*/
+
+/*======================== MODAL ==============================*/
+
+.ui.form.modal{
+    padding: 15px !important;
+}
+
+.item > p.header{
+    padding: 0 30px 0 30px;
+}
