@@ -5,157 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3dfadd7-7d1c-4301-a2c2-5575344b4358" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/accordion.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/accordion.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/ad.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/ad.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/api.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/api.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/breadcrumb.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/breadcrumb.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/button.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/button.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/card.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/card.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/checkbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/checkbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/checkbox.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/checkbox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/colorize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/colorize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/comment.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/comment.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/container.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/container.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/dimmer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/dimmer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/dimmer.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/dimmer.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/divider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/divider.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/dropdown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/dropdown.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/dropdown.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/embed.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/embed.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/embed.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/embed.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/feed.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/feed.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/flag.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/flag.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/form.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/form.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/form.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/grid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/grid.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/header.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/header.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/icon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/icon.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/image.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/image.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/input.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/input.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/item.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/item.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/label.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/label.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/list.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/list.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/loader.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/loader.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/message.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/message.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/modal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/modal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/modal.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/modal.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/nag.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/nag.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/nag.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/nag.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/popup.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/popup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/popup.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/popup.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/progress.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/progress.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/progress.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/progress.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/rail.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/rail.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/rating.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/rating.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/rating.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/rating.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/reset.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/reveal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/reveal.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/search.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/search.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/search.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/search.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/segment.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/segment.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/shape.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/shape.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/shape.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/shape.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/sidebar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/sidebar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/sidebar.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/sidebar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/site.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/site.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/site.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/site.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/state.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/state.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/statistic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/statistic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/step.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/step.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/sticky.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/sticky.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/sticky.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/sticky.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/tab.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/tab.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/tab.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/table.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/table.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/transition.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/transition.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/transition.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/video.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/video.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/video.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/video.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/visibility.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/visibility.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/visit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/components/visit.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/semantic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/semantic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/semantic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/semantic-2.1/semantic.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/detrans.sqlite" afterPath="$PROJECT_DIR$/media/detrans.sqlite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/base.html" afterPath="$PROJECT_DIR$/detransapp/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/detrans_sqlite/cria_sqlite.html" afterPath="$PROJECT_DIR$/detransapp/templates/detrans_sqlite/cria_sqlite.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/detrans_sqlite/status_sqlite.html" afterPath="$PROJECT_DIR$/detransapp/templates/detrans_sqlite/status_sqlite.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/views/detrans_arquivo_sqlite.py" afterPath="$PROJECT_DIR$/detransapp/views/detrans_arquivo_sqlite.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/base.css" afterPath="$PROJECT_DIR$/static/css/base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/components/modal.css" afterPath="$PROJECT_DIR$/static/css/components/modal.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/components/modal.min.css" afterPath="$PROJECT_DIR$/static/css/components/modal.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/infracao/relatorio.html" afterPath="$PROJECT_DIR$/detransapp/templates/infracao/relatorio.html" />
     </list>
     <ignored path="detrans1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -177,21 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="status_sqlite.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/detransapp/templates/detrans_sqlite/status_sqlite.html">
+      <file leaf-file-name="relatorio.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/detransapp/templates/infracao/relatorio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+            <state relative-caret-position="1026">
+              <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cria_sqlite.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/detransapp/templates/detrans_sqlite/cria_sqlite.html">
+      <file leaf-file-name="infracao.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/detransapp/views/infracao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="23" column="107" selection-start-line="23" selection-start-column="107" selection-end-line="23" selection-end-column="107" />
+            <state relative-caret-position="-2868">
+              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -238,6 +89,7 @@
         <option value="$PROJECT_DIR$/static/css/base.css" />
         <option value="$PROJECT_DIR$/detransapp/templates/detrans_sqlite/cria_sqlite.html" />
         <option value="$PROJECT_DIR$/detransapp/templates/detrans_sqlite/status_sqlite.html" />
+        <option value="$PROJECT_DIR$/detransapp/templates/infracao/relatorio.html" />
       </list>
     </option>
   </component>
@@ -248,10 +100,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
-    <option name="y" value="-4" />
-    <option name="width" value="1551" />
-    <option name="height" value="904" />
+    <option name="x" value="41" />
+    <option name="y" value="24" />
+    <option name="width" value="1559" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -278,6 +130,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -293,38 +146,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="detrans" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -396,50 +217,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="detrans_sqlite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detransapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="condutor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans" />
+              <option name="myItemId" value="infracao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -705,22 +489,28 @@
       <option name="project" value="LOCAL" />
       <updated>1462569519118</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="correção de tela para gerar sqlite">
+      <created>1463084146903</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1463084146903</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="-4" width="1551" height="904" extended-state="6" />
+    <frame x="41" y="24" width="1559" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20290813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18846154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18846154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -730,6 +520,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -749,7 +540,8 @@
     <MESSAGE value="logica det007, pagina de download e urls" />
     <MESSAGE value="correção de bugs levantados pela eliza:&#10;&#10;Relatórios de Agentes:&#10;Ao tentar cadastrar agente, se clicar em cancelar ele não volta para a página de busca, vai para a url inicial.&#10;Quando faz a busca e aparece o pesquisa, se clicar em cancelar ele não volta para a página de busca, vai para a url inicial.&#10;&#10;Bloco&#10;Não abre.&#10;&#10;Categoria:&#10;Em relatórios de categoria, a página de editar não abre.&#10;Importação de categoria, não importa os arquivos.&#10;&#10;Cadastro de cor&#10;Relatório de cor não abre o editar.&#10;Importação de cor, não importa os arquivos.&#10;&#10;Relatórios de dispositivos:&#10;Quando clica em editar e vai para o cadastro de dispositivo, se clicar em cancelar volta para a url inicial.&#10;&#10;Importação de espécie:&#10;Na página de relatório de Espécie, aparece cadastro de espécie.&#10;Não importa.&#10;&#10;Relatórios de Infração:&#10;Da erro ao tentar consultar&#10;&#10;Relatórios de Legislação:&#10;Da erro ao tentar editar a lei.&#10;&#10;Cadastro de modelo:&#10;Aparece erro ao tentar cadastrar modelo, mas aparece cadastrado depois.&#10;Não importa os arquivos..&#10;&#10;Cadastro de veículo:&#10;Select UF sem opções.&#10;Select Cidade sem opções.&#10;Da erro ao cadastrar.&#10;Da erro ao tentar importar veículo.&#10;" />
     <MESSAGE value="correção de tela de detalhes de auto de infração/ estilização de layout de impressão" />
-    <option name="LAST_COMMIT_MESSAGE" value="correção de tela de detalhes de auto de infração/ estilização de layout de impressão" />
+    <MESSAGE value="correção de tela para gerar sqlite" />
+    <option name="LAST_COMMIT_MESSAGE" value="correção de tela para gerar sqlite" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -758,13 +550,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/detransapp/serializers/agente.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/detransapp/views/agente.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -970,13 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/detransapp/templates/relatorios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/detransapp/templates/sobre.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1005,13 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/detransapp/views/infracao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/detransapp/templates/condutor/consulta.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1030,7 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="130" column="34" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,7 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,20 +831,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-204">
           <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
-          <folding>
-            <element signature="e#16#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/semantic-2.1/src/_site/views/ad.overrides">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/semantic-2.1/src/_site/views/ad.overrides" />
     <entry file="file://$PROJECT_DIR$/static/css/semantic.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1104,7 +863,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detransapp/templates/detrans_sqlite/status_sqlite.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1112,14 +877,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="23" column="107" selection-start-line="23" selection-start-column="107" selection-end-line="23" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detransapp/templates/relatorios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/detransapp/templates/detrans_sqlite/status_sqlite.html">
+    <entry file="file://$PROJECT_DIR$/detransapp/views/infracao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+        <state relative-caret-position="-2868">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detransapp/templates/infracao/relatorio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
           <folding />
         </state>
       </provider>
