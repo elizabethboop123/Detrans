@@ -76,13 +76,13 @@
     $('.fazul').click(function(){
         
         id = $(this).attr('id')
-        $('.'+id).transition('browse')
+        $('.'+id).transition('slide down')
     })
 
     $('.cazul').click(function(){
         
         id = $(this).attr('id')
-        $('.'+id).transition('browse')
+        $('.'+id).transition('slide down')
     })
 
   })

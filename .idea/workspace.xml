@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e3dfadd7-7d1c-4301-a2c2-5575344b4358" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detransapp/templates/infracao/relatorio.html" afterPath="$PROJECT_DIR$/detransapp/templates/infracao/relatorio.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/detrans.js" afterPath="$PROJECT_DIR$/static/js/detrans.js" />
     </list>
     <ignored path="detrans1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,21 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="relatorio.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/detransapp/templates/infracao/relatorio.html">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/detransapp/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+            <state relative-caret-position="270">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infracao.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/detransapp/views/infracao.py">
+      <file leaf-file-name="detrans.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/js/detrans.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2868">
-              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            <state relative-caret-position="1494">
+              <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -63,7 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/js/detrans.js" />
         <option value="$PROJECT_DIR$/detransapp/forms/DET.py" />
         <option value="$PROJECT_DIR$/detransapp/templates/det/salvar.html" />
         <option value="$PROJECT_DIR$/detransapp/admin.py" />
@@ -90,6 +89,7 @@
         <option value="$PROJECT_DIR$/detransapp/templates/detrans_sqlite/cria_sqlite.html" />
         <option value="$PROJECT_DIR$/detransapp/templates/detrans_sqlite/status_sqlite.html" />
         <option value="$PROJECT_DIR$/detransapp/templates/infracao/relatorio.html" />
+        <option value="$PROJECT_DIR$/static/js/detrans.js" />
       </list>
     </option>
   </component>
@@ -159,7 +159,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="detransapp" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detrans1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detrans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -174,10 +192,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="detransapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -196,28 +210,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detrans" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detransapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="infracao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -496,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463084146903</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="correção de link para vizualizar a infração">
+      <created>1463160392228</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1463160392228</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -541,7 +540,8 @@
     <MESSAGE value="correção de bugs levantados pela eliza:&#10;&#10;Relatórios de Agentes:&#10;Ao tentar cadastrar agente, se clicar em cancelar ele não volta para a página de busca, vai para a url inicial.&#10;Quando faz a busca e aparece o pesquisa, se clicar em cancelar ele não volta para a página de busca, vai para a url inicial.&#10;&#10;Bloco&#10;Não abre.&#10;&#10;Categoria:&#10;Em relatórios de categoria, a página de editar não abre.&#10;Importação de categoria, não importa os arquivos.&#10;&#10;Cadastro de cor&#10;Relatório de cor não abre o editar.&#10;Importação de cor, não importa os arquivos.&#10;&#10;Relatórios de dispositivos:&#10;Quando clica em editar e vai para o cadastro de dispositivo, se clicar em cancelar volta para a url inicial.&#10;&#10;Importação de espécie:&#10;Na página de relatório de Espécie, aparece cadastro de espécie.&#10;Não importa.&#10;&#10;Relatórios de Infração:&#10;Da erro ao tentar consultar&#10;&#10;Relatórios de Legislação:&#10;Da erro ao tentar editar a lei.&#10;&#10;Cadastro de modelo:&#10;Aparece erro ao tentar cadastrar modelo, mas aparece cadastrado depois.&#10;Não importa os arquivos..&#10;&#10;Cadastro de veículo:&#10;Select UF sem opções.&#10;Select Cidade sem opções.&#10;Da erro ao cadastrar.&#10;Da erro ao tentar importar veículo.&#10;" />
     <MESSAGE value="correção de tela de detalhes de auto de infração/ estilização de layout de impressão" />
     <MESSAGE value="correção de tela para gerar sqlite" />
-    <option name="LAST_COMMIT_MESSAGE" value="correção de tela para gerar sqlite" />
+    <MESSAGE value="correção de link para vizualizar a infração" />
+    <option name="LAST_COMMIT_MESSAGE" value="correção de link para vizualizar a infração" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -550,13 +550,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/detransapp/views/agente.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="90" column="39" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/detransapp/models/config_sinc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -859,13 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/detransapp/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/detransapp/templates/detrans_sqlite/status_sqlite.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
@@ -900,6 +886,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detransapp/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/detrans.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1494">
+          <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
           <folding />
         </state>
       </provider>
