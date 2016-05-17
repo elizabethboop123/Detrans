@@ -113,12 +113,10 @@ label.header.label{
     position:absolute !important;
     margin-top: 0% !important;
     z-index:99 !important;
-
 }
 
 .ui.header.cazul{
     cursor:pointer;
-
 }
 
 .ui.inverted.blue.segment.cazul{
@@ -136,7 +134,6 @@ a.branco:hover{
 }
 
 .ui.inverted.verde.menu{
-
     background-color: #4EA741;
 }
 
@@ -148,6 +145,11 @@ a.branco:hover{
 .ui.large.menu{
     width: 100%;
 }
+
+.item.oculta{
+    display: none !important;
+}
+
 
 /*===========================HOME==============================*/
 i.inverted.verde.icon{
@@ -275,6 +277,7 @@ i.icone {
 }
 .cancel{
     float:left;
+    background-color: #d95c5c !important;
 }
 
 .ui.form .field > label{
@@ -331,7 +334,6 @@ figure.fabrica{
 .foot{
     color:#fff !important;
 }
-
 
 /*======================== MODAL ==============================*/
 

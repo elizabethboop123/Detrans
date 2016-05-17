@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block title %} Status {% endblock %}
 
+{% block refresh %}
+<meta http-equiv="refresh" content="5">
+{% endblock %}
+
 {% block semantic_2.1 %}
 <link rel="stylesheet" href="{{ STATIC_URL }}semantic-2.1/semantic.min.css"/>
 <script src="{{ STATIC_URL }}semantic-2.1/semantic.min.js"></script>
@@ -8,8 +12,7 @@
 
 {% block home %}item {% endblock %}
 {% block cadastros %}item {% endblock %}
-{% block relatorios %}item {% endblock %}
-{% block sobre %}item {% endblock %}
+{% block sobre %}item oculta{% endblock %}
 {% block op1 %} item {% endblock %}
 {% block op2 %} item {% endblock %}
 
@@ -28,12 +31,12 @@
     </div>
     <div class="centered row">
         <div class="seven wide column">
-            {% if erro and status != 'Concluído' %}
+            {% if erro and status != 'Concluido' %}
             <div class="ui progress error" data-percent="{{ status_mensagem }}">
                 <div class="bar">
                     <div class="progress"></div>
                 </div>
-                <div class="label">Ocorreu um ERRO! Tente novamente.</div>
+                <div class="label">ERRO! {{ status_mensagem }}% Gerado do Banco Móvel</div>
             </div>
             {% else %}
             <div class="ui active progress" data-percent="{{ status_mensagem }}">
@@ -43,7 +46,7 @@
                 <div class="label">{{ status_mensagem }}% Gerado do Banco Móvel</div>
             </div>
             {% endif %}
-            <div class="ui red button" id="cancelar_carga">Cancelar</div>
+            <div class="ui cancel red button right floated" id="cancelar_carga">Cancelar</div>
         </div>
     </div>
     <div class="centered row">
@@ -64,7 +67,7 @@
                 </div>
                 <div class="actions">
                     <input type="submit" class="ui verde button" value="Sim"/>
-                    <div class="ui negative button">Não</div>
+                    <button type="button" class="ui cancel red button">Não</button>
                 </div>
             </form>
         </div>

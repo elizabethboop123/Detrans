@@ -30,22 +30,29 @@ class ThreadDetransSqlite(threading.Thread):
 
         try:
 
+            self.progress = 1
             if os.path.exists(self.detrans_sqlite_nome):
                 os.remove(self.detrans_sqlite_nome)
 
+            self.progress = 1
             if os.path.exists(self.detrans_sqlite_nome + '.gz'):
                 os.remove(self.detrans_sqlite_nome + '.gz')
 
+            self.progress = 2
             conn = sqlite3.connect(self.detrans_sqlite_nome)
             cursor = conn.cursor()
 
+            self.progress = 3
             cria_db.criar(conn, cursor)
 
+            self.progress = 4
             data_versao_bd = datetime.now()
 
+            self.progress = 5
             if self.stopthread.isSet():
                 raise ValueError('Geração detrans.sqlite cancelada, parada ao criar banco sqlite')
 
+            self.progress = 6
             categoria.importa(conn, cursor, self.stopthread)
             self.progress = 8
             cor.importa(conn, cursor, self.stopthread)
@@ -93,7 +100,7 @@ class ThreadDetransSqlite(threading.Thread):
             return 'Cancelado'
 
         if self.is_finalisado:
-            return 'Concluído'
+            return 'Concluido'
 
         return 'Processando'
 
