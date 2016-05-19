@@ -161,7 +161,7 @@ i.inverted.verde.icon{
 
 .ui.segment.dash{
     min-height: 250px;
-    max-height: 250px;
+    /*max-height: 250px;*/
     /*float: left;*/
     text-align: center;
 }
