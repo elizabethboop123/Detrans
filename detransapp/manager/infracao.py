@@ -8,7 +8,7 @@ class InfracaoManager(models.Manager):
     def get_page(self, page, procurar):
 
         if procurar is not None and procurar != '':
-            infracoes = self.filter(Q(obs__icontains=procurar) | Q(id_sincronia__icontains=procurar))
+            infracoes = self.filter(Q(obs__icontains=procurar) | Q(veiculo__placa__icontains=procurar))
         else:
             infracoes = self.filter()
 

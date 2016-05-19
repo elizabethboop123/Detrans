@@ -4,7 +4,8 @@ from django.views.generic.base import View
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.utils.decorators import method_decorator
-
+from json import loads, dumps
+from django.utils import timezone
 from detransapp.models import Agente_login
 from detransapp.forms.agente import FormAgente
 from detransapp.models.dispositivo import Dispositivo
@@ -104,39 +105,41 @@ class GetControlLoginRestView(APIView):
 
     @method_decorator(validar_imei())
     def post(self, request):
-        controle = loads(request.POST['controle_login'])
-
+            
         status = True
 
-        if controle['status'] == 0:
+        if int(request.POST['status']) == 0:
             status = False
 
-        # Logar
+        dispositivo = Dispositivo.objects.get(imei=str(request.POST['imei']))
+        agente = int(request.POST['agente'])
+        # Login
         if status == True:
-            agente_login = Agente_login.objects.filter(device=controle['device'], agente=int(controle['agente']), status=True)
+            
+            agente_login = Agente_login.objects.filter(device=dispositivo.id, agente_id=agente, status=True)
             if agente_login:
-                return False
+                
+                # return False
+                return JSONResponse({'permission': 0})
             else:
                 agente_login = Agente_login()
-
-                agente_login.agente = int(controle['agente'])
-
-                dispositivo = Dispositivo.objects.get(imei=controle['device'])
-                agente_login.device = dispositivo.id 
-
+                agente_login.agente_id = agente
+                agente_login.device_id = dispositivo.id 
+                agente_login.status = True
                 agente_login.save()
-                return True
-        # Deslogar
+                # return True
+                return JSONResponse({'permission': 1}) 
+        # Logout
         else:
-
-            # Talvez utilizar o filter
-            agente_login = Agente_login.objects.get(device=controle['device'], agente=int(controle['agente']), status=True)
-
+            
+            agente_login = Agente_login.objects.get(device=dispositivo.id, agente_id=agente, status=True)
+            print agente_login
             if agente_login:
-
                 agente_login.status = False
+                agente_login.data_logout = timezone.now()
                 agente_login.save()
-                return True
-
+                # return True
+                return JSONResponse({'permission': 1})
             else:
-                return False
+                # return False
+                return JSONResponse({'permission': 0})

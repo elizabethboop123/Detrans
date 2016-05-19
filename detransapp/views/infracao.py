@@ -2,6 +2,8 @@
 # from wkhtmltopdf.views import PDFTemplateResponse
 # from pandas.tseries.frequencies import infer_freq
 from json import loads, dumps
+import json
+
 from datetime import datetime
 # from django.utils import timezone
 
@@ -12,8 +14,8 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.http import HttpResponse
 from django.db import transaction
 from django.utils.decorators import method_decorator
-
-from detransapp.models import Infracao
+from detransapp.rest import JSONResponse
+from detransapp.models import Infracao, Image
 from detransapp.models import Infrator, Movimentacao, Dispositivo, VeiculoEditado, VeiculoEstrangeiro
 from detransapp.decorators import validar_imei
 
@@ -83,12 +85,16 @@ class RecebeInfracoesRestView(APIView):
     # @method_decorator(transaction.atomic)
     def post(self, request):
         print request.POST['infracoes']
+        
         infracoes_sinc = []
         infracoes_json = loads(request.POST['infracoes'])
         print "\n ------------------- \n"
-
-
+        
+              
+                    
         for inf_json in infracoes_json:
+
+
             sid = transaction.savepoint()
             print "Antes do try"
             try:
@@ -119,6 +125,7 @@ class RecebeInfracoesRestView(APIView):
                 infracao.local = inf_json['local']
                 infracao.local_numero = inf_json['local_numero']
 
+                 
                 if inf_json['veiculo_id'] != "null":
 
                     infracao.veiculo_id = inf_json['veiculo_id']
@@ -213,6 +220,51 @@ class RecebeInfracoesRestView(APIView):
         print infracoes_sinc
         json = dumps(infracoes_sinc, ensure_ascii=False)
         return HttpResponse(json)
+
+
+class GetImageRestView(APIView):
+
+    permission_classes = (IsAuthenticated, AllowAny)
+
+    # @method_decorator(validar_imei())
+    def post(self, request):
+              
+        images_json = loads(request.POST['imagem'])
+        print "Número de Imagens: ", len(images_json)
+        status_core = []
+        count = 0
+
+        for image in images_json:
+
+            Img = Image()
+            Img.id_image = int(image['id_image'])
+            # Img.infracao_id = int(image['infringement_id'])
+
+            # Looking if this match isn't in database
+
+            foto = str(image['photo'])
+            # print "Numero de caracteres foto: ", len(foto)
+            if Image.objects.filter(id_image=Img.id_image):
+                
+                status = {'id_image': Img.id_image, 'isStatus': 0}
+                status_core.append(status)
+            else:
+                status = {'id_image': Img.id_image, 'isStatus': 1}
+                Img.save()
+                status_core.append(status)
+
+            count += 1
+            print "CONTADOR", count
+        print "CONTADOR TOTAL", count
+
+        for img in status_core:
+            print "Id de Imagem: %d     Permissão: %d" %(img['id_image'], img['isStatus'])
+
+        
+        status_core = dumps(status_core, ensure_ascii=False)
+        print status_core
+
+        return JSONResponse(status_core)   
 
 
 class DET007(View):

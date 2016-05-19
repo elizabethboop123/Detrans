@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from datetime import datetime
 from detransapp.forms.bloco import FormBloco
-from detransapp.models import Bloco, BlocoPadrao
+from detransapp.models import Bloco, BlocoPadrao, Agente_login
 # Daqui para baixo -> Lucas
 from django.utils import timezone
 from django.contrib.auth.models import User
@@ -146,72 +146,71 @@ class GetBlocoRestView(APIView):
 
         # Se houver registros do usuário na tabela bloco:
         else:
-            """ 
-            if requisita um bloco || 1 - Verificar se o último IF bloco desse usuário está acabando 
-                e então mandar um novo para ele e setar o anterior "Ativo=False".
-
-            if usuario logou no sistema || 2 - Se o bloco dele não estiver acabando, verificar se ele
-                cabou de se logar e então mandar para ele seu último bloco cadastrado 
-                com o valor de "inicio_intervalo" latualizado.
-
-                obs: Ordenação por data em ordem Decrescente:
-                  >>> Bloco.objects.filter(usuario=request.user).order_by('-data')
-            """
-            
+                        
             bloco = Bloco.objects.filter(usuario=request.user).order_by('-data')[0]
             inf = Infracao.objects.filter(id__range=[bloco.inicio_intervalo, bloco.fim_intervalo])
             
-            usr = User.objects.get(id=request.user.id)
+            # Datetime Login User
+            usr = Agente_login.objects.get(agente_id=request.user.id, status=True)
+                        
+
             
-
-            # user.last_login
-            # número mínimo de páginas
-            bloco_valor_max = 50
             
+            if (timezone.now() - usr.data_login).total_seconds()/60 < 7:
 
-            ''' Se o bloco excedeu de fato seu limite, mande outro '''
-            if (bloco.fim_intervalo - len(inf)) <= bloco_valor_max:
-                bloco = Bloco.objects.filter(usuario=request.user).order_by('-data_alterado')[0]
-                # bloco.agente_campo = request.user
-                bloco.ativo = False
-                bloco.save()
-
-                bloco = AddBloco(request)
-                # bloco.agente_campo = request.user
-                bloco.save()
-
-                bp = BlocoPadrao.objects.get(ativo=True)
-                bp.contador += bp.numero_paginas
-                bp.save()
-
-                serializer = BlocoSerializer(bloco)
+                print "caiu no envia-bloco-login"
+                
+                bloco = Bloco.objects.filter(usuario=request.user).order_by('-data_alterado')
                 core_js = []
-                core_js.append(serializer.data)
 
-                print "caiu na condição de falta de numero_paginas"
+                if len(bloco) > 1:
+                    inf1 = Infracao.objects.filter(id__range=[bloco[1].inicio_intervalo, bloco[1].fim_intervalo])
+                    if (bloco[1].fim_intervalo - len(inf1)) <= bloco[1].minimo_pag_restantes:
+                        bloco = Bloco.objects.get(id=bloco[1].id)
+                        bloco.inicio_intervalo += len(inf1)
+                        bloco.data_alterado = timezone.now() 
+                        bloco.save()
+                        serializer = BlocoSerializer(bloco)
+                        core_js.append(serializer.data)
 
-                return JSONResponse(core_js)
-
-            """ Se não excedeu e mesmo assim houve a requisição, verificar se ele logou a poucos
-                minutos
-            """
-
-            
-
-            """ Se o usuário acabou de se logar então mande seu bloco"""
-            
-            if (timezone.now() - usr.last_login).total_seconds()/60 < 20:
-                bloco = Bloco.objects.filter(usuario=request.user).order_by('-data_alterado')[0]
-                # mudar a data modificado pra de agora
+                              
+                bloco = Bloco.objects.get(id=bloco[0].id)
                 bloco.data_alterado = timezone.now()
                 bloco.inicio_intervalo += len(inf) 
                 bloco.save()
                 serializer = BlocoSerializer(bloco)
-                print "caiu na condição de login"
-                return JSONResponse(serializer.data)
+                
+                core_js.append(serializer.data)
+                return JSONResponse(core_js)
 
-            """ Condição para testes """
-            
+
+            else:
+
+                if (bloco.fim_intervalo - len(inf)) <= bloco.minimo_pag_restantes:
+                    
+                    bloco = Bloco.objects.filter(usuario=request.user).order_by('-data_alterado')[0]
+                    
+                    bloco.ativo = False
+                    bloco.save()
+
+                    bloco = AddBloco(request)
+                    
+                    bloco.save()
+
+                    bp = BlocoPadrao.objects.get(ativo=True)
+                    bp.contador += bp.numero_paginas
+                    bp.save()
+
+                    serializer = BlocoSerializer(bloco)
+                    core_js = []
+                    core_js.append(serializer.data)
+
+                    print "caiu na condição de falta de numero_paginas"
+
+                    return JSONResponse(core_js)
+
+               
+                
             
 def AddBloco(request):
     bp = BlocoPadrao.objects.get(ativo=True)

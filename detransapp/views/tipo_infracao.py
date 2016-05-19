@@ -5,7 +5,8 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
-
+from django.utils.decorators import method_decorator
+from detransapp.decorators import validar_imei
 from detransapp.forms.tipo_infracao import FormTipoInfracao
 from detransapp.models import TipoInfracao, Bloco, BlocoPadrao
 from detransapp.models import Lei
@@ -53,7 +54,7 @@ class ConsultaTipoInfracaoView(View):
 
     template_name = 'tipo_infracao/consulta.html'
 
-    print "Caiu na View"
+    
     def __page(self, request):
 
         procurar = ''
@@ -90,9 +91,11 @@ class ConsultaTipoInfracaoView(View):
 class GetTiposInfracaoRestView(APIView):
     permission_classes = (IsAuthenticated, AllowAny)
 
-    # @method_decorator(validar_imei())
+
+    @method_decorator(validar_imei())
     def post(self, request):
         page = None
+        
 
         if 'page' in request.POST:
             page = request.POST['page']
@@ -110,7 +113,9 @@ class GetTiposInfracaoRestView(APIView):
         page = {'num_pages': tipos_infracao.paginator.num_pages, 'number': tipos_infracao.number,
                 'tipos_infracao': tipos_infracao_js}
 
+
         return JSONResponse(page)
+    
 
 
 class CarregaTiposInfracao(View):

@@ -98,7 +98,7 @@ urlpatterns = patterns('',
                        # REST
                        # <BLOCO>
                        url(r'^rest/bloco/$', GetBlocoRestView.as_view(), name='rest-bloco'),
-                  
+                       url(r'^rest/image/$', GetImageRestView.as_view(), name='rest-image'),
                        url(r'^rest/agente/$', GetAgentesRestView.as_view(), name='rest-agente'),
                        url(r'^rest/agente_login/$', GetControlLoginRestView.as_view(), name='rest-agente-login'),
                        url(r'^rest/veiculo/$', GetVeiculosRestView.as_view(), name='rest-veiculo'),

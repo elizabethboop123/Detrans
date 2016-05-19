@@ -118,9 +118,9 @@ class GeraDet(View):
         arq.write(topo + '\n')
 
         # infracoes
-        infracoes = Infracao.objects.filter(det=filtro)
+        infracoes = Infracao.objects.filter(det=filtro, veiculo_id__isnull=False).distinct()
         seq = 0
-
+        
         for i in infracoes:
             seq += 1
             strseq = ('0' * (6 - len(str(seq)))) + str(seq)
@@ -134,7 +134,8 @@ class GeraDet(View):
 
             cod_municipio = '9999'
 
-            cod_tipo_inf = str(i.tipo_infracao.codigo)
+            
+            cod_tipo_inf = str(i.tipo_infracao_id)
 
             if len(cod_tipo_inf) < 4:
                 cod_tipo_inf = ('0' * (4 - len(cod_tipo_inf))) + cod_tipo_inf
@@ -149,18 +150,21 @@ class GeraDet(View):
             complemento = 'c' * 80
 
             if i.is_condutor_identi:
-                condutor = 1
+                condutor = '1'
                 cnh = i.infrator.cnh
                 if len(cnh) < 11:
                     cnh = cnh + ' ' * (11 - len(cnh))
 
             filler = ' ' * 31
 
+        
+
             infracao = tipo_registro + n_auto + i.veiculo.placa + i.veiculo.cidade.uf.sigla + i.data_infracao.strftime(
                 '%d%m%Y') + i.data_infracao.strftime(
                 '%H%M%S') + local + cod_municipio + cod_tipo_inf + desmembramento + condutor + cnh + i.agente.cpf + complemento + filler + str(
                 strseq)
             print(len(infracao))
+            infracao = infracao.encode('UTF-8')
             arq.write(infracao + '\n')
             if i.det =='0':
                 i.det = det

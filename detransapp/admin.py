@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from detransapp.models import *
 
+
 admin.site.register(Cidade)
 admin.site.register(Veiculo)
 admin.site.register(Infracao)
@@ -21,3 +22,5 @@ admin.site.register(Regiao)
 admin.site.register(Modelo)
 admin.site.register(Cor)
 admin.site.register(DET.DET)
+admin.site.register(Agente_login)
+admin.site.register(Bloco)

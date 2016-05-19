@@ -29,3 +29,4 @@ from detransapp.models.veiculo_editado import VeiculoEditado
 from detransapp.models.veiculo_estrangeiro import VeiculoEstrangeiro
 from detransapp.models.veiculo_proprietario import VeiculoProprietario
 from detransapp.models.DET import Configuracao_DET
+from detransapp.models.image import Image
