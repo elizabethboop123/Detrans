@@ -32,6 +32,7 @@ class RelatorioInfracaoDetalhesView(View):
             inf = Infracao.objects.get(pk=infracao_id)
 
         return render(request, self.template, {'infracao': inf})
+        # return render(request, self.template)
 
 class RelatorioInfracaoView(View):
     template = 'infracao/relatorio.html'

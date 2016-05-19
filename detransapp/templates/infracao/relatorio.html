@@ -51,7 +51,7 @@
                         <td>{{ infracao.agente.username }}</td>
                         <td>{{ infracao.veiculo.placa }}</td>
                         <td>{{ infracao.data_infracao | date:"d/m/Y h:i:s" }}</td>
-                         <td><a href="{% url 'detalhes-infracao' infracao.id %}"><i class='icon configure'></i>Detalhes</a></td>
+                         <td><a href="{% url 'detalhes-infracao' infracao.id %}"><i class='fa fa-plus-square icon'></i>Detalhes</a></td>
                         
                     </tr>
                     {% endfor %}

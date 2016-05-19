@@ -1,7 +1,9 @@
 <html>
 <head>
     <title> {% block title %}{% endblock %}</title>
+    {% block refresh %} {% endblock %}
     <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/print.css" media="print" />
     <link rel="stylesheet" href="{{ STATIC_URL }}css/semantic.css"/>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/relatorios.css"/>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome-4.3.0/css/font-awesome.css"/>
@@ -10,8 +12,11 @@
     <script src="{{ STATIC_URL }}js/sticky.js"></script>
     <script src="{{ STATIC_URL }}js/highcharts.js"></script>
     <script src="{{ STATIC_URL }}css/components/transition.js"></script>
+    <script src="{{ STATIC_URL }}css/components/modal.js"></script>
+    <script src="{{ STATIC_URL }}css/components/progress.js"></script>
     <script src="{{ STATIC_URL }}js/detrans.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.png"/>
+    {% block semantic_2.1 %} {% endblock %}
     {% load sistema %}
 </head>
 <body>

@@ -90,6 +90,7 @@ urlpatterns = patterns('',
 
                        url(r'^infracao/relatorio/$', RelatorioInfracaoView.as_view(), name='relatorio-infracao'),
                        url(r'^infracao/relatorio/(?P<infracao_id>\d+)/$', RelatorioInfracaoDetalhesView.as_view(), name='detalhes-infracao'),
+                       # url(r'^infracao/relatorio/detalhes/$', RelatorioInfracaoDetalhesView.as_view()),
 
                        url(r'^get-cidades/$', 'detransapp.views.cidade.get_cidades', name='get-cidades'),
                        url(r'^downloadsqlite/$', DownloadDetransView.as_view(), name='download_sqlite'),

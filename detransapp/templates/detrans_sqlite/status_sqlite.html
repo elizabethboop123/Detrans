@@ -1,45 +1,81 @@
 {% extends "base.html" %}
 {% block title %} Status {% endblock %}
 
+{% block refresh %}
+<meta http-equiv="refresh" content="5">
+{% endblock %}
+
+{% block semantic_2.1 %}
+<link rel="stylesheet" href="{{ STATIC_URL }}semantic-2.1/semantic.min.css"/>
+<script src="{{ STATIC_URL }}semantic-2.1/semantic.min.js"></script>
+{% endblock %}
+
 {% block home %}item {% endblock %}
-{% block cadastros %}item active{% endblock %}
-{% block relatorios %}item {% endblock %}
-{% block sobre %}item {% endblock %}
+{% block cadastros %}item {% endblock %}
+{% block sobre %}item oculta{% endblock %}
 {% block op1 %} item {% endblock %}
 {% block op2 %} item {% endblock %}
 
 {% block result %}
-
-Status : {{ status }}<br>
-Erro : {{ erro }}
 <div class="ui grid">
     <div class="centered row">
-        <div class="four wide column">
-            {% if erro and status != 'Concluído' %}
-            <div class="ui red inverted compact segment">
-                Ocorreu um erro, tente novamente
-            </div>
-            {% else %}
-            <div class="ui loading center aligned segment">
-                <h1 class="ui header">Processando...</h1><br/>
-                <p></p>
-                <p></p>
-                <p></p>
-            </div>
-            {% endif %}
+        <div class="seven wide column">
+            <h2 class="ui header">
+                <i class="settings icon"></i>
+                <div class="content">
+                    Gerar Banco Móvel
+                    <div class="sub header">Cria a Carga Inicial e Atualização para os Dispositivos Móveis.</div>
+                </div>
+            </h2>
         </div>
     </div>
-</div>
-<div class='ui grid'>
-    <div class='row'>
-        <div class='three wide column'></div>
-        <div class='ten wide column'>
-            <form method="POST" action="{% url 'status-sqlite'%}" class='ui form'>
+    <div class="centered row">
+        <div class="seven wide column">
+            {% if erro and status != 'Concluido' %}
+            <div class="ui progress error" data-percent="{{ status_mensagem }}">
+                <div class="bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="label">ERRO! {{ status_mensagem }}% Gerado do Banco Móvel</div>
+            </div>
+            {% else %}
+            <div class="ui active progress" data-percent="{{ status_mensagem }}">
+                <div class="bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="label">{{ status_mensagem }}% Gerado do Banco Móvel</div>
+            </div>
+            {% endif %}
+            <div class="ui cancel red button right floated" id="cancelar_carga">Cancelar</div>
+        </div>
+    </div>
+    <div class="centered row">
+        <div class="seven wide column">
+            <form method="POST" action="{% url 'status-sqlite'%}" class='ui form modal'>
                 {% csrf_token %}
-                <button type="submit" class="ui red button">Cancelar</button>
+                <i class="close icon"></i>
+                <h3 class="ui header">
+                    Deseja cancelar o progresso?
+                </h3>
+                <div class="ui relaxed list">
+                    <div class="item">
+                        <p class="header">As alterações feitas até o momento serão perdidas, e não afetarão Carga Inicial e Atualização nos dispositivos móveis!</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <input type="submit" class="ui verde button" value="Sim"/>
+                    <button type="button" class="ui cancel red button">Não</button>
+                </div>
             </form>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $('.ui.progress').progress();
+
+    $('.ui.modal')
+            .modal('setting', 'closable', false)
+            .modal('attach events', '#cancelar_carga', 'show');
+</script>
 
 {% endblock %}
