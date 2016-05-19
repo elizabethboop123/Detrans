@@ -25,21 +25,22 @@ class ThreadDetransSqlite(threading.Thread):
         self.is_erro_processo = False
         self.progress = 0
         self.detrans_sqlite_nome = settings.MEDIA_ROOT + '/detrans.sqlite'
+        self.detrans_sqlite_nome_execucao = settings.MEDIA_ROOT + '/detrans_execucao.sqlite'
 
     def run(self):
 
         try:
 
             self.progress = 1
-            if os.path.exists(self.detrans_sqlite_nome):
-                os.remove(self.detrans_sqlite_nome)
+            if os.path.exists(self.detrans_sqlite_nome_execucao):
+                os.remove(self.detrans_sqlite_nome_execucao)
 
             self.progress = 1
-            if os.path.exists(self.detrans_sqlite_nome + '.gz'):
-                os.remove(self.detrans_sqlite_nome + '.gz')
+            if os.path.exists(self.detrans_sqlite_nome_execucao + '.gz'):
+                os.remove(self.detrans_sqlite_nome_execucao + '.gz')
 
             self.progress = 2
-            conn = sqlite3.connect(self.detrans_sqlite_nome)
+            conn = sqlite3.connect(self.detrans_sqlite_nome_execucao)
             cursor = conn.cursor()
 
             self.progress = 3
@@ -75,8 +76,13 @@ class ThreadDetransSqlite(threading.Thread):
             self.progress = 80
             config_sinc.importa(conn, cursor, data_versao_bd, self.stopthread)
             self.progress = 90
-            comprimir.comprimir_detrans_sqlite(self.detrans_sqlite_nome)
+            comprimir.comprimir_detrans_sqlite(self.detrans_sqlite_nome_execucao)
+            self.progress = 99
+
             self.progress = 100
+            if os.path.exists(self.detrans_sqlite_nome):
+                os.remove(self.detrans_sqlite_nome)
+                os.rename(self.detrans_sqlite_nome_execucao, self.detrans_sqlite_nome)
 
             self.is_finalisado = True
             self.is_erro_processo = False
