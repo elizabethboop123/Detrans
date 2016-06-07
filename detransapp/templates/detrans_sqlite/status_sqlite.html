@@ -32,6 +32,11 @@
     <div class="centered row">
         <div class="seven wide column">
             {% if erro and status != 'Concluido' %}
+            <aside class="ui error message">
+                <h3 class="header">
+                    Banco Móvel foi cancelado, pois ocorreu um erro!
+                </h3>
+            </aside>
             <div class="ui progress error" data-percent="{{ status_mensagem }}">
                 <div class="bar">
                     <div class="progress"></div>
@@ -39,6 +44,13 @@
                 <div class="label">ERRO! {{ status_mensagem }}% Gerado do Banco Móvel</div>
             </div>
             {% else %}
+                {% if status == 'Concluido' and status_mensagem == 100 %}
+                <aside class="ui positive message">
+                    <h3 class="header">
+                        Banco Móvel foi gerado com Sucesso!
+                    </h3>
+                </aside>
+                {% endif %}
             <div class="ui active progress" data-percent="{{ status_mensagem }}">
                 <div class="bar">
                     <div class="progress"></div>
@@ -59,7 +71,8 @@
                 </h3>
                 <div class="ui relaxed list">
                     <div class="item">
-                        <p class="header">As alterações feitas até o momento serão perdidas, e não afetarão Carga Inicial e Atualização nos dispositivos móveis!</p>
+                        <p class="header">As alterações feitas até o momento serão perdidas, e não afetarão Carga
+                            Inicial e Atualização nos dispositivos móveis!</p>
                     </div>
                 </div>
                 <div class="actions">

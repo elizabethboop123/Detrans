@@ -129,6 +129,7 @@ urlpatterns = patterns('',
                        url(r'^importa/veiculo$', ImportaVeiculo.as_view(), name='importa-veiculo'),
 
                        url(r'^cria-sqlite/$', CriaSqliteView.as_view(), name='cria-sqlite'),
+                       url(r'^cria-sqlite-cancelado/$', CriaSqliteCanceladoView.as_view(), name='cria-sqlite-cancelado'),
                        url(r'^status-sqlite/$', StatusView.as_view(), name='status-sqlite'),
                        url(r'^config/set/det$', CadastroDETView.as_view(), name='cadastra-det'),
                        url(r'^config/get/det$', ConsultaDETView.as_view(), name='consulta-det'),
