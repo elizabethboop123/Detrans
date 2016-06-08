@@ -131,6 +131,19 @@ class CriaSqliteView(View):
 
         return redirect('status-sqlite')
 
+class CriaSqliteCanceladoView(View):
+    template = 'detrans_sqlite/cria_sqlite_cancelado.html'
+
+    def get(self, request):
+        return render(request, self.template)
+
+    def post(self, request):
+        global myProcess
+
+        myProcess = ThreadDetransSqlite('importa')
+        myProcess.start()
+
+        return redirect('status-sqlite')
 
 class StatusView(View):
     template = 'detrans_sqlite/status_sqlite.html'
@@ -149,4 +162,4 @@ class StatusView(View):
 
         myProcess.stop()
 
-        return redirect('cria-sqlite')
+        return redirect('cria-sqlite-cancelado')
