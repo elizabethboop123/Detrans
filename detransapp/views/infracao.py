@@ -3,7 +3,8 @@
 # from pandas.tseries.frequencies import infer_freq
 from json import loads, dumps
 import json
-
+import ast
+import base64
 from datetime import datetime
 # from django.utils import timezone
 
@@ -226,42 +227,46 @@ class RecebeInfracoesRestView(APIView):
 class GetImageRestView(APIView):
 
     permission_classes = (IsAuthenticated, AllowAny)
-
+   
     # @method_decorator(validar_imei())
     def post(self, request):
-              
-        images_json = loads(request.POST['imagem'])
-        print "Número de Imagens: ", len(images_json)
+        
+        ids_json = loads(request.POST['id_infringement'])
+        img_json = "" + str(request.POST['imagem'])
+        img_json = img_json.split(",")
+
         status_core = []
         count = 0
 
-        for image in images_json:
-
-            Img = Image()
-            Img.id_image = int(image['id_image'])
-            # Img.infracao_id = int(image['infringement_id'])
-
-            # Looking if this match isn't in database
-
-            foto = str(image['photo'])
-            # print "Numero de caracteres foto: ", len(foto)
-            if Image.objects.filter(id_image=Img.id_image):
+        for ids in ids_json:
                 
-                status = {'id_image': Img.id_image, 'isStatus': 0}
-                status_core.append(status)
-            else:
-                status = {'id_image': Img.id_image, 'isStatus': 1}
-                Img.save()
-                status_core.append(status)
+            Img = Image()
+            Img.infracao_id = ids['infringement_id']
+
+            arqv = open('imagens_analise.txt', 'r')
+            texto = arqv.readlines()
+            texto.append(img_json[count])
+            texto.append('\n \n \n \n \n \n \n')
+            arqv = open('imagens_analise.txt', 'w')
+            arqv.writelines(texto)
+            arqv.close()
+
+            imgdata = base64.b64decode(img_json[count])
+            filename = 'media/infracao_images/inf' + str(count) + str(Img.infracao_id) + '.png'
+
+            with open(filename, 'wb') as f:
+                f.write(imgdata)
+
+            Img.photo = filename    
+            Img.save()
+            status = {'isStatus': 1}
+            status_core.append(status)
 
             count += 1
-            print "CONTADOR", count
+            
         print "CONTADOR TOTAL", count
 
-        for img in status_core:
-            print "Id de Imagem: %d     Permissão: %d" %(img['id_image'], img['isStatus'])
-
-        
+                
         status_core = dumps(status_core, ensure_ascii=False)
         print status_core
 

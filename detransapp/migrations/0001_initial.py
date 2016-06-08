@@ -157,9 +157,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Infrator',
             fields=[
-                ('documento', models.CharField(max_length=14, serialize=False, primary_key=True, db_index=True)),
+                ('documento', models.CharField(max_length=18, serialize=False, primary_key=True, db_index=True)),
                 ('nome', models.CharField(max_length=60)),
-                ('cnh', models.CharField(max_length=11, null=True)),
+                ('cnh', models.CharField(max_length=14, null=True)),
             ],
         ),
         migrations.CreateModel(
@@ -222,9 +222,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Proprietario',
             fields=[
-                ('documento', models.CharField(max_length=14, serialize=False, primary_key=True, db_index=True)),
+                ('documento', models.CharField(max_length=18, serialize=False, primary_key=True, db_index=True)),
                 ('nome', models.CharField(max_length=60)),
-                ('cnh', models.CharField(max_length=11, null=True)),
+                ('cnh', models.CharField(max_length=14, null=True)),
             ],
         ),
         migrations.CreateModel(

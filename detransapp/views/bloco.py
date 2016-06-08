@@ -120,13 +120,12 @@ class GetBlocoRestView(APIView):
     @method_decorator(validar_imei())
     def post(self, request):
         
-        # Se não tiver registros de bloco desse usuário
-        # (primeiro acesso) mande um bloco para ele!
+        
         if not Bloco.objects.filter(usuario=request.user):
             
-            print "caiu no primeiro if"
+            
             bloco = AddBloco(request)
-            # bloco.agente_campo = request.user
+            
             bloco.save()
 
             bp = BlocoPadrao.objects.get(ativo=True)
@@ -144,7 +143,7 @@ class GetBlocoRestView(APIView):
 
             return JSONResponse(js_core)
 
-        # Se houver registros do usuário na tabela bloco:
+  
         else:
                         
             bloco = Bloco.objects.filter(usuario=request.user).order_by('-data')[0]
@@ -152,13 +151,10 @@ class GetBlocoRestView(APIView):
             
             # Datetime Login User
             usr = Agente_login.objects.get(agente_id=request.user.id, status=True)
-                        
-
-            
             
             if (timezone.now() - usr.data_login).total_seconds()/60 < 7:
 
-                print "caiu no envia-bloco-login"
+                
                 
                 bloco = Bloco.objects.filter(usuario=request.user).order_by('-data_alterado')
                 core_js = []
@@ -173,13 +169,16 @@ class GetBlocoRestView(APIView):
                         serializer = BlocoSerializer(bloco)
                         core_js.append(serializer.data)
 
-                              
+                pos = len(inf) - 1
                 bloco = Bloco.objects.get(id=bloco[0].id)
                 bloco.data_alterado = timezone.now()
-                bloco.inicio_intervalo += len(inf) 
+                    
+                if pos > 0:
+                    
+                    bloco.inicio_intervalo = (inf[pos].id)+1  
+                    
                 bloco.save()
                 serializer = BlocoSerializer(bloco)
-                
                 core_js.append(serializer.data)
                 return JSONResponse(core_js)
 
@@ -204,8 +203,6 @@ class GetBlocoRestView(APIView):
                     serializer = BlocoSerializer(bloco)
                     core_js = []
                     core_js.append(serializer.data)
-
-                    print "caiu na condição de falta de numero_paginas"
 
                     return JSONResponse(core_js)
 

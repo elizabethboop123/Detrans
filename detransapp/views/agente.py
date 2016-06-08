@@ -133,7 +133,7 @@ class GetControlLoginRestView(APIView):
         else:
             
             agente_login = Agente_login.objects.get(device=dispositivo.id, agente_id=agente, status=True)
-            print agente_login
+            
             if agente_login:
                 agente_login.status = False
                 agente_login.data_logout = timezone.now()

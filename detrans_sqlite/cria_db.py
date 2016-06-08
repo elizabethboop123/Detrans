@@ -2,7 +2,7 @@
 def criar(conn, cursor):
 
     cursor.execute("create table if not exists config_sinc ("
-                    + "horas_discarte integer, "
+                    + "horas_descarte integer, "
                     + "tempo_captura_mov integer,"
                     + "distancia_captura_mov decimal,"
                     + "data_sinc datetime, "
@@ -103,6 +103,6 @@ def criar(conn, cursor):
                     + "id integer primary key autoincrement, "
                     + "agente integer, "
                     + "status boolean, "
-                    + "foreign key (agente) references agente(id)")
+                    + "foreign key (agente) references agente(id))")
 
     conn.commit()

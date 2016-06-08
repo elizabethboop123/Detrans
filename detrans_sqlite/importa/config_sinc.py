@@ -5,12 +5,12 @@ from django.db import connection
 def importa(conn, cursor, data_versao_bd, stopthread):
 
     cursor_django = connection.cursor()
-    cursor_django.execute('select distancia_captura_mov,horas_discarte,tempo_captura_mov from detransapp_configsinc')
+    cursor_django.execute('select distancia_captura_mov,horas_descarte,tempo_captura_mov from detransapp_configsinc')
 
     tupla_config_sinc = cursor_django.fetchall()
 
 
-    cursor.executemany('INSERT INTO config_sinc (distancia_captura_mov,horas_discarte,tempo_captura_mov,data_sinc) values (?,?,?,?)',
+    cursor.executemany('INSERT INTO config_sinc (distancia_captura_mov,horas_descarte,tempo_captura_mov,data_sinc) values (?,?,?,?)',
                        [(float(tupla_config_sinc[0][0]),tupla_config_sinc[0][1],tupla_config_sinc[0][2],data_versao_bd)])
     conn.commit()
 
