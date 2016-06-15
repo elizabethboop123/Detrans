@@ -27,6 +27,7 @@
                     <div class="sub header">Visualizaçao do auto de infraçao.</div>
                 </div>
             </h2>
+
             <div class="ui segments">
                 <div class="ui tertiary segment">
                     <h3 class="ui header">
@@ -167,7 +168,26 @@
                             {{infracao.agente.first_name}} {{infracao.agente.last_name}}
                         </div>
                     </div>
+
                 </div>
+
+                
+                <div class="ui tertiary segment">
+                    <h3 class="ui header">
+                        <i class="fa fa-user-secret icone"></i>
+                        <div class="content">
+                          
+                            {% for img in imagens %}
+                                <img src="/{{img.photo}}">
+                            {% endfor %}
+
+                
+                        </div>
+                    </h3>
+                </div>
+        
+                        
+
             </div>
             <a href='..'>
                 <button type="button" class="ui cancel red button">Cancelar</button>

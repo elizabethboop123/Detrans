@@ -80,8 +80,19 @@ class ThreadDetransSqlite(threading.Thread):
             self.progress = 99
 
             self.progress = 100
+
+
             if os.path.exists(self.detrans_sqlite_nome):
                 os.remove(self.detrans_sqlite_nome)
+            
+            if os.path.exists(self.detrans_sqlite_nome +".gz"):
+                os.remove(self.detrans_sqlite_nome +".gz")
+            
+            if os.path.exists(self.detrans_sqlite_nome_execucao + ".gz"):
+                os.rename(self.detrans_sqlite_nome_execucao + ".gz", self.detrans_sqlite_nome + ".gz")
+
+
+            if os.path.exists(self.detrans_sqlite_nome_execucao):
                 os.rename(self.detrans_sqlite_nome_execucao, self.detrans_sqlite_nome)
 
             self.is_finalisado = True

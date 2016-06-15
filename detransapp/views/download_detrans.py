@@ -29,8 +29,10 @@ class DownloadDetransView(APIView):
     # @method_decorator(login_required)
     # @method_decorator(validar_imei())
     # @method_decorator(registro_log_sinc(0))
-    @staticmethod
-    def get():
+
+    
+    def get(self, request):
+        
         filename = 'detrans.sqlite.gz'
         db_path = "%s/%s" % (settings.MEDIA_ROOT, filename)
 

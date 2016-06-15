@@ -26,6 +26,7 @@ def criar(conn, cursor):
                     + "fim_intervalo integer, "
                     + "agente_id integer, "
                     + "ativo boolean, "
+                    + "minimo_pag_restantes integer, "
                     + "foreign key(agente_id) references agente(id))")
 
     cursor.execute("create table if not exists uf ("
@@ -101,8 +102,13 @@ def criar(conn, cursor):
 
     cursor.execute("create table if not exists agente_login ("
                     + "id integer primary key autoincrement, "
-                    + "agente integer, "
-                    + "status boolean, "
-                    + "foreign key (agente) references agente(id))")
+                    + "id_agente integer, "
+                    + "status integer, "
+                    + "imei VARCHAR )")
+
+    cursor.execute("create table if not exists config_det ("
+                    + "id integer primary key autoincrement, "
+                    + "autuador VARCHAR(15))")
+                   
 
     conn.commit()
