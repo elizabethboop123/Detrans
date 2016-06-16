@@ -168,26 +168,22 @@
                             {{infracao.agente.first_name}} {{infracao.agente.last_name}}
                         </div>
                     </div>
-
                 </div>
-
-                
                 <div class="ui tertiary segment">
                     <h3 class="ui header">
-                        <i class="fa fa-user-secret icone"></i>
+                        <i class="fa fa-picture-o icone"></i>
                         <div class="content">
-                          
-                            {% for img in imagens %}
-                                <img src="/{{img.photo}}">
-                            {% endfor %}
-
-                
+                            Anexo
                         </div>
                     </h3>
                 </div>
-        
-                        
-
+                <div class="ui secondary segment">
+                    <div class="ui medium images anexo">
+                        {% for img in imagens %}
+                        <img src="/{{img.photo}}">
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
             <a href='..'>
                 <button type="button" class="ui cancel red button">Cancelar</button>

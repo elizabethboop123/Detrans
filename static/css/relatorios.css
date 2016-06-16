@@ -21,3 +21,7 @@ float:left;
 #criaContainer ul{
     list-style:none;
     }
+.anexo{
+    page-break-before: always !important;
+    text-align: center;
+}

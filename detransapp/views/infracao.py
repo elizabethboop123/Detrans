@@ -34,7 +34,6 @@ class RelatorioInfracaoDetalhesView(View):
             img = Image.objects.filter(infracao=infracao_id)
 
         return render(request, self.template, {'infracao': inf, 'imagens': img})
-        
 
 class RelatorioInfracaoView(View):
     template = 'infracao/relatorio.html'
