@@ -57,6 +57,7 @@
                     {% endfor %}
                     </tbody>
                 </table>
+                {% include "partials/paginacao.html" with lista=infracoes procurar=procurar %}
             </div>
         </div>
     </div>
