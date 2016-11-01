@@ -1,1 +1,1 @@
-from detrans.settings.vanessa import *
+from detrans.settings.iago import *
