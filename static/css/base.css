@@ -344,3 +344,8 @@ figure.fabrica{
 .item > p.header{
     padding: 0 30px 0 30px;
 }
+
+.cabecalho img{
+    width: 200px;
+    height: 200px;
+}

@@ -8,7 +8,7 @@ import base64
 from datetime import datetime
 # from django.utils import timezone
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -30,10 +30,14 @@ class RelatorioInfracaoDetalhesView(View):
     def get(self, request, infracao_id = None):
 
         if infracao_id:
-            inf = Infracao.objects.get(pk=infracao_id)
-            img = Image.objects.filter(infracao=infracao_id)
-
-        return render(request, self.template)
+            try:
+                inf = Infracao.objects.get(pk=infracao_id)
+                img = Image.objects.filter(infracao=infracao_id)
+                return render(request, self.template, {'infracao': inf, 'imagens': img})
+            except:
+                return redirect('/infracao/relatorio/')
+        else:
+            return render(request, self.template)
         # return render(request, self.template, {'infracao': inf, 'imagens': img})
 
 class RelatorioInfracaoView(View):

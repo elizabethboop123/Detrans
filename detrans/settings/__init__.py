@@ -1,1 +1,1 @@
-from detrans.settings.iago import *
+from detrans.settings.flamarion import *

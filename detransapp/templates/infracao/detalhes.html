@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load static %}
 
 {% block title %} Relat&oacute;rio de Infraç&otilde;es {% endblock %}
 
@@ -13,167 +13,207 @@
 <div class='ui grid relatorio'>
     <div class='centered row'>
         <div class='ten wide column'>
-            <a id="print" class="ui circular ui icon button right floated" href='javascript:window.print()'
-               rel="nofollow"
-               target="_blank">
-                <i class="fa fa-print"></i>
-                Imprimir
-            </a>
+            <!--<a id="print" class="ui circular ui icon button right floated" href='javascript:window.print()'-->
+               <!--rel="nofollow"-->
+               <!--target="_blank">-->
+                <!--<i class="fa fa-print"></i>-->
+                <!--Imprimir-->
+            <!--</a>-->
 
-            <h2 class="ui header">
-                <i class="browser icon"></i>
-                <div class="content">
-                    Detalhes Infração
-                    <div class="sub header">Visualizaçao do auto de infraçao.</div>
-                </div>
-            </h2>
+            <!--<h2 class="ui header">-->
+                <!--<i class="browser icon"></i>-->
+                <!--<div class="content">-->
+                    <!--Detalhes Infração-->
+                    <!--<div class="sub header">Visualizaçao do auto de infraçao.</div>-->
+                <!--</div>-->
+            <!--</h2>-->
 
             <div class="ui segments">
+                <div class="ui secondary cabecalho segment">
+                    <img src="{% static 'images/joinville.png' %}" class="ui left floated image" />
+
+                    <h3 class="ui center aligned header">
+                        PREFEITURA DE JOINVILLE<br />
+                        DEPARTAMENTO DE TRÂNSITO DE JOINVILLE - DETRANS
+                        <div class="sub header">
+                            Portaria 160/99 - Denatran
+                            Lei Complementar 378/12 e 418/04
+                        </div>
+                    </h3>
+
+                    <h1 class="ui center aligned header">
+                        AUTO DE INFRAÇÃO DE TRÂNSITO
+                        <div class="sub header">
+                            Talonário Eletrônico
+                        </div>
+                    </h1>
+                </div>
                 <div class="ui tertiary segment">
                     <h3 class="ui header">
-                        <i class="fa fa-tags icone"></i>
                         <div class="content">
-                            Detalhes do Auto de Infraçao
+                            1. DETALHES DO AUTO DE INFRAÇÃO
                         </div>
                     </h3>
                 </div>
                 <div class="ui secondary segment">
                     <div class="ui divided list">
                         <div class="item">
-                            <label class="header label">Nº do Bloco:</label>
+                            <strong>Nº do Bloco:</strong>
                             {{infracao.id}}
+                        </div>
+                        <div class="item">
+                            <strong>Código do Órgão Autuador:</strong>
+                            212321321321teste
                         </div>
                     </div>
                 </div>
+
                 <div class="ui tertiary segment">
                     <h3 class="ui header">
-                        <i class="fa fa-car icone"></i>
                         <div class="content">
-                            Identificaçao do Veiculo
+                            2. IDENTIFICAÇÃO DO VEÍCULO
                         </div>
                     </h3>
                 </div>
                 <div class="ui secondary segment">
                     <div class="ui divided list">
                         <div class="item">
-                            <label class="header label">Placa do Veículo: </label>
+                            <strong>Placa:</strong>
                             {{infracao.veiculo.placa}}
                         </div>
                         <div class="item">
-                            <label class="header label">Município: </label>
-                            {{infracao.veiculo.cidade.nome}}
+                            <strong>Marca/Modelo:</strong>
+                            {{infracao.veiculo.modelo.descricao|title}}
                         </div>
                         <div class="item">
-                            <label class="header label">UF: </label>
-                            {{infracao.veiculo.cidade.uf.sigla}}
+                            <strong>Espécie:</strong>
+                            {{infracao.veiculo.especie.descricao|title}}
                         </div>
                         <div class="item">
-                            <label class="header label">Marca / Modelo: </label>
-                            {{infracao.veiculo.modelo.descricao}}
+                            <strong>Tipo:</strong>
+                            {{infracao.veiculo.tipo_veiculo.descricao|title}}
                         </div>
                         <div class="item">
-                            <label class="header label">Espécie: </label>
-                            {{infracao.veiculo.especie.descricao}}
+                            <strong>Categoria:</strong>
+                            {{infracao.veiculo.categoria.descricao|title}}
+                        </div>
+                        <div class="item">
+                            <strong>Cidade / UF:</strong>
+                            {{infracao.veiculo.cidade.nome|title}} / {{infracao.veiculo.cidade.uf.sigla}}
                         </div>
                     </div>
                 </div>
                 <div class="ui tertiary segment">
                     <h3 class="ui header">
-                        <i class="fa fa-file-text icone"></i>
                         <div class="content">
-                            Identificação da Infração
+                            3. IDENTIFICAÇÃO DO LOCAL DA INFRAÇÃO
                         </div>
                     </h3>
                 </div>
                 <div class="ui secondary segment">
                     <div class="ui divided list">
                         <div class="item">
-                            <label class="header label">Localidade: </label>
-                            {{infracao.local}} {{infracao.local_numero}}
+                            <strong>Local da Infração:</strong>
+                            {{infracao.local}}, Nº {{infracao.local_numero}}
                         </div>
                         <div class="item">
-                            <label class="header label">Código da Infração: </label>
-                            {{infracao.id}}
+                            <strong>Data:</strong>
+                            {{infracao.data_infracao|date:"d/m/Y"}}
                         </div>
                         <div class="item">
-                            <label class="header label">Data / Hora: </label>
-                            {{infracao.data_infracao}}
+                            <strong>Hora:</strong>
+                            {{infracao.data_infracao|date:"H:i"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="ui tertiary segment">
+                    <h3 class="ui header">
+                        <div class="content">
+                            4. TIPIFICAÇÃO DA INFRAÇÃO
+                        </div>
+                    </h3>
+                </div>
+                <div class="ui secondary segment">
+                    <div class="ui divided list">
+                        <div class="item">
+                            <strong>Código:</strong>
+                            {{infracao.tipo_infracao.codigo}}
                         </div>
                         <div class="item">
-                            <label class="header label">Código de Legislação: </label>
-                            {{infracao.tipo_infracao_id}}
-                        </div>
-                        <div class="item">
-                            <label class="header label">Descrição da Infração:</label>
+                            <strong>Descrição da Infração:</strong>
                             {{infracao.tipo_infracao.descricao}}
                         </div>
                     </div>
                 </div>
                 <div class="ui tertiary segment">
                     <h3 class="ui header">
-                        <i class="fa fa-user icone"></i>
                         <div class="content">
-                            Identificação do Condutor
+                            5. IDENTIFICAÇÃO DO AGENTE AUTUADOR
                         </div>
                     </h3>
                 </div>
                 <div class="ui secondary segment">
                     <div class="ui divided list">
                         <div class="item">
-                            <label class="header label">Nome: </label>
-                            {{infracao.infrator.nome}}
+                            <strong>Matrícula:</strong>
+                            {{infracao.agente.id}}
                         </div>
                         <div class="item">
-                            <label class="header label">CNH / PPD: </label>
-                            {{infracao.infrator.cnh}}
-                        </div>
-                        <div class="item">
-                            <label class="header label">RG / CPF: </label>
-                            {{infracao.infrator.documento}}
+                            <strong>Assinatura:</strong>
+                            {{infracao.agente.first_name|title}} {{infracao.agente.last_name|title}}
                         </div>
                     </div>
                 </div>
                 <div class="ui tertiary segment">
                     <h3 class="ui header">
-                        <i class="fa fa-eye icone"></i>
                         <div class="content">
-                            Observação
+                           6. IDENTIFICAÇÃO DO CONDUTOR
                         </div>
                     </h3>
                 </div>
                 <div class="ui secondary segment">
                     <div class="ui divided list">
                         <div class="item">
-                            <label class="header label">Observação:</label>
+                            <strong>Nome:</strong>
+                            {{infracao.infrator.nome|title}}
+                        </div>
+                        <div class="item">
+                            <strong>CNH / PPD:</strong>
+                            {{infracao.infrator.cnh}}
+                        </div>
+                        <div class="item">
+                            <strong>RG / CPF:</strong>
+                            {{infracao.infrator.documento}}
+                        </div>
+                        <div class="item">
+                            <strong>Assinatura:</strong>
+
+                        </div>
+                    </div>
+                </div>
+
+                {% if infracao.obs %}
+                <div class="ui tertiary segment">
+                    <h3 class="ui header">
+                        <div class="content">
+                            7. OBSERVAÇÃO
+                        </div>
+                    </h3>
+                </div>
+                <div class="ui secondary segment">
+                    <div class="ui divided list">
+                        <div class="item">
+                            <strong>Observação:</strong>
                             {{infracao.obs}}
                         </div>
                     </div>
                 </div>
+                {% endif %}
+                {% if imagens %}
                 <div class="ui tertiary segment">
                     <h3 class="ui header">
-                        <i class="fa fa-user-secret icone"></i>
                         <div class="content">
-                            Identificação do Agente
-                        </div>
-                    </h3>
-                </div>
-                <div class="ui secondary segment">
-                    <div class="ui divided list">
-                        <div class="item">
-                            <label class="header label">Agente Nome:</label>
-                            {{infracao.agente.first_name}} {{infracao.agente.last_name}}
-                        </div>
-                        <div class="item">
-                            <label class="header label">Assinatura:</label>
-                            {{infracao.agente.first_name}} {{infracao.agente.last_name}}
-                        </div>
-                    </div>
-                </div>
-                <div class="ui tertiary segment">
-                    <h3 class="ui header">
-                        <i class="fa fa-picture-o icone"></i>
-                        <div class="content">
-                            Anexo
+                            9. ANEXO
                         </div>
                     </h3>
                 </div>
@@ -184,6 +224,7 @@
                         {% endfor %}
                     </div>
                 </div>
+                {% endif %}
             </div>
             <a href='..'>
                 <button type="button" class="ui cancel red button">Cancelar</button>
